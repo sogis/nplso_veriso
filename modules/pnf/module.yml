@@ -1,6 +1,0 @@
----
-displayname: Periodische Nachfuehrung
-ilimodels:
-- ilimodel: DM01AVSO24LV95
-  referenceframe: LV95
-  epsg: '2056'
