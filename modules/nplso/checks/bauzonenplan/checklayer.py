@@ -49,26 +49,94 @@ class ComplexCheck(ComplexCheckBase):
 
         if not project_id:
             self.message_bar.pushCritical(
-                    "Error", _translate("VeriSO_PNF_Bahn", "project_id not "
+                    "Error", _translate("VeriSO_PNF_Bauzonenplan", "project_id not "
                                                          "set", None))
             return
 
         QApplication.setOverrideCursor(Qt.WaitCursor)
         try:
-            group = _translate("VeriSO_PNF_Bahn", "Checklayer - Bahn",
+            group = _translate("VeriSO_PNF_Bauzonenplan", "Checklayer - Bauzonenplan",
                                None)
             group += " (" + str(project_id) + ")"
 
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_PNF_Bahn", "EO.Bahngeleise_ueberdeckt",
+                "title": _translate("VeriSO_PNF_Bauzonenplan", "Stützpunkte nicht identisch zur Liegenschaft",
                                     None),
-                "featuretype": "t_geleise_ueberdeckt",
-                "geom": "the_geom", "key": "ogc_fid", "sql": "",
+                "featuretype": "t_stuetzpunkte_nicht_identisch_zur_liegenschaft",
+                "geom": "geometrie", "key": "t_id", "sql": "",
                 "readonly": True, "group": group,
                 "style": "checks/checklayer_punkt.qml"
             }
-            vlayer = self.layer_loader.load(layer, True, True, True)
+            vlayer = self.layer_loader.load(layer, False, True, False)
+
+            layer = {
+                "type": "postgres",
+                "title": _translate("VeriSO_PNF_Bauzonenplan", "Beschriftung nicht io",
+                                    None),
+                "featuretype": "t_beschriftung_nicht_io",
+                "geom": "pos", "key": "t_ili_tid", "sql": "",
+                "readonly": True, "group": group,
+                "style": "checks/checklayer_punkt.qml"
+            }
+            vlayer = self.layer_loader.load(layer, True, True, False)
+
+            layer = {
+                "type": "postgres",
+                "title": _translate("VeriSO_PNF_Bauzonenplan", "Rechtsstatus nicht 'in Kraft'",
+                                    None),
+                "featuretype": "t_rechtsstatus_nicht_inkraft",
+                "geom": "geometrie", "key": "t_ili_tid", "sql": "",
+                "readonly": True, "group": group,
+                "style": "checks/checklayer_punkt.qml"
+            }
+            vlayer = self.layer_loader.load(layer, True, True, False)
+
+            layer = {
+                "type": "postgres",
+                "title": _translate("VeriSO_PNF_Bauzonenplan", "Perimeter ohne Plandokument",
+                                    None),
+                "featuretype": "t_perimeter_ohne_plandokument",
+                "geom": "geometrie", "key": "t_id", "sql": "",
+                "readonly": True, "group": group,
+                "style": "checks/checklayer_punkt.qml"
+            }
+            vlayer = self.layer_loader.load(layer, True, True, False)
+
+
+            layer = {
+                "type": "postgres",
+                "title": _translate("VeriSO_PNF_Bauzonenplan", "Perimeter mit Plandokument",
+                                    None),
+                "featuretype": "t_perimeter_mit_plandokument",
+                "geom": "geometrie", "key": "t_id", "sql": "",
+                "readonly": True, "group": group,
+                "style": "checks/checklayer_punkt.qml"
+            }
+            vlayer = self.layer_loader.load(layer, True, True, False)
+
+            layer = {
+                "type": "postgres",
+                "title": _translate("VeriSO_PNF_Bauzonenplan", "Dokument mit Geometrie verknüpft",
+                                    None),
+                "featuretype": "t_dokument_mit_geometrie_verknuepft",
+                "geom": "geometrie", "key": "t_id", "sql": "",
+                "readonly": True, "group": group,
+                "style": "checks/checklayer_punkt.qml"
+            }
+            vlayer = self.layer_loader.load(layer, True, True, False)
+
+            layer = {
+                "type": "postgres",
+                "title": _translate("VeriSO_PNF_Bauzonenplan", "Dokument ohne Verknüpfung",
+                                    None),
+                "featuretype": "t_dokument_ohne_verknuepfung",
+                "geom": "", "key": "t_id", "sql": "",
+                "readonly": True, "group": group,
+                "style": "checks/checklayer_punkt.qml"
+            }
+            vlayer = self.layer_loader.load(layer, True, True, False)
+
 
         except Exception:
             QApplication.restoreOverrideCursor()

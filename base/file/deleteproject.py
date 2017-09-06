@@ -140,6 +140,7 @@ class DeleteProjectDialog(QDialog, Ui_DeleteProject):
 
             sql = "BEGIN;"
             sql += "DROP SCHEMA IF EXISTS %s CASCADE;" % self.db_schema
+            sql += "DELETE FROM geometry_columns WHERE f_table_schema='%s' ;" % self.db_schema
             sql += "COMMIT;"
 
             query = db.exec_(sql)

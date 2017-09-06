@@ -431,7 +431,7 @@ class ImportProjectDialog(QDialog, Ui_ImportProject):
         # TODO: ili2pg has a lot of  options. At least some of them should be
         #  exposed to the user.
         arguments.append("--t_id_Name")
-        arguments.append("ogc_fid")
+        arguments.append("t_id")
         arguments.append("--importTid")
         arguments.append("--createGeomIdx")
         arguments.append("--createEnumTabs")
