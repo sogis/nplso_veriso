@@ -1,0 +1,6 @@
+---
+displayname: Nutzungsplanung
+ilimodels:
+- ilimodel: SO_Nutzungsplanung_20170105
+  referenceframe: LV95
+  epsg: '2056'
