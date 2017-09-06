@@ -4,6 +4,7 @@ VeriSO
 VeriSO is a QGIS plugin that allows verifying for Interlis data.
 It was originally developed by Stefan Ziegler and it is now mantained by 
 OPENGIS.ch LLC
+This specific VeriSO version is designed to verify data of Nutzungsplanung.
  
 Usage
 --------
