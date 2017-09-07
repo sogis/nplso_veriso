@@ -155,6 +155,27 @@ class ComplexCheck(ComplexCheckBase):
             }
             vlayer = self.layer_loader.load(layer, False, True, False)
 
+            layer = {
+                "type": "postgres",
+                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Plandokument",
+                                    None),
+                "featuretype": "rechtsvorschrften_plandokument",
+                "geom": "", "key": "t_id", "sql": "",
+                "readonly": True, "group": group
+            }
+            vlayer = self.layer_loader.load(layer, False, True, False)
+
+
+            layer = {
+                "type": "postgres",
+                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Dokument",
+                                    None),
+                "featuretype": "rechtsvorschrften_dokument",
+                "geom": "", "key": "t_id", "sql": "",
+                "readonly": True, "group": group
+            }
+            vlayer = self.layer_loader.load(layer, False, True, False)
+
             
 
 
