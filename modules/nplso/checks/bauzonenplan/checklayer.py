@@ -49,19 +49,19 @@ class ComplexCheck(ComplexCheckBase):
 
         if not project_id:
             self.message_bar.pushCritical(
-                    "Error", _translate("VeriSO_PNF_Bauzonenplan", "project_id not "
+                    "Error", _translate("VeriSO_NPLSO_Bauzonenplan", "project_id not "
                                                          "set", None))
             return
 
         QApplication.setOverrideCursor(Qt.WaitCursor)
         try:
-            group = _translate("VeriSO_PNF_Bauzonenplan", "Checklayer - Bauzonenplan",
+            group = _translate("VeriSO_NPLSO_Bauzonenplan", "Checklayer - Bauzonenplan",
                                None)
             group += " (" + str(project_id) + ")"
 
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_PNF_Bauzonenplan", "Stützpunkte nicht identisch zur Liegenschaft",
+                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Stützpunkte nicht identisch zur Liegenschaft",
                                     None),
                 "featuretype": "t_stuetzpunkte_nicht_identisch_zur_liegenschaft",
                 "geom": "geometrie", "key": "t_id", "sql": "",
@@ -72,7 +72,7 @@ class ComplexCheck(ComplexCheckBase):
 
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_PNF_Bauzonenplan", "Beschriftung nicht io",
+                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Beschriftung nicht io",
                                     None),
                 "featuretype": "t_beschriftung_nicht_io",
                 "geom": "pos", "key": "t_ili_tid", "sql": "",
@@ -83,7 +83,7 @@ class ComplexCheck(ComplexCheckBase):
 
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_PNF_Bauzonenplan", "Rechtsstatus nicht 'in Kraft'",
+                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Rechtsstatus nicht 'in Kraft'",
                                     None),
                 "featuretype": "t_rechtsstatus_nicht_inkraft",
                 "geom": "geometrie", "key": "t_ili_tid", "sql": "",
@@ -94,7 +94,7 @@ class ComplexCheck(ComplexCheckBase):
 
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_PNF_Bauzonenplan", "Perimeter ohne Plandokument",
+                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Perimeter ohne Plandokument",
                                     None),
                 "featuretype": "t_perimeter_ohne_plandokument",
                 "geom": "geometrie", "key": "t_id", "sql": "",
@@ -106,7 +106,7 @@ class ComplexCheck(ComplexCheckBase):
 
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_PNF_Bauzonenplan", "Perimeter mit Plandokument",
+                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Perimeter mit Plandokument",
                                     None),
                 "featuretype": "t_perimeter_mit_plandokument",
                 "geom": "geometrie", "key": "t_id", "sql": "",
@@ -117,7 +117,7 @@ class ComplexCheck(ComplexCheckBase):
 
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_PNF_Bauzonenplan", "Dokument mit Geometrie verknüpft",
+                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Dokument mit Geometrie verknüpft",
                                     None),
                 "featuretype": "t_dokument_mit_geometrie_verknuepft",
                 "geom": "geometrie", "key": "t_id", "sql": "",
@@ -128,7 +128,7 @@ class ComplexCheck(ComplexCheckBase):
 
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_PNF_Bauzonenplan", "Dokument ohne Verknüpfung",
+                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Dokument ohne Verknüpfung",
                                     None),
                 "featuretype": "t_dokument_ohne_verknuepfung",
                 "geom": "", "key": "t_id", "sql": "",
