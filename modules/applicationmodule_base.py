@@ -58,7 +58,7 @@ class ApplicationModuleBase(QObject):
         # TODO (MB) is this really the requirement?
         # Entfernen des Reiters "Tables"
         # self.do_init_topics_tables_menu()
-        self.do_init_baselayer_menu()
+        #self.do_init_baselayer_menu()
 
         self.doShowProjectId()
 
@@ -303,15 +303,15 @@ class ApplicationModuleBase(QObject):
         menubar.setSizePolicy(
                 QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Minimum))
         menu = QMenu(menubar)
-        menu.setTitle(_translate(self.module, "Mängel", None))
+        menu.setTitle(_translate(self.module, "Bemerkungen", None))
 
-        action = QAction(_translate(self.module, "Mängellayer laden", None),
+        action = QAction(_translate(self.module, "Bemerkungen laden", None),
                          self.iface.mainWindow())
         action.triggered.connect(self.do_load_defects)
         menu.addAction(action)
 
         action = QAction(_translate(
-                        self.module, "Mängellayer exportieren",None),
+                        self.module, "Bemerkungen exportieren",None),
                 self.iface.mainWindow())
         action.triggered.connect(self.do_export_defects)
         menu.addAction(action)

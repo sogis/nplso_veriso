@@ -72,7 +72,7 @@ class ComplexCheck(ComplexCheckBase):
                 "readonly": True, "group": group,
                 "style": "nutzungsplanungslayer_bauzone/t_grundnutzung.qml"
             }
-            grundlayer = self.layer_loader.load(layer, True, True, False)
+            vlayer = self.layer_loader.load(layer, True, True, False)
 
 
             layer = {
@@ -84,7 +84,7 @@ class ComplexCheck(ComplexCheckBase):
                 "readonly": True, "group": group,
                 "style": "nutzungsplanungslayer_bauzone/t_grundnutzung_kommunal.qml"
             }
-            grundlayer = self.layer_loader.load(layer, True, True, False)
+            vlayer = self.layer_loader.load(layer, True, True, False)
 
             layer = {
                 "type": "postgres",
@@ -157,6 +157,39 @@ class ComplexCheck(ComplexCheckBase):
 
             layer = {
                 "type": "postgres",
+                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Grundnutzung Beschriftung",
+                                    None),
+                "featuretype": "t_nutzungsplanung_beschriftung",
+                "geom": "pos", "key": "t_ili_tid", "sql": "",
+                "readonly": True, "group": group,
+                "style": "nutzungsplanungslayer_bauzone/t_grundnutzung_beschriftung.qml"
+            }
+            vlayer = self.layer_loader.load(layer, True, True, False)
+
+            layer = {
+                "type": "postgres",
+                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "ausserhalb Bauzone",
+                                    None),
+                "featuretype": "t_ausserhalb_bauzone",
+                "geom": "geometrie_ausserhalb_bauzone", "key": "bfs_gemeindenummer", "sql": "",
+                "readonly": True, "group": group,
+                "style": "nutzungsplanungslayer_bauzone/t_ausserhalb_bauzone.qml"
+            }
+            vlayer = self.layer_loader.load(layer, True, True, False)
+
+            layer = {
+                "type": "postgres",
+                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Bauzonen Perimeter",
+                                    None),
+                "featuretype": "t_nutzungsplanung_grundnutzung_vereinigt",
+                "geom": "geometrie", "key": "t_id", "sql": "",
+                "readonly": True, "group": group,
+                "style": "nutzungsplanungslayer_bauzone/t_nutzungsplanung_grundnutzung_vereinigt.qml"
+            }
+            bauzone = self.layer_loader.load(layer, True, True, False)
+
+            layer = {
+                "type": "postgres",
                 "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Plandokument",
                                     None),
                 "featuretype": "rechtsvorschrften_plandokument",
@@ -178,11 +211,9 @@ class ComplexCheck(ComplexCheckBase):
 
             
 
-
-
       
-            if grundlayer:
-                rect = grundlayer.extent()
+            if bauzone:
+                rect = bauzone.extent()
                 self.iface.mapCanvas().setExtent(rect)
                 self.iface.mapCanvas().refresh()
 

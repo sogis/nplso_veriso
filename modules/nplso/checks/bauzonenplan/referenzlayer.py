@@ -62,6 +62,30 @@ class ComplexCheck(ComplexCheckBase):
             group = _translate("VeriSO_NPLSO_Bauzonenplan", "Referenzlayer - Bauzonenplan", None)
             group += " (" + str(project_id) + ")"
 
+            layer = {
+                "type": "postgres",
+                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Bewirtschaftungseinheiten mit Direktzahlungsgrösse",
+                                    None),
+                "params": {"dbhost": "geodb.verw.rootso.org", "dbport": 5432, "dbname": "sogis", "dbschema": "gelan"},
+                "featuretype": "gelanx_so_bewe",
+                "geom": "wkb_geometry", "key": "ogc_fid", "sql": "typ_name = 'Anerkannt nach LBV' OR typ_name = 'Betriebsgemeinschaft' OR typ_name='LBV ohne DZ'",
+                "readonly": True, "group": group,
+                "style": "referenzlayer_bauzone/gelan_bewirtschaftungseinheiten.qml"
+            }
+            vlayer = self.layer_loader.load(layer, False, True, False)
+
+            layer = {
+                "type": "postgres",
+                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Gelan-Standorte",
+                                    None),
+                "params": {"dbhost": "geodb.verw.rootso.org", "dbport": 5432, "dbname": "sogis", "dbschema": "gelan"},
+                "featuretype": "gelanx_so_stao_point",
+                "geom": "wkb_geometry", "key": "ogc_fid", "sql": "betriebtyp = 'Anerkannt nach LBV' OR betriebtyp = 'Betriebsgemeinschaft' OR betriebtyp='LBV ohne DZ'",
+                "readonly": True, "group": group,
+                "style": "referenzlayer_bauzone/gelan_standorte.qml"
+            }
+            vlayer = self.layer_loader.load(layer, False, True, False)
+
 
             layer = {
                 "type": "postgres",
@@ -108,7 +132,7 @@ class ComplexCheck(ComplexCheckBase):
                 "readonly": True, "group": group,
                 "style": "referenzlayer_bauzone/t_grundnutzung.qml"
             }
-            grundlayer = self.layer_loader.load(layer, False, True, False)
+            vlayer = self.layer_loader.load(layer, False, True, False)
 
             layer = {
                 "type": "postgres",
@@ -133,13 +157,6 @@ class ComplexCheck(ComplexCheckBase):
             }
             vlayer = self.layer_loader.load(layer, False, True, False)
 
-
-
-      
-            if grundlayer:
-                rect = grundlayer.extent()
-                self.iface.mapCanvas().setExtent(rect)
-                self.iface.mapCanvas().refresh()
 
         except Exception:
             QApplication.restoreOverrideCursor()

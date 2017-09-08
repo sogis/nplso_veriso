@@ -138,6 +138,7 @@ class ComplexCheck(ComplexCheckBase):
             vlayer = self.layer_loader.load(layer, True, True, False)
 
 
+
         except Exception:
             QApplication.restoreOverrideCursor()
             exc_type, exc_value, exc_traceback = sys.exc_info()
