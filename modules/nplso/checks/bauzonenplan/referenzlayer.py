@@ -125,6 +125,18 @@ class ComplexCheck(ComplexCheckBase):
 
             layer = {
                 "type": "postgres",
+                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "historische Verkehrswege",
+                                    None),
+                "params": {"dbhost": "geodb.verw.rootso.org", "dbport": 5432, "dbname": "sogis", "dbschema": "public"},
+                "featuretype": "arp_ivsso_line",
+                "geom": "wkb_geometry", "key": "ogc_fid", "sql": "archive=0",
+                "readonly": True, "group": group,
+                "style": "referenzlayer_bauzone/historische_verkehrswege.qml"
+            }
+            vlayer = self.layer_loader.load(layer, False, True, False)
+
+            layer = {
+                "type": "postgres",
                 "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Grundnutzung Linie",
                                     None),
                 "featuretype": "t_nutzungsplanung_grundnutzung",

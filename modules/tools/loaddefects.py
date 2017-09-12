@@ -36,107 +36,104 @@ class LoadDefects(QObject):
             self.project_id = self.settings.value("project/id")
             self.epsg = self.settings.value("project/epsg")
 
-            group = tr(u"Mängel", self.tr_tag, None)
+            group = tr(u"Bemerkungen", self.tr_tag, None)
             group += " (" + str(self.project_id) + ")"
 
             layer = {
                 "type": "postgres",
-                "title": tr(u"Mängelliste (Punkte)", self.tr_tag, None),
-                "featuretype": "t_maengel", "geom": "the_geom",
-                "key": "ogc_fid", "readonly": False, "sql": "",
+                "title": tr("VeriSO_NPLSO_Bauzonenplan", "Bemerkungen - Plan",
+                                    None),
+                "featuretype": "t_maengel_plan",
+                "geom": "", "key": "t_id", "sql": "",
+                "readonly": True, "group": group
+            }
+            lyr_plan = self.layer_loader.load(layer, True, True, False)
+
+            layer = {
+                "type": "postgres", "title": tr("VeriSO_NPLSO_Bauzonenplan",
+                                                        "Bemerkungen - kommunaler Typ",
+                                                        None),
+                "featuretype": "t_maengel_komm_typ",
+                "geom": "", "key": "t_id",
+                "sql": "", "readonly": True, 
+                "group": group
+            }
+            lyr_komm_typ = self.layer_loader.load(layer, True, True, False)
+
+            layer = {
+                "type": "postgres",
+                "title": tr(u"Bemerkungen (Punkte)", self.tr_tag, None),
+                "featuretype": "t_maengel_punkt", "geom": "the_geom",
+                "key": "t_id", "readonly": False, "sql": "",
                 "group": group, "style": "global_qml/maengel/maengel_punkt.qml"
             }
 
             vlayer = self.layer_loader.load(layer)
-            if vlayer:
-                vlayer.setEditorLayout(QgsVectorLayer.GeneratedLayout)
 
-                ogc_fid_idx = vlayer.fieldNameIndex("ogc_fid")
-                topic_idx = vlayer.fieldNameIndex("topic")
-                bemerkung_idx = vlayer.fieldNameIndex("bemerkung")
-                datum_idx = vlayer.fieldNameIndex("datum")
+            if vlayer <> False:
+                self.iface.legendInterface().setLayerVisible(vlayer, True) 
+                vlayer.setLayerName(u"Bemerkungen (Punkte)")
+                #vlayer.saveDefaultStyle()            
 
-                vlayer.addAttributeAlias(topic_idx,
-                                         tr("Topic:", self.tr_tag,
-                                            None))
-                vlayer.addAttributeAlias(bemerkung_idx,
-                                         tr("bemekung:", self.tr_tag,
-                                            None))
+                provider = vlayer.dataProvider()
+                provider.attributeIndexes()
+                ogc_fid_idx = provider.fieldNameIndex("t_id")
+                plan_idx = provider.fieldNameIndex("plan")
+                kommunaler_typ_idx = provider.fieldNameIndex("kommunaler_typ")
+                bemerkung_idx = provider.fieldNameIndex("bemerkung")
+                datum_idx = provider.fieldNameIndex("datum")  
 
-                vlayer.setEditorWidgetV2(ogc_fid_idx, "Hidden")
-                vlayer.setEditorWidgetV2(topic_idx, "Enumeration")
-                vlayer.setEditorWidgetV2(bemerkung_idx, "TextEdit")
-                vlayer.setEditorWidgetV2Config(bemerkung_idx, {
-                    "IsMultiline": True
-                })  # See gui/editorwidgets/qgstexteditwrapper.cpp for all
-                # the parameters.
-                vlayer.setEditorWidgetV2(datum_idx, "Hidden")
+                vlayer.addAttributeAlias(plan_idx, "Plan:")
+                vlayer.addAttributeAlias(kommunaler_typ_idx, "kommunaler Typ:")
+                vlayer.addAttributeAlias(bemerkung_idx, "Bemerkung:")
+      
+                vlayer.setEditorWidgetV2(0,"Hidden")
+                vlayer.setEditorWidgetV2(1, "ValueRelation")
+                vlayer.setEditorWidgetV2(2, "ValueRelation")
+                vlayer.setEditorWidgetV2(3, "TextEdit")            
+                vlayer.setEditorWidgetV2(4, "Hidden")        
+                 
+                vlayer.setEditorWidgetV2Config(1, {'Layer':lyr_plan.id(), 'Key':'plan_txt', 'Value':'plan_txt', 'OrderByValue':"1", 'AllowNull':"0", 'AllowMulti':'0'})
+                vlayer.setEditorWidgetV2Config(2, {'Layer':lyr_komm_typ.id(), 'Key':'kommunaler_typ', 'Value':'kommunaler_typ', 'OrderByValue':"1", 'AllowNull':"0", 'AllowMulti':'0' })
+                vlayer.setEditorWidgetV2Config(3, {'IsMultiline':"1", 'fieldEditable':"1", 'UseHtml':"0", 'labelOnTop':"0"})
 
             layer = {
                 "type": "postgres",
-                "title": tr(u"Mängelliste (Linien)", self.tr_tag, None),
+                "title": tr(u"Bemerkungen (Linien)", self.tr_tag, None),
                 "featuretype": "t_maengel_linie", "geom": "the_geom",
-                "key": "ogc_fid", "readonly": False, "sql": "",
+                "key": "t_id", "readonly": False, "sql": "",
                 "group": group, "style": "global_qml/maengel/maengel_linie.qml"
             }
 
             vlayer = self.layer_loader.load(layer)
-            if vlayer:
-                vlayer.setEditorLayout(QgsVectorLayer.GeneratedLayout)
 
-                ogc_fid_idx = vlayer.fieldNameIndex("ogc_fid")
-                topic_idx = vlayer.fieldNameIndex("topic")
-                bemerkung_idx = vlayer.fieldNameIndex("bemerkung")
-                datum_idx = vlayer.fieldNameIndex("datum")
+            if vlayer <> False:
+                self.iface.legendInterface().setLayerVisible(vlayer, True) 
+                vlayer.setLayerName(u"Bemerkungen (Linie)")
+                #vlayer.saveDefaultStyle()            
 
-                vlayer.addAttributeAlias(topic_idx,
-                                         tr("Topic:", self.tr_tag,
-                                            None))
-                vlayer.addAttributeAlias(bemerkung_idx,
-                                         tr("Bemerkung:", self.tr_tag, None))
+                provider = vlayer.dataProvider()
+                provider.attributeIndexes()
+                ogc_fid_idx = provider.fieldNameIndex("t_id")
+                plan_idx = provider.fieldNameIndex("plan")
+                kommunaler_typ_idx = provider.fieldNameIndex("kommunaler_typ")
+                bemerkung_idx = provider.fieldNameIndex("bemerkung")
+                datum_idx = provider.fieldNameIndex("datum")  
 
-                vlayer.setEditorWidgetV2(ogc_fid_idx, "Hidden")
-                vlayer.setEditorWidgetV2(topic_idx, "Enumeration")
-                vlayer.setEditorWidgetV2(bemerkung_idx, "TextEdit")
-                vlayer.setEditorWidgetV2Config(bemerkung_idx, {
-                    "IsMultiline": True
-                })  # See gui/editorwidgets/qgstexteditwrapper.cpp for all
-                # the parameters.
-                vlayer.setEditorWidgetV2(datum_idx, "Hidden")
+                vlayer.addAttributeAlias(plan_idx, "Plan:")
+                vlayer.addAttributeAlias(kommunaler_typ_idx, "kommunaler Typ:")
+                vlayer.addAttributeAlias(bemerkung_idx, "Bemerkung:")
+      
+                vlayer.setEditorWidgetV2(0,"Hidden")
+                vlayer.setEditorWidgetV2(1, "ValueRelation")
+                vlayer.setEditorWidgetV2(2, "ValueRelation")
+                vlayer.setEditorWidgetV2(3, "TextEdit")            
+                vlayer.setEditorWidgetV2(4, "Hidden")        
+                 
+                vlayer.setEditorWidgetV2Config(1, {'Layer':lyr_plan.id(), 'Key':'plan_txt', 'Value':'plan_txt', 'OrderByValue':"1", 'AllowNull':"0", 'AllowMulti':'0'})
+                vlayer.setEditorWidgetV2Config(2, {'Layer':lyr_komm_typ.id(), 'Key':'kommunaler_typ', 'Value':'kommunaler_typ', 'OrderByValue':"1", 'AllowNull':"0", 'AllowMulti':'0' })
+                vlayer.setEditorWidgetV2Config(3, {'IsMultiline':"1", 'fieldEditable':"1", 'UseHtml':"0", 'labelOnTop':"0"})
 
-                """layer = {
-                    "type": "postgres",
-                    "title": tr(u"Mängelliste (Polygone)", self.tr_tag, None),
-                    "featuretype": "t_maengel_polygon", "geom": "the_geom",
-                    "key": "ogc_fid", "readonly": False, "sql": "",
-                    "group": group,
-                    "style": "global_qml/maengel/maengel_polygon.qml"
-                }
-
-                vlayer = self.layer_loader.load(layer)
-                if vlayer:
-                    vlayer.setEditorLayout(QgsVectorLayer.GeneratedLayout)
-
-                    ogc_fid_idx = vlayer.fieldNameIndex("ogc_fid")
-                    topic_idx = vlayer.fieldNameIndex("topic")
-                    bemerkung_idx = vlayer.fieldNameIndex("bemerkung")
-                    datum_idx = vlayer.fieldNameIndex("datum")
-
-                    vlayer.addAttributeAlias(topic_idx,
-                                             tr("Topic:", self.tr_tag,
-                                                None))
-                    vlayer.addAttributeAlias(bemerkung_idx,
-                                             tr("Bemerkung:", self.tr_tag,
-                                                None))
-
-                    vlayer.setEditorWidgetV2(ogc_fid_idx, "Hidden")
-                    vlayer.setEditorWidgetV2(topic_idx, "Enumeration")
-                    vlayer.setEditorWidgetV2(bemerkung_idx, "TextEdit")
-                    vlayer.setEditorWidgetV2Config(bemerkung_idx, {
-                        "IsMultiline": True
-                    })  # See gui/editorwidgets/qgstexteditwrapper.cpp for all
-                    # the parameters.
-                    vlayer.setEditorWidgetV2(datum_idx, "Hidden")"""
 
         except Exception:
             QApplication.restoreOverrideCursor()

@@ -95,15 +95,15 @@ class ExportDefects(QObject):
 
             uri = QgsDataSourceURI()
             uri.setConnection(db_host, db_port, db_name, db_user, db_pwd)
-            uri.setDataSource(db_schema, "t_maengel", "the_geom", "",
-                              "ogc_fid")
+            uri.setDataSource(db_schema, "t_maengel_punkt", "the_geom", "",
+                              "t_id")
             vlayer_points = QgsVectorLayer(uri.uri(), "Maengel (Punkte)",
                                            "postgres")
 
             uri = QgsDataSourceURI()
             uri.setConnection(db_host, db_port, db_name, db_user, db_pwd)
             uri.setDataSource(db_schema, "t_maengel_linie", "the_geom", "",
-                              "ogc_fid")
+                              "t_id")
             vlayer_lines = QgsVectorLayer(uri.uri(), "Maengel (Linien)",
                                           "postgres")
 
@@ -156,7 +156,7 @@ class ExportDefects(QObject):
 
             # Create excel file.
             filename = QDir.convertSeparators(
-                    QDir.cleanPath(os.path.join(project_dir, "maengel.xlsx")))
+                    QDir.cleanPath(os.path.join(project_dir, "bemerkungen.xlsx")))
 
             workbook = xlsxwriter.Workbook(filename)
             fmt_bold = workbook.add_format({'bold': True})
@@ -168,7 +168,7 @@ class ExportDefects(QObject):
 
             # Create the worksheet for the points defects.
             worksheet_points = workbook.add_worksheet(
-                    tr(u'Mängelliste (Punkte)', self.tr_tag,
+                    tr(u'Bemerkungen (Punkte)', self.tr_tag,
                        None))
             worksheet_points.set_paper(9)
             worksheet_points.set_portrait()
@@ -224,7 +224,7 @@ class ExportDefects(QObject):
 
             # Create the worksheet for the line defects.
             worksheet_lines = workbook.add_worksheet(
-                    tr(u'Mängelliste (Linien)', self.tr_tag,
+                    tr(u'Bemerkungen (Linien)', self.tr_tag,
                        None))
             worksheet_lines.set_paper(9)
             worksheet_lines.set_portrait()

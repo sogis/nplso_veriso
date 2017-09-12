@@ -26,7 +26,7 @@ from veriso.modules.complexcheck_base import ComplexCheckBase
 
 class ComplexCheck(ComplexCheckBase):
     names = OrderedDict()
-    names['de'] = u'Maengel'
+    names['de'] = u'Bemerkungen'
     #names['fr'] = 'Parcelles'
 
     def __init__(self, iface):
@@ -52,56 +52,56 @@ class ComplexCheck(ComplexCheckBase):
 
         if not project_id:
             self.message_bar.pushCritical("Error",
-                                          _translate("VeriSO_PNF_Bauzonenplan",
+                                          _translate("VeriSO_NPLSO_Bauzonenplan",
                                                      "project_id not set",
                                                      None))
             return
 
         QApplication.setOverrideCursor(Qt.WaitCursor)
         try:
-            group = _translate("VeriSO_PNF_Bauzonenplan", "Maengel - Bauzonenplan", None)
+            group = _translate("VeriSO_NPLSO_Bauzonenplan", "Bemerkungen - Bauzonenplan", None)
             group += " (" + str(project_id) + ")"
 
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_PNF_Bauzonenplan", "Maengel - Plan",
+                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Bemerkungen - Plan",
                                     None),
                 "featuretype": "t_maengel_plan",
-                "geom": "", "key": "ogc_fid", "sql": "plan_txt='Bauzonenplan'",
+                "geom": "", "key": "t_id", "sql": "plan_txt='Bauzonenplan'",
                 "readonly": True, "group": group
             }
-            lyr_plan = self.layer_loader.load(layer, False, True)
+            lyr_plan = self.layer_loader.load(layer, True, True, False)
 
             layer = {
-                "type": "postgres", "title": _translate("VeriSO_PNF_Bauzonenplan",
-                                                        "Maengel - kommunaler Typ",
+                "type": "postgres", "title": _translate("VeriSO_NPLSO_Bauzonenplan",
+                                                        "Bemerkungen - kommunaler Typ",
                                                         None),
                 "featuretype": "t_maengel_komm_typ",
-                "geom": "", "key": "ogc_fid",
+                "geom": "", "key": "t_id",
                 "sql": "", "readonly": True, #gruppe = 'Bahn'
                 "group": group
             }
-            lyr_komm_typ = self.layer_loader.load(layer, False, True)
+            lyr_komm_typ = self.layer_loader.load(layer, True, True, False)
 
             layer = {
-                "type": "postgres", "title": _translate("VeriSO_PNF_Bauzonenplan",
-                                                        "Maengelliste (Punkte)",
+                "type": "postgres", "title": _translate("VeriSO_NPLSO_Bauzonenplan",
+                                                        "Bemerkungen (Punkte)",
                                                         None),
                 "featuretype": "t_maengel_punkt",
-                "geom": "the_geom", "key": "ogc_fid",
-                "sql": "", "readonly": False,  # plan='Bauzonenplan'
+                "geom": "the_geom", "key": "t_id",
+                "sql": "plan='Bauzonenplan'", "readonly": False,  # plan='Bauzonenplan'
                 "group": group, "style": "maengel/maengel.qml"
             }
-            vlayer = self.layer_loader.load(layer, False, True)
+            vlayer = self.layer_loader.load(layer, True, True, False)
             
             if vlayer <> False:
                 self.iface.legendInterface().setLayerVisible(vlayer, True) 
-                vlayer.setLayerName(u"Mängelliste (Punkte)")
+                vlayer.setLayerName(u"Bemerkungen (Punkte)")
                 #vlayer.saveDefaultStyle()            
 
                 provider = vlayer.dataProvider()
                 provider.attributeIndexes()
-                ogc_fid_idx = provider.fieldNameIndex("ogc_fid")
+                ogc_fid_idx = provider.fieldNameIndex("t_id")
                 plan_idx = provider.fieldNameIndex("plan")
                 kommunaler_typ_idx = provider.fieldNameIndex("kommunaler_typ")
                 bemerkung_idx = provider.fieldNameIndex("bemerkung")
@@ -122,59 +122,44 @@ class ComplexCheck(ComplexCheckBase):
                 vlayer.setEditorWidgetV2Config(3, {'IsMultiline':"1", 'fieldEditable':"1", 'UseHtml':"0", 'labelOnTop':"0"})
 
             
-            '''layer = {
-                "type": "postgres", "title": _translate("VeriSO_PNF_Bahn",
-                                                        "Maengelliste (Linien)",
+            layer = {
+                "type": "postgres", "title": _translate("VeriSO_NPLSO_Bauzonenplan",
+                                                        "Bemerkungen (Linien)",
                                                         None),
                 "featuretype": "t_maengel_linie",
-                "geom": "the_geom", "key": "ogc_fid",
-                "sql": "", "readonly": False,
+                "geom": "the_geom", "key": "t_id",
+                "sql": "plan='Bauzonenplan'", "readonly": False,
                 "group": group, "style": "maengel/maengel_linie.qml"
             }
-            vlayer = self.layer_loader.load(layer, False, True)
+            vlayer = self.layer_loader.load(layer, True, True, False)
             
             if vlayer <> False:
                 self.iface.legendInterface().setLayerVisible(vlayer, True) 
-                vlayer.setLayerName(u"Mängelliste (Linie)")
+                vlayer.setLayerName(u"Bemerkungen (Linie)")
                 #vlayer.saveDefaultStyle()            
 
                 provider = vlayer.dataProvider()
                 provider.attributeIndexes()
-                ogc_fid_idx = provider.fieldNameIndex("ogc_fid")
-                gruppe_idx = provider.fieldNameIndex("gruppe")
-                art_idx = provider.fieldNameIndex("art")
-                fehler_idx = provider.fieldNameIndex("fehler")
-                feld_idx = provider.fieldNameIndex("feldkontrolle")
-                lnf_idx = provider.fieldNameIndex("lnf")
-                terr_idx = provider.fieldNameIndex("terrestrisch")
+                ogc_fid_idx = provider.fieldNameIndex("t_id")
+                plan_idx = provider.fieldNameIndex("plan")
+                kommunaler_typ_idx = provider.fieldNameIndex("kommunaler_typ")
                 bemerkung_idx = provider.fieldNameIndex("bemerkung")
                 datum_idx = provider.fieldNameIndex("datum")  
 
-                vlayer.addAttributeAlias(gruppe_idx, "Gruppe:")
-                vlayer.addAttributeAlias(art_idx, "Art:")
-                vlayer.addAttributeAlias(fehler_idx, "Fehler:")
-                vlayer.addAttributeAlias(feld_idx, "Feldkontrolle:")
-                vlayer.addAttributeAlias(lnf_idx, u"Laufende Nachführung:")
-                vlayer.addAttributeAlias(terr_idx, "Terrestrische Aufnahme:")
+                vlayer.addAttributeAlias(plan_idx, "Plan:")
+                vlayer.addAttributeAlias(kommunaler_typ_idx, "kommunaler Typ:")
                 vlayer.addAttributeAlias(bemerkung_idx, "Bemerkung:")
       
                 vlayer.setEditorWidgetV2(0,"Hidden")
                 vlayer.setEditorWidgetV2(1, "ValueRelation")
                 vlayer.setEditorWidgetV2(2, "ValueRelation")
-                vlayer.setEditorWidgetV2(3, "ValueRelation")
-                vlayer.setEditorWidgetV2(4, "CheckBox")
-                vlayer.setEditorWidgetV2(5, "CheckBox")
-                vlayer.setEditorWidgetV2(6, "CheckBox")
-                vlayer.setEditorWidgetV2(7, "TextEdit")            
-                vlayer.setEditorWidgetV2(8, "Hidden")        
+                vlayer.setEditorWidgetV2(3, "TextEdit")            
+                vlayer.setEditorWidgetV2(4, "Hidden")        
                  
-                vlayer.setEditorWidgetV2Config(1, {'Layer':lyr_maengelarten.id(), 'Key':'gruppe', 'Value':'gruppe', 'OrderByValue':"1", 'AllowNull':"0", 'AllowMutli':'0'})
-                vlayer.setEditorWidgetV2Config(2, {'Layer':lyr_maengelarten.id(), 'Key':'art_txt', 'Value':'art_txt', 'OrderByValue':"1", 'AllowNull':"1", 'AllowMutli':'0' })
-                vlayer.setEditorWidgetV2Config(3, {'Layer':lyr_fehlerarten.id(), 'Key':'fehler_txt', 'Value':'fehler_txt', 'OrderByValue':"1", 'AllowNull':"1", 'AllowMutli':'0' })
-                vlayer.setEditorWidgetV2Config(4, {'fieldEditable':"1", 'UncheckedState':'f','CheckedState':'t'})
-                vlayer.setEditorWidgetV2Config(5, {'fieldEditable':"1", 'UncheckedState':'f','CheckedState':'t'})
-                vlayer.setEditorWidgetV2Config(6, {'fieldEditable':"1", 'UncheckedState':'f','CheckedState':'t'})
-                vlayer.setEditorWidgetV2Config(7, {'IsMultiline':"1", 'fieldEditable':"1", 'UseHtml':"0", 'labelOnTop':"0"})'''
+                vlayer.setEditorWidgetV2Config(1, {'Layer':lyr_plan.id(), 'Key':'plan_txt', 'Value':'plan_txt', 'OrderByValue':"1", 'AllowNull':"0", 'AllowMulti':'0'})
+                vlayer.setEditorWidgetV2Config(2, {'Layer':lyr_komm_typ.id(), 'Key':'kommunaler_typ', 'Value':'kommunaler_typ', 'OrderByValue':"1", 'AllowNull':"0", 'AllowMulti':'0' })
+                vlayer.setEditorWidgetV2Config(3, {'IsMultiline':"1", 'fieldEditable':"1", 'UseHtml':"0", 'labelOnTop':"0"})
+
 
         except Exception:
             QApplication.restoreOverrideCursor()

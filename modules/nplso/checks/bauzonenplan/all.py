@@ -19,6 +19,11 @@ class ComplexCheck(ComplexCheckBase):
     def run(self):
         package = "veriso.modules.nplso.checks.bauzonenplan"
         try:
+            module = "%s.bemerkungen" % package
+            _temp = dynamic_import(module)
+            c = _temp.ComplexCheck(self.iface)
+            c.run()
+
             module = "%s.checklayer" % package
             _temp = dynamic_import(module)
             c = _temp.ComplexCheck(self.iface)
@@ -33,11 +38,6 @@ class ComplexCheck(ComplexCheckBase):
             _temp = dynamic_import(module)
             c = _temp.ComplexCheck(self.iface)
             c.run()
-
-            #module = "%s.maengel" % package
-            #_temp = dynamic_import(module)
-            #c = _temp.ComplexCheck(self.iface)
-            #c.run()
 
             module = "%s.grundlagelayer" % package
             _temp = dynamic_import(module)
