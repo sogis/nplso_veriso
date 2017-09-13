@@ -137,45 +137,23 @@ class ComplexCheck(ComplexCheckBase):
 
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Erschliessungsplan", "90000 Grundstücke aggregiert",
+                "title": _translate("VeriSO_NPLSO_Erschliessungsplan", "Grundnutzung Linie",
                                     None),
-                "featuretype": "t_grundstuecke_90000_aggregiert",
-                "geom": "geometrie", "key": "id", "sql": "",
+                "featuretype": "t_nutzungsplanung_grundnutzung",
+                "geom": "geometrie", "key": "t_id", "sql": "typ_code_kommunal::numeric > 1919",
                 "readonly": True, "group": group,
-                "style": "referenzlayer_erschliessung/t_grundstuecke_90000_aggregiert.qml"
+                "style": "referenzlayer_erschliessung/t_grundnutzung_linie.qml"
             }
             vlayer = self.layer_loader.load(layer, False, True, False)
 
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Erschliessungsplan", "Verkehrszone gepuffert 4m, 5m, 6m",
+                "title": _translate("VeriSO_NPLSO_Erschliessungsplan", "Erschliessung Flaechenobjekt",
                                     None),
-                "featuretype": "t_verkehrszone_gepuffert",
+                "featuretype": "t_erschliessung_flaechenobjekt",
                 "geom": "geometrie", "key": "t_id", "sql": "",
                 "readonly": True, "group": group,
-                "style": "referenzlayer_erschliessung/t_verkehrszone_gepuffert.qml"
-            }
-            vlayer = self.layer_loader.load(layer, False, True, False)
-
-            layer = {
-                "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Erschliessungsplan", "AV Gewaesser gepuffert 4m",
-                                    None),
-                "featuretype": "t_av_gewaesser_gepuffert",
-                "geom": "geometrie", "key": "id", "sql": "",
-                "readonly": True, "group": group,
-                "style": "referenzlayer_erschliessung/t_av_gewaesser_gepuffert.qml"
-            }
-            vlayer = self.layer_loader.load(layer, False, True, False)
-
-            layer = {
-                "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Erschliessungsplan", "Erschliessung Punktobjekt",
-                                    None),
-                "featuretype": "t_erschliessung_punktobjekt",
-                "geom": "geometrie", "key": "t_id", "sql": "",
-                "readonly": True, "group": group,
-                "style": "referenzlayer_erschliessung/t_erschliessung_punktobjekt.qml"
+                "style": "referenzlayer_erschliessung/t_erschliessung_flaechenobjekt.qml"
             }
             vlayer = self.layer_loader.load(layer, False, True, False)
 
@@ -192,12 +170,45 @@ class ComplexCheck(ComplexCheckBase):
 
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Erschliessungsplan", "Erschliessung Flaechenobjekt",
+                "title": _translate("VeriSO_NPLSO_Erschliessungsplan", "Erschliessung Punktobjekt",
                                     None),
-                "featuretype": "t_erschliessung_flaechenobjekt",
+                "featuretype": "t_erschliessung_punktobjekt",
                 "geom": "geometrie", "key": "t_id", "sql": "",
                 "readonly": True, "group": group,
-                "style": "referenzlayer_erschliessung/t_erschliessung_flaechenobjekt.qml"
+                "style": "referenzlayer_erschliessung/t_erschliessung_punktobjekt.qml"
+            }
+            vlayer = self.layer_loader.load(layer, False, True, False)
+
+            layer = {
+                "type": "postgres",
+                "title": _translate("VeriSO_NPLSO_Erschliessungsplan", "90000 Grundstücke aggregiert",
+                                    None),
+                "featuretype": "t_grundstuecke_90000_aggregiert",
+                "geom": "geometrie", "key": "id", "sql": "",
+                "readonly": True, "group": group,
+                "style": "referenzlayer_erschliessung/t_grundstuecke_90000_aggregiert.qml"
+            }
+            vlayer = self.layer_loader.load(layer, False, True, False)
+
+            layer = {
+                "type": "postgres",
+                "title": _translate("VeriSO_NPLSO_Erschliessungsplan", "AV Gewaesser gepuffert 4m",
+                                    None),
+                "featuretype": "t_av_gewaesser_gepuffert",
+                "geom": "geometrie", "key": "id", "sql": "",
+                "readonly": True, "group": group,
+                "style": "referenzlayer_erschliessung/t_av_gewaesser_gepuffert.qml"
+            }
+            vlayer = self.layer_loader.load(layer, False, True, False)
+
+            layer = {
+                "type": "postgres",
+                "title": _translate("VeriSO_NPLSO_Erschliessungsplan", "Verkehrszone gepuffert 4m, 5m, 6m",
+                                    None),
+                "featuretype": "t_verkehrszone_gepuffert",
+                "geom": "geometrie", "key": "t_id", "sql": "",
+                "readonly": True, "group": group,
+                "style": "referenzlayer_erschliessung/t_verkehrszone_gepuffert.qml"
             }
             vlayer = self.layer_loader.load(layer, False, True, False)
 
