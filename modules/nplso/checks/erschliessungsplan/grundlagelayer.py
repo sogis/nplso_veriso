@@ -1,10 +1,11 @@
 # coding=utf-8
+import os
 import sys
 import traceback
 from builtins import str
-from qgis.PyQt.QtCore import QObject, QSettings, Qt
+from qgis.PyQt.QtCore import QDir, QObject, QSettings, Qt
 from qgis.PyQt.QtWidgets import QApplication
-from qgis.core import QgsProject
+from qgis.core import QgsProject, QgsVectorJoinInfo
 from qgis.gui import QgsMessageBar
 
 from veriso.base.utils.loadlayer import LoadLayer
@@ -16,7 +17,6 @@ try:
     def _translate(context, text, disambig):
         return QApplication.translate(context, text, disambig, _encoding)
 except AttributeError:
-
     def _translate(context, text, disambig):
         return QApplication.translate(context, text, disambig)
 
@@ -26,8 +26,7 @@ from veriso.modules.complexcheck_base import ComplexCheckBase
 
 class ComplexCheck(ComplexCheckBase):
     names = OrderedDict()
-    names['de'] = u'Grundstücke'
-    names['fr'] = 'Parcelles'
+    names['de'] = u'Grundlagelayer'
 
     def __init__(self, iface):
         super(ComplexCheck, self).__init__(iface)
@@ -52,38 +51,53 @@ class ComplexCheck(ComplexCheckBase):
 
         if not project_id:
             self.message_bar.pushCritical("Error",
-                                          _translate("VeriSO_V+D_BB",
+                                          _translate("VeriSO_NPLSO_Erschliessungsplan",
                                                      "project_id not set",
-                                                     None))
+                                                     None)
+                                          )
             return
 
         QApplication.setOverrideCursor(Qt.WaitCursor)
         try:
-            group = _translate("VeriSO_V+D_BB", "Grundstücke", None)
+            group = _translate("VeriSO_NPLSO_Erschliessungsplan", "Grundlagelayer - Erschliessungsplan", None)
             group += " (" + str(project_id) + ")"
 
-            layer = {
-                "type": "postgres",
-                "title": _translate("VeriSO_V+D_BB", "LS.Liegenschaften",
-                                    None),
-                "featuretype": "v_liegenschaften_liegenschaft",
-                "geom": "geometrie", "key": "ogc_fid", "sql": "",
-                "readonly": True, "group": group,
-                "style": "grundstuecke/liegenschaften.qml"
-            }
-            vlayer = self.layer_loader.load(layer, False, True)
 
             layer = {
-                "type": "postgres", "title": _translate("VeriSO_V+D_BB",
-                                                        "LS.GrundstueckPos ("
-                                                        "Liegenschaften)",
-                                                        None),
-                "featuretype": "v_liegenschaften_grundstueckpos",
-                "geom": "pos", "key": "ogc_fid",
-                "sql": "art = 'Liegenschaft'", "readonly": True,
-                "group": group, "style": "grundstuecke/grundstueckpos.qml"
+                "type": "wms",
+                "title": _translate("VeriSO_NPLSO_Erschliessungsplan", "Basisplan schwarz-weiss (WMS)",
+                                    None),
+                "url": "http://geoweb.rootso.org/wms/sogis_bpav.wms",
+                "layers": "bpav10000sw_overview_scaledependent,bpav10000sw_scaledependent,bpav5000sw_scaledependent",
+                "format": "image/png", "crs": "EPSG:" + str(epsg),
+                "group": group
             }
-            vlayer = self.layer_loader.load(layer, False, True)
+            vlayer = self.layer_loader.load(layer, True, True, False)
+
+
+            layer = {
+                "type": "wms",
+                "title": _translate("VeriSO_NPLSO_Erschliessungsplan", "Amtliche Vermessung (schwarz-weiss)",
+                                    None),
+                "url": "http://geoweb.so.ch/wms/grundbuchplan",
+                "layers": "Amtliche Vermessung (schwarz-weiss)",
+                "format": "image/jpeg", "crs": "EPSG:" + str(epsg),
+                "group": group
+            }
+            vlayer = self.layer_loader.load(layer, True, True, False)
+
+
+            layer = {
+                "type": "wms",
+                "title": _translate("VeriSO_NPLSO_Erschliessungsplan", "Orthofoto RGB",
+                                    None),
+                "url": "http://geoweb.so.ch/wms/sogis_orthofoto.wms",
+                "layers": "Ortho_SO",
+                "format": "image/jpeg", "crs": "EPSG:" + str(epsg),
+                "group": group
+            }
+            vlayer = self.layer_loader.load(layer, False, True, False)
+
 
         except Exception:
             QApplication.restoreOverrideCursor()
@@ -93,3 +107,4 @@ class ComplexCheck(ComplexCheckBase):
                                          level=QgsMessageBar.CRITICAL,
                                          duration=0)
         QApplication.restoreOverrideCursor()
+

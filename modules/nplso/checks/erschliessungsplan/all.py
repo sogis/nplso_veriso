@@ -17,9 +17,9 @@ class ComplexCheck(ComplexCheckBase):
         super(ComplexCheck, self).__init__(iface)
 
     def run(self):
-        package = "veriso.modules.veriso_v_d.checks.bb"
+        package = "veriso.modules.nplso.checks.bauzonenplan"
         try:
-            module = "%s.utils_realestate" % package
+            module = "%s.bemerkungen" % package
             _temp = dynamic_import(module)
             c = _temp.ComplexCheck(self.iface)
             c.run()
@@ -29,10 +29,25 @@ class ComplexCheck(ComplexCheckBase):
             c = _temp.ComplexCheck(self.iface)
             c.run()
 
-            module = "%s.overview" % package
+            module = "%s.referenzlayer" % package
             _temp = dynamic_import(module)
             c = _temp.ComplexCheck(self.iface)
             c.run()
+
+            module = "%s.nutzungsplanungslayer" % package
+            _temp = dynamic_import(module)
+            c = _temp.ComplexCheck(self.iface)
+            c.run()
+
+            module = "%s.grundlagelayer" % package
+            _temp = dynamic_import(module)
+            c = _temp.ComplexCheck(self.iface)
+            c.run()
+
+
+
+ 
+
 
         except Exception as e:
             self.message_bar.pushMessage("Error", str(e),
