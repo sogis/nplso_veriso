@@ -17,7 +17,7 @@ class ComplexCheck(ComplexCheckBase):
         super(ComplexCheck, self).__init__(iface)
 
     def run(self):
-        package = "veriso.modules.nplso.checks.bauzonenplan"
+        package = "veriso.modules.nplso.checks.erschliessungsplan"
         try:
             module = "%s.bemerkungen" % package
             _temp = dynamic_import(module)
