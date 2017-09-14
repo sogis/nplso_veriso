@@ -52,28 +52,28 @@ class ComplexCheck(ComplexCheckBase):
 
         if not project_id:
             self.message_bar.pushCritical("Error",
-                                          _translate("VeriSO_NPLSO_Bauzonenplan",
+                                          _translate("VeriSO_NPLSO_Gesamtplan",
                                                      "project_id not set",
                                                      None))
             return
 
         QApplication.setOverrideCursor(Qt.WaitCursor)
         try:
-            group = _translate("VeriSO_NPLSO_Bauzonenplan", "Bemerkungen - Bauzonenplan", None)
+            group = _translate("VeriSO_NPLSO_Gesamtplan", "Bemerkungen - Gesamtplan", None)
             group += " (" + str(project_id) + ")"
 
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Bemerkungen - Plan",
+                "title": _translate("VeriSO_NPLSO_Gesamtplan", "Bemerkungen - Plan",
                                     None),
                 "featuretype": "t_maengel_plan",
-                "geom": "", "key": "t_id", "sql": "plan_txt='Bauzonenplan'",
+                "geom": "", "key": "t_id", "sql": "plan_txt='Gesamtplan'",
                 "readonly": True, "group": group
             }
             lyr_plan = self.layer_loader.load(layer, True, True, False)
 
             layer = {
-                "type": "postgres", "title": _translate("VeriSO_NPLSO_Bauzonenplan",
+                "type": "postgres", "title": _translate("VeriSO_NPLSO_Gesamtplan",
                                                         "Bemerkungen - kommunaler Typ",
                                                         None),
                 "featuretype": "t_maengel_komm_typ",
@@ -84,12 +84,12 @@ class ComplexCheck(ComplexCheckBase):
             lyr_komm_typ = self.layer_loader.load(layer, True, True, False)
 
             layer = {
-                "type": "postgres", "title": _translate("VeriSO_NPLSO_Bauzonenplan",
+                "type": "postgres", "title": _translate("VeriSO_NPLSO_Gesamtplan",
                                                         "Bemerkungen (Punkte)",
                                                         None),
                 "featuretype": "t_maengel_punkt",
                 "geom": "the_geom", "key": "t_id",
-                "sql": "plan='Bauzonenplan'", "readonly": False,  # plan='Bauzonenplan'
+                "sql": "plan='Gesamtplan'", "readonly": False,  # plan='Gesamtplan'
                 "group": group, "style": "bemerkungen/bemerkungen_punkt.qml"
             }
             vlayer = self.layer_loader.load(layer, True, True, False)
@@ -123,12 +123,12 @@ class ComplexCheck(ComplexCheckBase):
 
             
             layer = {
-                "type": "postgres", "title": _translate("VeriSO_NPLSO_Bauzonenplan",
+                "type": "postgres", "title": _translate("VeriSO_NPLSO_Gesamtplan",
                                                         "Bemerkungen (Linien)",
                                                         None),
                 "featuretype": "t_maengel_linie",
                 "geom": "the_geom", "key": "t_id",
-                "sql": "plan='Bauzonenplan'", "readonly": False,
+                "sql": "plan='Gesamtplan'", "readonly": False,
                 "group": group, "style": "bemerkungen/bemerkungen_linie.qml"
             }
             vlayer = self.layer_loader.load(layer, True, True, False)

@@ -64,7 +64,7 @@ class OptionsDialog(QDialog, Ui_Options):
         self.lineEditDbAdminPwd.setText(
                 self.settings.value("options/db/adminpwd"))
 
-        default_repo = ['https://geoweb.rootso.org/models/',
+        default_repo = ['http://geo.so.ch/models/',
                         'http://models.geo.admin.ch/']
         self.listWidgetModelRepos.insertItems(0, self.settings.value(
                 "options/model_repositories/repositories", default_repo))

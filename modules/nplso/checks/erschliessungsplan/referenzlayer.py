@@ -70,7 +70,7 @@ class ComplexCheck(ComplexCheckBase):
                 "featuretype": "gelanx_so_bewe",
                 "geom": "wkb_geometry", "key": "ogc_fid", "sql": "typ_name = 'Anerkannt nach LBV' OR typ_name = 'Betriebsgemeinschaft' OR typ_name='LBV ohne DZ'",
                 "readonly": True, "group": group,
-                "style": "referenzlayer_erschliessung/gelan_bewirtschaftungseinheiten.qml"
+                "style": "referenzlayer_kant_daten/gelan_bewirtschaftungseinheiten.qml"
             }
             vlayer = self.layer_loader.load(layer, False, True, False)
 
@@ -82,7 +82,7 @@ class ComplexCheck(ComplexCheckBase):
                 "featuretype": "gelanx_so_stao_point",
                 "geom": "wkb_geometry", "key": "ogc_fid", "sql": "betriebtyp = 'Anerkannt nach LBV' OR betriebtyp = 'Betriebsgemeinschaft' OR betriebtyp='LBV ohne DZ'",
                 "readonly": True, "group": group,
-                "style": "referenzlayer_erschliessung/gelan_standorte.qml"
+                "style": "referenzlayer_kant_daten/gelan_standorte.qml"
             }
             vlayer = self.layer_loader.load(layer, False, True, False)
 
@@ -95,7 +95,7 @@ class ComplexCheck(ComplexCheckBase):
                 "featuretype": "aww_gszoar",
                 "geom": "wkb_geometry", "key": "ogc_fid", "sql": "",
                 "readonly": True, "group": group,
-                "style": "referenzlayer_erschliessung/grundwasserschutz.qml"
+                "style": "referenzlayer_kant_daten/grundwasserschutz.qml"
             }
             vlayer = self.layer_loader.load(layer, False, True, False)
 
@@ -107,7 +107,7 @@ class ComplexCheck(ComplexCheckBase):
                 "featuretype": "punktfundstellen",
                 "geom": "geometrie", "key": "ogc_fid", "sql": "",
                 "readonly": True, "group": group,
-                "style": "referenzlayer_erschliessung/archaeologische_fundstellen_punktfundstellen.qml"
+                "style": "referenzlayer_kant_daten/archaeologische_fundstellen_punktfundstellen.qml"
             }
             vlayer = self.layer_loader.load(layer, False, True, False)
 
@@ -119,7 +119,7 @@ class ComplexCheck(ComplexCheckBase):
                 "featuretype": "flaechenfundstellen",
                 "geom": "geometrie", "key": "ogc_fid", "sql": "",
                 "readonly": True, "group": group,
-                "style": "referenzlayer_erschliessung/archaeologische_fundstellen_flaechenfundstellen.qml"
+                "style": "referenzlayer_kant_daten/archaeologische_fundstellen_flaechenfundstellen.qml"
             }
             vlayer = self.layer_loader.load(layer, False, True, False)
 
@@ -131,7 +131,7 @@ class ComplexCheck(ComplexCheckBase):
                 "featuretype": "arp_ivsso_line",
                 "geom": "wkb_geometry", "key": "ogc_fid", "sql": "archive=0",
                 "readonly": True, "group": group,
-                "style": "referenzlayer_erschliessung/historische_verkehrswege.qml"
+                "style": "referenzlayer_kant_daten/historische_verkehrswege.qml"
             }
             vlayer = self.layer_loader.load(layer, False, True, False)
 

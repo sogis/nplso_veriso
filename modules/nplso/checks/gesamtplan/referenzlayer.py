@@ -51,7 +51,7 @@ class ComplexCheck(ComplexCheckBase):
 
         if not project_id:
             self.message_bar.pushCritical("Error",
-                                          _translate("VeriSO_NPLSO_Bauzonenplan",
+                                          _translate("VeriSO_NPLSO_Gesamtplan",
                                                      "project_id not set",
                                                      None)
                                           )
@@ -59,12 +59,23 @@ class ComplexCheck(ComplexCheckBase):
 
         QApplication.setOverrideCursor(Qt.WaitCursor)
         try:
-            group = _translate("VeriSO_NPLSO_Bauzonenplan", "Referenzlayer - Bauzonenplan", None)
+            group = _translate("VeriSO_NPLSO_Gesamtplan", "Referenzlayer - Gesamtplan", None)
             group += " (" + str(project_id) + ")"
 
             layer = {
+                "type": "wms",
+                "title": _translate("VeriSO_NPLSO_Gesamtplan", "Richtplan",
+                                    None),
+                "url": "http://geoweb.so.ch/wms/sogis_richt.wms",
+                "layers": "Richtplan",
+                "format": "image/png", "crs": "EPSG:" + str(epsg),
+                "group": group
+            }
+            vlayer = self.layer_loader.load(layer, False, True, False)
+
+            layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Bewirtschaftungseinheiten mit Direktzahlungsgrösse",
+                "title": _translate("VeriSO_NPLSO_Gesamtplan", "Bewirtschaftungseinheiten mit Direktzahlungsgrösse",
                                     None),
                 "params": {"dbhost": "geodb.verw.rootso.org", "dbport": 5432, "dbname": "sogis", "dbschema": "gelan"},
                 "featuretype": "gelanx_so_bewe",
@@ -76,7 +87,7 @@ class ComplexCheck(ComplexCheckBase):
 
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Gelan-Standorte",
+                "title": _translate("VeriSO_NPLSO_Gesamtplan", "Gelan-Standorte",
                                     None),
                 "params": {"dbhost": "geodb.verw.rootso.org", "dbport": 5432, "dbname": "sogis", "dbschema": "gelan"},
                 "featuretype": "gelanx_so_stao_point",
@@ -89,7 +100,7 @@ class ComplexCheck(ComplexCheckBase):
 
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Grundwasserschutzzonen und -areale",
+                "title": _translate("VeriSO_NPLSO_Gesamtplan", "Grundwasserschutzzonen und -areale",
                                     None),
                 "params": {"dbhost": "geodb.verw.rootso.org", "dbport": 5432, "dbname": "sogis", "dbschema": "public"},
                 "featuretype": "aww_gszoar",
@@ -101,7 +112,7 @@ class ComplexCheck(ComplexCheckBase):
 
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Archäologische Fundstellen - Punktfundstellen",
+                "title": _translate("VeriSO_NPLSO_Gesamtplan", "Archäologische Fundstellen - Punktfundstellen",
                                     None),
                 "params": {"dbhost": "geodb.verw.rootso.org", "dbport": 5432, "dbname": "sogis", "dbschema": "ada_adagis_a"},
                 "featuretype": "punktfundstellen",
@@ -113,7 +124,7 @@ class ComplexCheck(ComplexCheckBase):
 
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Archäologische Fundstellen - Flächenfundstellen",
+                "title": _translate("VeriSO_NPLSO_Gesamtplan", "Archäologische Fundstellen - Flächenfundstellen",
                                     None),
                 "params": {"dbhost": "geodb.verw.rootso.org", "dbport": 5432, "dbname": "sogis", "dbschema": "ada_adagis_a"},
                 "featuretype": "flaechenfundstellen",
@@ -125,7 +136,7 @@ class ComplexCheck(ComplexCheckBase):
 
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "historische Verkehrswege",
+                "title": _translate("VeriSO_NPLSO_Gesamtplan", "historische Verkehrswege",
                                     None),
                 "params": {"dbhost": "geodb.verw.rootso.org", "dbport": 5432, "dbname": "sogis", "dbschema": "public"},
                 "featuretype": "arp_ivsso_line",
@@ -137,37 +148,37 @@ class ComplexCheck(ComplexCheckBase):
 
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Grundnutzung Linie",
+                "title": _translate("VeriSO_NPLSO_Gesamtplan", "Grundnutzung Linie",
                                     None),
                 "featuretype": "t_nutzungsplanung_grundnutzung",
-                "geom": "geometrie", "key": "t_id", "sql": "typ_code_kommunal::numeric < 1919",
+                "geom": "geometrie", "key": "t_id", "sql": "typ_code_kommunal::numeric > 1919",
                 "readonly": True, "group": group,
-                "style": "referenzlayer_bauzone/t_grundnutzung.qml"
+                "style": "referenzlayer_gesamtplan/t_grundnutzung.qml"
             }
             vlayer = self.layer_loader.load(layer, False, True, False)
 
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Überlagernd Linie",
+                "title": _translate("VeriSO_NPLSO_Gesamtplan", "Überlagernd Fläche (Liniendarstellung)",
+                                    None),
+                "featuretype": "t_nutzungsplanung_ueberlagernd_flaeche",
+                "geom": "geometrie", "key": "t_id", "sql": "",
+                "readonly": True, "group": group,
+                "style": "referenzlayer_gesamtplan/t_ueberlagernd_flaeche.qml"
+            }
+            vlayer = self.layer_loader.load(layer, False, True, False)
+
+            layer = {
+                "type": "postgres",
+                "title": _translate("VeriSO_NPLSO_Gesamtplan", "Überlagernd Linie",
                                     None),
                 "featuretype": "t_nutzungsplanung_ueberlagernd_linie",
                 "geom": "geometrie", "key": "t_id", "sql": "",
                 "readonly": True, "group": group,
-                "style": "referenzlayer_bauzone/t_nutzungsplanung_ueberlagernd_linie.qml"
+                "style": "referenzlayer_gesamtplan/t_ueberlagernd_linie.qml"
             }
             vlayer = self.layer_loader.load(layer, False, True, False)
 
-            layer = {
-                "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Bauzone unbebaut (ARP)",
-                                    None),
-                "params": {"dbhost": "geodb.verw.rootso.org", "dbport": 5432, "dbname": "sogis", "dbschema": "digizone"},
-                "featuretype": "bauzone_bebaut_unbebaut_v",
-                "geom": "wkb_geometry", "key": "ogc_fid", "sql": "bebaut = 'f' and  flaeche >5",
-                "readonly": True, "group": group,
-                "style": "referenzlayer_bauzone/bauzone_unbebaut_arp.qml"
-            }
-            vlayer = self.layer_loader.load(layer, False, True, False)
 
 
         except Exception:

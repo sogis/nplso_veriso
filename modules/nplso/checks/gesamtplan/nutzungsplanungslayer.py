@@ -51,7 +51,7 @@ class ComplexCheck(ComplexCheckBase):
 
         if not project_id:
             self.message_bar.pushCritical("Error",
-                                          _translate("VeriSO_NPLSO_Bauzonenplan",
+                                          _translate("VeriSO_NPLSO_Gesamtplan",
                                                      "project_id not set",
                                                      None)
                                           )
@@ -59,157 +59,129 @@ class ComplexCheck(ComplexCheckBase):
 
         QApplication.setOverrideCursor(Qt.WaitCursor)
         try:
-            group = _translate("VeriSO_NPLSO_Bauzonenplan", "Nutzungsplanungslayer - Bauzonenplan", None)
+            group = _translate("VeriSO_NPLSO_Gesamtplan", "Nutzungsplanungslayer - Gesamtplan", None)
             group += " (" + str(project_id) + ")"
 
+            layer = {
+                "type": "postgres",
+                "title": _translate("VeriSO_NPLSO_Gesamtplan", "Grundnutzung",
+                                    None),
+                "featuretype": "t_nutzungsplanung_grundnutzung",
+                "geom": "geometrie", "key": "t_id", "sql": "typ_code_kommunal::numeric > 1919",
+                "readonly": True, "group": group,
+                "style": "nutzungsplanungslayer_gesamtplan/t_nutzungsplanung_grundnutzung.qml"
+            }
+            vlayer = self.layer_loader.load(layer, True, True, False)
 
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Grundnutzung",
+                "title": _translate("VeriSO_NPLSO_Gesamtplan", "Grundnutzung kommunal",
                                     None),
                 "featuretype": "t_nutzungsplanung_grundnutzung",
-                "geom": "geometrie", "key": "t_id", "sql": "typ_code_kommunal::numeric < 1919",
+                "geom": "geometrie", "key": "t_id", "sql": "typ_code_kommunal::numeric > 1919",
                 "readonly": True, "group": group,
-                "style": "nutzungsplanungslayer_bauzone/t_grundnutzung.qml"
+                "style": "nutzungsplanungslayer_gesamtplan/t_nutzungsplanung_grundnutzung_kommunal.qml"
             }
             vlayer = self.layer_loader.load(layer, True, True, False)
 
 
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Grundnutzung kommunal",
-                                    None),
-                "featuretype": "t_nutzungsplanung_grundnutzung",
-                "geom": "geometrie", "key": "t_id", "sql": "typ_code_kommunal::numeric < 1919",
-                "readonly": True, "group": group,
-                "style": "nutzungsplanungslayer_bauzone/t_grundnutzung_kommunal.qml"
-            }
-            vlayer = self.layer_loader.load(layer, True, True, False)
-
-            layer = {
-                "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "überlagernde Fläche",
+                "title": _translate("VeriSO_NPLSO_Gesamtplan", "Überlagernd Fläche",
                                     None),
                 "featuretype": "t_nutzungsplanung_ueberlagernd_flaeche",
                 "geom": "geometrie", "key": "t_id", "sql": "",
                 "readonly": True, "group": group,
-                "style": "nutzungsplanungslayer_bauzone/t_ueberlagernd_flaeche.qml"
+                "style": "nutzungsplanungslayer_gesamtplan/t_ueberlagernd_flaeche.qml"
             }
             vlayer = self.layer_loader.load(layer, False, True, False)
 
-
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "überlagernde Fläche kommunal",
+                "title": _translate("VeriSO_NPLSO_Gesamtplan", "Überlagernd Fläche kommunal",
                                     None),
                 "featuretype": "t_nutzungsplanung_ueberlagernd_flaeche",
                 "geom": "geometrie", "key": "t_id", "sql": "",
                 "readonly": True, "group": group,
-                "style": "nutzungsplanungslayer_bauzone/t_ueberlagernd_flaeche_kommunal.qml"
+                "style": "nutzungsplanungslayer_gesamtplan/t_ueberlagernd_flaeche_kommunal.qml"
             }
             vlayer = self.layer_loader.load(layer, False, True, False)
 
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "überlagernde Linie",
+                "title": _translate("VeriSO_NPLSO_Gesamtplan", "Überlagernd Linie",
                                     None),
                 "featuretype": "t_nutzungsplanung_ueberlagernd_linie",
                 "geom": "geometrie", "key": "t_id", "sql": "",
                 "readonly": True, "group": group,
-                "style": "nutzungsplanungslayer_bauzone/t_ueberlagernd_linie.qml"
+                "style": "nutzungsplanungslayer_gesamtplan/t_ueberlagernd_linie.qml"
             }
             vlayer = self.layer_loader.load(layer, False, True, False)
 
-
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "überlagernde Linie kommunal",
+                "title": _translate("VeriSO_NPLSO_Gesamtplan", "Überlagernd Linie kommunal",
                                     None),
                 "featuretype": "t_nutzungsplanung_ueberlagernd_linie",
                 "geom": "geometrie", "key": "t_id", "sql": "",
                 "readonly": True, "group": group,
-                "style": "nutzungsplanungslayer_bauzone/t_ueberlagernd_linie_kommunal.qml"
+                "style": "nutzungsplanungslayer_gesamtplan/t_ueberlagernd_linie_kommunal.qml"
             }
             vlayer = self.layer_loader.load(layer, False, True, False)
 
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "überlagernder Punkt",
+                "title": _translate("VeriSO_NPLSO_Gesamtplan", "Überlagernd Punkt",
                                     None),
                 "featuretype": "t_nutzungsplanung_ueberlagernd_punkt",
                 "geom": "geometrie", "key": "t_id", "sql": "",
                 "readonly": True, "group": group,
-                "style": "nutzungsplanungslayer_bauzone/t_ueberlagernd_punkt.qml"
+                "style": "nutzungsplanungslayer_gesamtplan/t_ueberlagernd_punkt.qml"
             }
             vlayer = self.layer_loader.load(layer, False, True, False)
 
-
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "überlagernder Punkt kommunal",
+                "title": _translate("VeriSO_NPLSO_Gesamtplan", "Überlagernd Punkt kommunal",
                                     None),
                 "featuretype": "t_nutzungsplanung_ueberlagernd_punkt",
                 "geom": "geometrie", "key": "t_id", "sql": "",
                 "readonly": True, "group": group,
-                "style": "nutzungsplanungslayer_bauzone/t_ueberlagernd_punkt_kommunal.qml"
+                "style": "nutzungsplanungslayer_gesamtplan/t_ueberlagernd_punkt_kommunal.qml"
             }
             vlayer = self.layer_loader.load(layer, False, True, False)
 
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Nutzungsplanung Beschriftung",
+                "title": _translate("VeriSO_NPLSO_Gesamtplan", "Nutzungsplanung Beschriftung",
                                     None),
                 "featuretype": "t_nutzungsplanung_beschriftung",
-                "geom": "pos", "key": "t_ili_tid", "sql": "",
+                "geom": "pos", "key": "t_id", "sql": "",
                 "readonly": True, "group": group,
-                "style": "nutzungsplanungslayer_bauzone/t_grundnutzung_beschriftung.qml"
+                "style": "nutzungsplanungslayer_gesamtplan/t_grundnutzung_beschriftung.qml"
             }
             vlayer = self.layer_loader.load(layer, True, True, False)
 
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "ausserhalb Bauzone",
-                                    None),
-                "featuretype": "t_ausserhalb_bauzone",
-                "geom": "geometrie_ausserhalb_bauzone", "key": "bfs_gemeindenummer", "sql": "",
-                "readonly": True, "group": group,
-                "style": "nutzungsplanungslayer_bauzone/t_ausserhalb_bauzone.qml"
-            }
-            vlayer = self.layer_loader.load(layer, True, True, False)
-
-            layer = {
-                "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Bauzonen Perimeter",
+                "title": _translate("VeriSO_NPLSO_Gesamtplan", "Bauzonen Perimeter",
                                     None),
                 "featuretype": "t_nutzungsplanung_grundnutzung_vereinigt",
                 "geom": "geometrie", "key": "t_id", "sql": "",
                 "readonly": True, "group": group,
-                "style": "nutzungsplanungslayer_bauzone/t_nutzungsplanung_grundnutzung_vereinigt.qml"
+                "style": "nutzungsplanungslayer_gesamtplan/t_nutzungsplanung_grundnutzung_vereinigt.qml"
             }
             bauzone = self.layer_loader.load(layer, True, True, False)
 
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Plandokument",
-                                    None),
-                "featuretype": "rechtsvorschrften_plandokument",
-                "geom": "", "key": "t_id", "sql": "",
-                "readonly": True, "group": group
-            }
-            vlayer = self.layer_loader.load(layer, False, True, False)
-
-
-            layer = {
-                "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Dokument",
+                "title": _translate("VeriSO_NPLSO_Gesamtplan", "Dokument",
                                     None),
                 "featuretype": "rechtsvorschrften_dokument",
                 "geom": "", "key": "t_id", "sql": "",
                 "readonly": True, "group": group
             }
             vlayer = self.layer_loader.load(layer, False, True, False)
-
-            
 
       
             if bauzone:

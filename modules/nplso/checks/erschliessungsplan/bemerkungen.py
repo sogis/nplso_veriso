@@ -90,7 +90,7 @@ class ComplexCheck(ComplexCheckBase):
                 "featuretype": "t_maengel_punkt",
                 "geom": "the_geom", "key": "t_id",
                 "sql": "plan='Erschliessungsplan'", "readonly": False,  # plan='Erschliessungsplan'
-                "group": group, "style": "maengel/maengel.qml"
+                "group": group, "style": "bemerkungen/bemerkungen_punkt.qml"
             }
             vlayer = self.layer_loader.load(layer, True, True, False)
             
@@ -129,7 +129,7 @@ class ComplexCheck(ComplexCheckBase):
                 "featuretype": "t_maengel_linie",
                 "geom": "the_geom", "key": "t_id",
                 "sql": "plan='Erschliessungsplan'", "readonly": False,
-                "group": group, "style": "maengel/maengel_linie.qml"
+                "group": group, "style": "bemerkungen/bemerkungen_linie.qml"
             }
             vlayer = self.layer_loader.load(layer, True, True, False)
             
