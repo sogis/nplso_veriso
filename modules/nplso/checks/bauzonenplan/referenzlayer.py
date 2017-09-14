@@ -62,6 +62,18 @@ class ComplexCheck(ComplexCheckBase):
             group = _translate("VeriSO_NPLSO_Bauzonenplan", "Referenzlayer - Bauzonenplan", None)
             group += " (" + str(project_id) + ")"
 
+            for file in os.listdir(self.project_dir):
+              if file.endswith(".tif"):
+                layer = {
+                  "type": "gdal",
+                  "title": _translate("VeriSO_NPLSO_Bauzonenplan", file,
+                                    None),
+                  "url": os.path.join(self.project_dir, file),
+                  "group": group
+                }
+                vlayer = self.layer_loader.load(layer, False, True, False)
+
+
             layer = {
                 "type": "postgres",
                 "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Bewirtschaftungseinheiten mit Direktzahlungsgrösse",
@@ -168,6 +180,8 @@ class ComplexCheck(ComplexCheckBase):
                 "style": "referenzlayer_bauzone/bauzone_unbebaut_arp.qml"
             }
             vlayer = self.layer_loader.load(layer, False, True, False)
+
+
 
 
         except Exception:

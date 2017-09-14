@@ -62,6 +62,18 @@ class ComplexCheck(ComplexCheckBase):
             group = _translate("VeriSO_NPLSO_Erschliessungsplan", "Referenzlayer - Erschliessungsplan", None)
             group += " (" + str(project_id) + ")"
 
+            for file in os.listdir(self.project_dir):
+              if file.endswith(".tif"):
+                layer = {
+                  "type": "gdal",
+                  "title": _translate("VeriSO_NPLSO_Gesamtplan", file,
+                                    None),
+                  "url": os.path.join(self.project_dir, file),
+                  "group": group
+                }
+                vlayer = self.layer_loader.load(layer, False, True, False)
+
+
             layer = {
                 "type": "postgres",
                 "title": _translate("VeriSO_NPLSO_Erschliessungsplan", "Bewirtschaftungseinheiten mit Direktzahlungsgrösse",
