@@ -245,9 +245,9 @@ class LoadLayer(QObject):
 
             if style != "":
                 if style.startswith('global_qml'):
-                    qml_dir = "/python/plugins/veriso/"
+                    qml_dir = "/plugins/veriso/"
                 else:
-                    qml_dir = "/python/plugins/veriso/modules/%s/qml/" % \
+                    qml_dir = "/plugins/veriso/modules/%s/qml/" % \
                               module_name
 
                 """qml_path = QDir.convertSeparators(QDir.cleanPath(
@@ -255,7 +255,7 @@ class LoadLayer(QObject):
                         qml_dir + style))"""
 
                 qml_path=QDir.convertSeparators(QDir.cleanPath(
-                (os.path.realpath(__file__)).split("python")[0] +qml_dir + style))
+                (os.path.realpath(__file__)).split("plugins")[0] +qml_dir + style))
 
 
 
