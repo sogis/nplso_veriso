@@ -77,8 +77,8 @@ class ComplexCheck(ComplexCheckBase):
                 "type": "wms",
                 "title": _translate("VeriSO_NPLSO_Gesamtplan", "Richtplan",
                                     None),
-                "url": "http://geoweb.so.ch/wms/sogis_richt.wms",
-                "layers": "Richtplan",
+                "url": "http://geoweb.so.ch/wms/richtplan",
+                "layers": "Punktsymbole,Siedlung (S),Landschaft (L),Verkehr (V),Ver- und Entsorgung (E),Grundnutzung",
                 "format": "image/png", "crs": "EPSG:" + str(epsg),
                 "group": group
             }
