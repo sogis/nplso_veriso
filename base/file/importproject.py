@@ -676,7 +676,7 @@ class ImportProjectDialog(QDialog, Ui_ImportProject):
        
         # Hack
         filename = QDir.convertSeparators(QDir.cleanPath(
-                (os.path.realpath(__file__)).split("python")[0] +
+                (os.path.abspath(__file__)).split("python")[0] +
                 "/python/plugins/veriso/modules/" + self.app_module +
                 "/postprocessing/postprocessing.db"))
 
