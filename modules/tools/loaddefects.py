@@ -65,7 +65,7 @@ class LoadDefects(QObject):
                 "title": tr(u"Bemerkungen (Punkte)", self.tr_tag, None),
                 "featuretype": "t_maengel_punkt", "geom": "the_geom",
                 "key": "t_id", "readonly": False, "sql": "",
-                "group": group, "style": "global_qml/maengel/maengel_punkt.qml"
+                "group": group, "style": "bemerkungen/bemerkungen_punkt.qml"
             }
 
             vlayer = self.layer_loader.load(layer)
