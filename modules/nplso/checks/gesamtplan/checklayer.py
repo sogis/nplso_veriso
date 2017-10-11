@@ -127,32 +127,7 @@ class ComplexCheck(ComplexCheckBase):
             }
             vlayer = self.layer_loader.load(layer, True, True, False)
 
-            layer = {
-                "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Kontrolllayer",
-                                    None),
-                "featuretype": "t_grundnutzung_kontrolliert",
-                "geom": "geometrie", "key": "t_id", "sql": "",
-                "readonly": False, "group": group,
-                "style": "checks/t_grundnutzung_kontrolliert.qml"
-            }
-            vlayer = self.layer_loader.load(layer, True, True, False)
 
-            if vlayer <> False:
-                self.iface.legendInterface().setLayerVisible(vlayer, True) 
-                vlayer.setLayerName(u"Kontroll-Layer")
-                #vlayer.saveDefaultStyle()            
-
-                provider = vlayer.dataProvider()
-                provider.attributeIndexes()
-                t_id_idx = provider.fieldNameIndex("t_id")
-                kontrolliert_idx = provider.fieldNameIndex("kontrolliert")
-
-      
-                vlayer.setEditorWidgetV2(0,"Hidden")
-                vlayer.setEditorWidgetV2(1, "CheckBox")       
-                 
-                vlayer.setEditorWidgetV2Config(1, {'fieldEditable':"1", 'UncheckedState':'f','CheckedState':'t'})
 
 
 
