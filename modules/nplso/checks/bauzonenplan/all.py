@@ -29,12 +29,12 @@ class ComplexCheck(ComplexCheckBase):
             c = _temp.ComplexCheck(self.iface)
             c.run()
 
-            module = "%s.referenzlayer" % package
+            module = "%s.nutzungsplanungslayer" % package
             _temp = dynamic_import(module)
             c = _temp.ComplexCheck(self.iface)
             c.run()
 
-            module = "%s.nutzungsplanungslayer" % package
+            module = "%s.referenzlayer" % package
             _temp = dynamic_import(module)
             c = _temp.ComplexCheck(self.iface)
             c.run()
