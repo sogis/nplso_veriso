@@ -325,6 +325,7 @@ class LoadLayer(QObject):
                     my_layer_node = self.root.addLayer(my_layer)
 
                 my_layer_node.setVisible(Qt.Unchecked)
+                my_layer_node.setCustomProperty("showFeatureCount",True)
 
 
                 if visible:
