@@ -94,7 +94,7 @@ class ComplexCheck(ComplexCheckBase):
 
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Perimeter ohne Plandokument",
+                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Perimeter ohne Dokument",
                                     None),
                 "featuretype": "t_perimeter_ohne_plandokument",
                 "geom": "geometrie", "key": "t_id", "sql": "",
@@ -106,7 +106,7 @@ class ComplexCheck(ComplexCheckBase):
 
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Perimeter mit Plandokument",
+                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Perimeter mit Dokument",
                                     None),
                 "featuretype": "t_perimeter_mit_plandokument",
                 "geom": "geometrie", "key": "t_id", "sql": "",
