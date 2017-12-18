@@ -105,16 +105,6 @@ class ComplexCheck(ComplexCheckBase):
             }
             vlayer = self.layer_loader.load(layer, True, True, False)
 
-            layer = {
-                "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Gesamtplan", "Dokument mit Geometrie verknüpft",
-                                    None),
-                "featuretype": "t_dokument_mit_geometrie_verknuepft",
-                "geom": "geometrie", "key": "t_id", "sql": "",
-                "readonly": True, "group": group,
-                "style": "checks/checklayer_punkt.qml"
-            }
-            vlayer = self.layer_loader.load(layer, True, True, False)
 
             layer = {
                 "type": "postgres",
