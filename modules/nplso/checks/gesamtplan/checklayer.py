@@ -66,7 +66,7 @@ class ComplexCheck(ComplexCheckBase):
                 "featuretype": "t_beschriftung_nicht_io",
                 "geom": "pos", "key": "t_ili_tid", "sql": "",
                 "readonly": True, "group": group,
-                "style": "checks/checklayer_punkt.qml"
+                "style": "checks/GP_beschriftung_nicht_io.qml"
             }
             vlayer = self.layer_loader.load(layer, True, True, False)
 
@@ -77,31 +77,31 @@ class ComplexCheck(ComplexCheckBase):
                 "featuretype": "t_rechtsstatus_nicht_inkraft",
                 "geom": "geometrie", "key": "t_ili_tid", "sql": "",
                 "readonly": True, "group": group,
-                "style": "checks/checklayer_punkt.qml"
+                "style": "checks/GP_rechtsstatus_nicht_in_kraft.qml"
             }
             vlayer = self.layer_loader.load(layer, True, True, False)
 
 
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Gesamtplan", "Perimeter ohne Plandokument",
+                "title": _translate("VeriSO_NPLSO_Gesamtplan", "Perimeter ohne Dokument",
                                     None),
                 "featuretype": "t_perimeter_ohne_plandokument",
                 "geom": "geometrie", "key": "t_id", "sql": "",
                 "readonly": True, "group": group,
-                "style": "checks/checklayer_punkt.qml"
+                "style": "checks/GP_perimeter_ohne_dokument.qml"
             }
             vlayer = self.layer_loader.load(layer, True, True, False)
 
 
             layer = {
                 "type": "postgres",
-                "title": _translate("VeriSO_NPLSO_Gesamtplan", "Perimeter mit Plandokument",
+                "title": _translate("VeriSO_NPLSO_Gesamtplan", "Perimeter mit Dokument",
                                     None),
                 "featuretype": "t_perimeter_mit_plandokument",
                 "geom": "geometrie", "key": "t_id", "sql": "",
                 "readonly": True, "group": group,
-                "style": "checks/checklayer_punkt.qml"
+                "style": "checks/GP_perimeter_mit_dokument.qml"
             }
             vlayer = self.layer_loader.load(layer, True, True, False)
 

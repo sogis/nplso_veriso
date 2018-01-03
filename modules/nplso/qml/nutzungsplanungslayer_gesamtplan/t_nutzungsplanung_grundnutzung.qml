@@ -1,10 +1,7 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis version="2.15.2-Dev" minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+<qgis version="2.15.2-Dev" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
   <edittypes>
     <edittype widgetv2type="TextEdit" name="t_id">
-      <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-    </edittype>
-    <edittype widgetv2type="TextEdit" name="t_datasetname">
       <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
     </edittype>
     <edittype widgetv2type="TextEdit" name="t_ili_tid">
@@ -20,6 +17,9 @@
       <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
     </edittype>
     <edittype widgetv2type="TextEdit" name="typ_bemerkungen">
+      <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+    </edittype>
+    <edittype widgetv2type="TextEdit" name="typ_kt_txt">
       <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
     </edittype>
     <edittype widgetv2type="TextEdit" name="typ_kt">
@@ -92,32 +92,32 @@
       <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
     </edittype>
   </edittypes>
-  <renderer-v2 attr="typ_kt" symbollevels="0" type="categorizedSymbol">
-    <categories>
-      <category render="true" symbol="0" value="N210_Landwirtschaftszone" html="" label="N210_Landwirtschaftszone"/>
-      <category render="true" symbol="1" value="N220_Spezielle_Landwirtschaftszone" html="" label="N220_Spezielle_Landwirtschaftszone"/>
-      <category render="true" symbol="2" value="N230_Rebbauzone" html="" label="N230_Rebbauzone"/>
-      <category render="true" symbol="3" value="N290_weitere_Landwirtschaftszonen" html="" label="N290_weitere_Landwirtschaftszonen"/>
-      <category render="true" symbol="4" value="N310_kommunale_Naturschutzzone" html="" label="N310_kommunale_Naturschutzzone"/>
-      <category render="true" symbol="5" value="N311_Waldrandschutzzone" html="" label="N311_Waldrandschutzzone"/>
-      <category render="true" symbol="6" value="N319_weitere_Schutzzonen_fuer_Lebensraeume_und_Landschaften" html="" label="N319_weitere_Schutzzonen_fuer_Lebensraeume_und_Landschaften"/>
-      <category render="true" symbol="7" value="N320_Gewaesser" html="" label="N320_Gewaesser"/>
-      <category render="true" symbol="8" value="N329_weitere_Zonen_fuer_Gewaesser_und_ihre_Ufer" html="" label="N329_weitere_Zonen_fuer_Gewaesser_und_ihre_Ufer"/>
-      <category render="true" symbol="9" value="N390_weitere_Schutzzonen_ausserhalb_Bauzonen" html="" label="N390_weitere_Schutzzonen_ausserhalb_Bauzonen"/>
-      <category render="true" symbol="10" value="N420_Verkehrsflaeche_Strasse" html="" label="N420_Verkehrsflaeche_Strasse"/>
-      <category render="true" symbol="11" value="N421_Verkehrsflaeche_Bahnareal" html="" label="N421_Verkehrsflaeche_Bahnareal"/>
-      <category render="true" symbol="12" value="N422_Verkehrsflaeche_Flugplatzareal" html="" label="N422_Verkehrsflaeche_Flugplatzareal"/>
-      <category render="true" symbol="13" value="N429_weitere_Verkehrsflaechen" html="" label="N429_weitere_Verkehrsflaechen"/>
-      <category render="true" symbol="14" value="N430_Reservezone_Wohnzone_Mischzone_Kernzone_Zentrumszone" html="" label="N430_Reservezone_Wohnzone_Mischzone_Kernzone_Zentrumszone"/>
-      <category render="true" symbol="15" value="N431_Reservezone_Arbeiten" html="" label="N431_Reservezone_Arbeiten"/>
-      <category render="true" symbol="16" value="N432_Reservezone_OeBA" html="" label="N432_Reservezone_OeBA"/>
-      <category render="true" symbol="17" value="N439_Reservezone" html="" label="N439_Reservezone"/>
-      <category render="true" symbol="18" value="N440_Wald" html="" label="N440_Wald"/>
-      <category render="true" symbol="19" value="N490_Golfzone" html="" label="N490_Golfzone"/>
-      <category render="true" symbol="20" value="N491_Abbauzone" html="" label="N491_Abbauzone"/>
-      <category render="true" symbol="21" value="N492_Deponiezone" html="" label="N492_Deponiezone"/>
-      <category render="true" symbol="22" value="N499_weitere_Zonen_nach_Art18_RPG_ausserhalb_Bauzonen" html="" label="N499_weitere_Zonen_nach_Art18_RPG_ausserhalb_Bauzonen"/>
-    </categories>
+  <renderer-v2 symbollevels="0" type="RuleRenderer">
+    <rules key="{f3d3452d-9d24-4b08-a453-1172d9f93932}">
+      <rule filter="typ_kt = 'N210'" key="{3f4892c4-5277-422d-b66c-8c103ea136a3}" symbol="0" label="210 Landwirtschaftszone"/>
+      <rule filter="typ_kt = 'N220'" key="{7509c72f-5f4a-46dd-aaa2-77b8ae6c620b}" symbol="1" label="220 Spezielle Landwirtschaftszone"/>
+      <rule filter="typ_kt = 'N230'" key="{3e3bb98b-ff6d-4b0f-9ab4-51532858b37c}" symbol="2" label="230 Rebbauzone"/>
+      <rule filter="typ_kt = 'N290'" key="{752aa7f5-8403-4e83-887f-c3e622db53bb}" symbol="3" label="290 weitere Landwirtschaftszonen"/>
+      <rule filter="typ_kt = 'N310'" key="{4d94db83-ace1-4f29-9997-0a31d5cbe1fe}" symbol="4" label="310 kommunale Naturschutzzone"/>
+      <rule filter="typ_kt = 'N311'" key="{57503576-f3da-48fb-9586-b7cac23fb5d4}" symbol="5" label="311 Waldrandschutzzone"/>
+      <rule filter="typ_kt = 'N319'" key="{6ac1fbd1-184d-4af9-bfb3-cb194b779365}" symbol="6" label="319 weitere Schutzzonen für Lebensräume und Landschaften"/>
+      <rule filter="typ_kt = 'N320'" key="{9319c636-4496-49e0-a357-eab48d3e0652}" symbol="7" label="320 Gewässer"/>
+      <rule filter="typ_kt = 'N329'" key="{19bc3854-2840-48ef-be8e-4b9c773537bf}" symbol="8" label="329 weitere Zonen für Gewässer und ihre Ufer"/>
+      <rule filter="typ_kt = 'N390'" key="{94add6dc-8a7e-4035-8abd-cf3cbef02899}" symbol="9" label="390 weitere Schutzzonen ausserhalb Bauzonen"/>
+      <rule filter="typ_kt = 'N420'" key="{23d21632-01af-4513-b837-23e5e15c5a60}" symbol="10" label="420 Verkehrsfläche Strasse"/>
+      <rule filter="typ_kt = 'N421'" key="{795a3f35-a690-4da9-9efb-9b3c3e8bf447}" symbol="11" label="421 Verkehrsfläche Bahnareal"/>
+      <rule filter="typ_kt = 'N422'" key="{83a1276e-96e8-4e19-a7e2-67305104645c}" symbol="12" label="422 Verkehrsfläche Flugplatzareal"/>
+      <rule filter="typ_kt = 'N429'" key="{17fd5071-6fd2-4960-b4bd-de7d2e0fefd1}" symbol="13" label="429 weitere Verkehrsflächen"/>
+      <rule filter="typ_kt = 'N430'" key="{3d8590d8-dc9b-45f4-a674-36a37748a6c9}" symbol="14" label="430 Reservezone, Wohnzone, Mischzone, Kernzone, Zentrumszone"/>
+      <rule filter="typ_kt = 'N431'" key="{781fae0c-ba52-4e30-94ba-83c054185b12}" symbol="15" label="431 Reservezone Arbeiten"/>
+      <rule filter="typ_kt = 'N432'" key="{ebd240de-b2fb-4def-b926-0cbc8dad19f0}" symbol="16" label="432 Reservezone OeBA"/>
+      <rule filter="typ_kt = 'N439'" key="{48e37d9d-6db8-4f2c-bca1-91e00306985a}" symbol="17" label="439 Reservezone"/>
+      <rule filter="typ_kt = 'N440'" key="{06c7dd44-50f1-4b5c-b5e6-24ce5a1ab1a9}" symbol="18" label="440 Wald"/>
+      <rule filter="typ_kt = 'N490'" key="{214af63e-9783-4dc0-8d1c-5dd77a856c33}" symbol="19" label="490 Golfzone"/>
+      <rule filter="typ_kt = 'N491'" key="{314c5745-c085-40a1-9d9a-45ea87cb9df3}" symbol="20" label="491 Abbauzone"/>
+      <rule filter="typ_kt = 'N492'" key="{6aa76f21-e3c5-4523-80a4-c7696042fb01}" symbol="21" label="492 Deponiezone"/>
+      <rule filter="typ_kt = 'N499'" key="{d49f762f-a57c-4f9b-9a70-c7414b0d6576}" symbol="22" label="499 weitere Zonen nach Art18 RPG ausserhalb Bauzonen"/>
+    </rules>
     <symbols>
       <symbol alpha="0.772549" type="fill" name="0">
         <layer pass="0" class="SimpleFill" locked="0">
@@ -212,22 +212,39 @@
       <symbol alpha="0.694118" type="fill" name="14">
         <layer pass="0" class="SimpleFill" locked="0">
           <prop k="border_width_map_unit_scale" v="0,0"/>
-          <prop k="color" v="255,255,0,255"/>
+          <prop k="color" v="201,255,209,255"/>
           <prop k="joinstyle" v="bevel"/>
           <prop k="offset" v="0,0"/>
           <prop k="offset_map_unit_scale" v="0,0"/>
           <prop k="offset_unit" v="MM"/>
           <prop k="outline_color" v="0,0,0,255"/>
-          <prop k="outline_style" v="no"/>
+          <prop k="outline_style" v="solid"/>
           <prop k="outline_width" v="0.26"/>
           <prop k="outline_width_unit" v="MM"/>
           <prop k="style" v="solid"/>
+        </layer>
+        <layer pass="0" class="SimpleLine" locked="0">
+          <prop k="capstyle" v="flat"/>
+          <prop k="customdash" v="5;2"/>
+          <prop k="customdash_map_unit_scale" v="0,0"/>
+          <prop k="customdash_unit" v="MM"/>
+          <prop k="draw_inside_polygon" v="0"/>
+          <prop k="joinstyle" v="miter"/>
+          <prop k="line_color" v="255,255,0,255"/>
+          <prop k="line_style" v="solid"/>
+          <prop k="line_width" v="5"/>
+          <prop k="line_width_unit" v="MM"/>
+          <prop k="offset" v="2.5"/>
+          <prop k="offset_map_unit_scale" v="0,0"/>
+          <prop k="offset_unit" v="MM"/>
+          <prop k="use_custom_dash" v="0"/>
+          <prop k="width_map_unit_scale" v="0,0"/>
         </layer>
       </symbol>
       <symbol alpha="0.694118" type="fill" name="15">
         <layer pass="0" class="SimpleFill" locked="0">
           <prop k="border_width_map_unit_scale" v="0,0"/>
-          <prop k="color" v="168,115,168,255"/>
+          <prop k="color" v="201,255,209,255"/>
           <prop k="joinstyle" v="bevel"/>
           <prop k="offset" v="0,0"/>
           <prop k="offset_map_unit_scale" v="0,0"/>
@@ -237,12 +254,29 @@
           <prop k="outline_width" v="0.26"/>
           <prop k="outline_width_unit" v="MM"/>
           <prop k="style" v="solid"/>
+        </layer>
+        <layer pass="0" class="SimpleLine" locked="0">
+          <prop k="capstyle" v="flat"/>
+          <prop k="customdash" v="5;2"/>
+          <prop k="customdash_map_unit_scale" v="0,0"/>
+          <prop k="customdash_unit" v="MM"/>
+          <prop k="draw_inside_polygon" v="0"/>
+          <prop k="joinstyle" v="miter"/>
+          <prop k="line_color" v="0,92,230,255"/>
+          <prop k="line_style" v="solid"/>
+          <prop k="line_width" v="5"/>
+          <prop k="line_width_unit" v="MM"/>
+          <prop k="offset" v="2.5"/>
+          <prop k="offset_map_unit_scale" v="0,0"/>
+          <prop k="offset_unit" v="MM"/>
+          <prop k="use_custom_dash" v="0"/>
+          <prop k="width_map_unit_scale" v="0,0"/>
         </layer>
       </symbol>
       <symbol alpha="0.694118" type="fill" name="16">
         <layer pass="0" class="SimpleFill" locked="0">
           <prop k="border_width_map_unit_scale" v="0,0"/>
-          <prop k="color" v="109,0,126,255"/>
+          <prop k="color" v="201,255,209,255"/>
           <prop k="joinstyle" v="bevel"/>
           <prop k="offset" v="0,0"/>
           <prop k="offset_map_unit_scale" v="0,0"/>
@@ -253,11 +287,28 @@
           <prop k="outline_width_unit" v="MM"/>
           <prop k="style" v="solid"/>
         </layer>
+        <layer pass="0" class="SimpleLine" locked="0">
+          <prop k="capstyle" v="flat"/>
+          <prop k="customdash" v="5;2"/>
+          <prop k="customdash_map_unit_scale" v="0,0"/>
+          <prop k="customdash_unit" v="MM"/>
+          <prop k="draw_inside_polygon" v="0"/>
+          <prop k="joinstyle" v="miter"/>
+          <prop k="line_color" v="180,180,180,255"/>
+          <prop k="line_style" v="solid"/>
+          <prop k="line_width" v="5"/>
+          <prop k="line_width_unit" v="MM"/>
+          <prop k="offset" v="2.5"/>
+          <prop k="offset_map_unit_scale" v="0,0"/>
+          <prop k="offset_unit" v="MM"/>
+          <prop k="use_custom_dash" v="0"/>
+          <prop k="width_map_unit_scale" v="0,0"/>
+        </layer>
       </symbol>
       <symbol alpha="0.694118" type="fill" name="17">
         <layer pass="0" class="SimpleFill" locked="0">
           <prop k="border_width_map_unit_scale" v="0,0"/>
-          <prop k="color" v="0,0,0,255"/>
+          <prop k="color" v="201,255,209,255"/>
           <prop k="joinstyle" v="bevel"/>
           <prop k="offset" v="0,0"/>
           <prop k="offset_map_unit_scale" v="0,0"/>
@@ -267,6 +318,23 @@
           <prop k="outline_width" v="0.26"/>
           <prop k="outline_width_unit" v="MM"/>
           <prop k="style" v="solid"/>
+        </layer>
+        <layer pass="0" class="SimpleLine" locked="0">
+          <prop k="capstyle" v="flat"/>
+          <prop k="customdash" v="5;2"/>
+          <prop k="customdash_map_unit_scale" v="0,0"/>
+          <prop k="customdash_unit" v="MM"/>
+          <prop k="draw_inside_polygon" v="0"/>
+          <prop k="joinstyle" v="miter"/>
+          <prop k="line_color" v="255,0,0,255"/>
+          <prop k="line_style" v="solid"/>
+          <prop k="line_width" v="5"/>
+          <prop k="line_width_unit" v="MM"/>
+          <prop k="offset" v="2.5"/>
+          <prop k="offset_map_unit_scale" v="0,0"/>
+          <prop k="offset_unit" v="MM"/>
+          <prop k="use_custom_dash" v="0"/>
+          <prop k="width_map_unit_scale" v="0,0"/>
         </layer>
       </symbol>
       <symbol alpha="0.694118" type="fill" name="18">
@@ -433,6 +501,23 @@
           <prop k="outline_width_unit" v="MM"/>
           <prop k="style" v="solid"/>
         </layer>
+        <layer pass="0" class="SimpleLine" locked="0">
+          <prop k="capstyle" v="square"/>
+          <prop k="customdash" v="5;2"/>
+          <prop k="customdash_map_unit_scale" v="0,0"/>
+          <prop k="customdash_unit" v="MM"/>
+          <prop k="draw_inside_polygon" v="0"/>
+          <prop k="joinstyle" v="bevel"/>
+          <prop k="line_color" v="32,90,219,255"/>
+          <prop k="line_style" v="solid"/>
+          <prop k="line_width" v="0.46"/>
+          <prop k="line_width_unit" v="MM"/>
+          <prop k="offset" v="0"/>
+          <prop k="offset_map_unit_scale" v="0,0"/>
+          <prop k="offset_unit" v="MM"/>
+          <prop k="use_custom_dash" v="0"/>
+          <prop k="width_map_unit_scale" v="0,0"/>
+        </layer>
       </symbol>
       <symbol alpha="0.694118" type="fill" name="8">
         <layer pass="0" class="SimpleFill" locked="0">
@@ -466,32 +551,6 @@
       </symbol>
     </symbols>
     <legendsymbols/>
-    <source-symbol>
-      <symbol alpha="1" type="fill" name="0">
-        <layer pass="0" class="SimpleFill" locked="0">
-          <prop k="border_width_map_unit_scale" v="0,0"/>
-          <prop k="color" v="61,131,76,255"/>
-          <prop k="joinstyle" v="bevel"/>
-          <prop k="offset" v="0,0"/>
-          <prop k="offset_map_unit_scale" v="0,0"/>
-          <prop k="offset_unit" v="MM"/>
-          <prop k="outline_color" v="0,0,0,255"/>
-          <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.26"/>
-          <prop k="outline_width_unit" v="MM"/>
-          <prop k="style" v="solid"/>
-        </layer>
-      </symbol>
-    </source-symbol>
-    <colorramp type="gradient" name="[source]">
-      <prop k="color1" v="215,25,28,255"/>
-      <prop k="color2" v="26,150,65,255"/>
-      <prop k="discrete" v="0"/>
-      <prop k="stops" v="0.25;253,174,97,255:0.5;255,255,192,255:0.75;166,217,106,255"/>
-    </colorramp>
-    <invertedcolorramp value="0"/>
-    <rotation/>
-    <sizescale scalemethod="area"/>
   </renderer-v2>
   <customproperties>
     <property key="labeling" value="pal"/>

@@ -66,7 +66,7 @@ class ComplexCheck(ComplexCheckBase):
                 "featuretype": "t_private_strasse_nicht_plausibel",
                 "geom": "geometrie", "key": "id", "sql": "",
                 "readonly": True, "group": group,
-                "style": "checks/checklayer_punkt.qml"
+                "style": "checks/ES_private_strasse_nicht_plausibel.qml"
             }
             vlayer = self.layer_loader.load(layer, True, True, False)
 
@@ -77,7 +77,7 @@ class ComplexCheck(ComplexCheckBase):
                 "featuretype": "t_baulinie_durch_gebaeude",
                 "geom": "geometrie", "key": "id", "sql": "",
                 "readonly": True, "group": group,
-                "style": "checks/checklayer_punkt.qml"
+                "style": "checks/ES_Baulinie_geht_durch_gebaeude.qml"
             }
             vlayer = self.layer_loader.load(layer, True, True, False)
 
@@ -88,7 +88,7 @@ class ComplexCheck(ComplexCheckBase):
                 "featuretype": "t_baulinie_strasse_nicht_plausibel",
                 "geom": "geometrie", "key": "id", "sql": "",
                 "readonly": True, "group": group,
-                "style": "checks/checklayer_punkt.qml"
+                "style": "checks/ES_Baulinie_strasse_nicht_plausibel.qml"
             }
             vlayer = self.layer_loader.load(layer, True, True, False)
 
@@ -99,7 +99,7 @@ class ComplexCheck(ComplexCheckBase):
                 "featuretype": "t_gewaesserbaulinie_nicht_plausibel",
                 "geom": "geometrie", "key": "id", "sql": "",
                 "readonly": True, "group": group,
-                "style": "checks/checklayer_punkt.qml"
+                "style": "checks/ES_geawaesserbaulinie_nicht_plausibel.qml"
             }
             vlayer = self.layer_loader.load(layer, True, True, False)
 

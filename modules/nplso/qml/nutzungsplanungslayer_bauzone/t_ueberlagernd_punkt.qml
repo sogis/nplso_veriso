@@ -4,9 +4,6 @@
     <edittype widgetv2type="TextEdit" name="t_id">
       <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
     </edittype>
-    <edittype widgetv2type="TextEdit" name="t_datasetname">
-      <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-    </edittype>
     <edittype widgetv2type="TextEdit" name="t_ili_tid">
       <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
     </edittype>
@@ -20,6 +17,9 @@
       <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
     </edittype>
     <edittype widgetv2type="TextEdit" name="typ_bemerkungen">
+      <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+    </edittype>
+    <edittype widgetv2type="TextEdit" name="typ_kt_txt">
       <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
     </edittype>
     <edittype widgetv2type="TextEdit" name="typ_kt">
@@ -83,57 +83,54 @@
       <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
     </edittype>
   </edittypes>
-  <renderer-v2 attr="typ_kt" symbollevels="0" type="categorizedSymbol">
-    <categories>
-      <category render="true" symbol="0" value="N810_geschuetzter_Einzelbaum" html="" label="N810_geschuetzter_Einzelbaum"/>
-      <category render="true" symbol="1" value="N811_erhaltenswerter_Einzelbaum" html="" label="N811_erhaltenswerter_Einzelbaum"/>
-      <category render="true" symbol="2" value="N812_geologisches_Objekt" html="" label="N812_geologisches_Objekt"/>
-      <category render="true" symbol="3" value="N813_Naturobjekt" html="" label="N813_Naturobjekt"/>
-      <category render="true" symbol="4" value="N820_kantonal_geschuetztes_Kulturobjekt" html="" label="N820_kantonal_geschuetztes_Kulturobjekt"/>
-      <category render="true" symbol="5" value="N821_kommunal_geschuetztes_Kulturobjekt" html="" label="N821_kommunal_geschuetztes_Kulturobjekt"/>
-      <category render="true" symbol="6" value="N822_schuetzenswertes_Kulturobjekt" html="" label="N822_schuetzenswertes_Kulturobjekt"/>
-      <category render="true" symbol="7" value="N823_erhaltenswertes_Kulturobjekt" html="" label="N823_erhaltenswertes_Kulturobjekt"/>
-      <category render="true" symbol="8" value="N899_weitere_punktbezogene_Festlegungen_NP" html="" label="N899_weitere_punktbezogene_Festlegungen_NP"/>
-      <category render="true" symbol="9" value="" html="" label=""/>
-    </categories>
+  <renderer-v2 symbollevels="0" type="RuleRenderer">
+    <rules key="{52a6da8a-6434-4535-8cc0-28bc5dc17c9a}">
+      <rule filter="typ_kt = 'N810'" key="{b212994a-b19c-4d5e-8e6d-f0013c7c3ade}" symbol="0" label="810 geschützter Einzelbaum"/>
+      <rule filter="typ_kt = 'N811'" key="{5f97b44a-9d4d-49fc-9952-d68360658c6f}" symbol="1" label="811 erhaltenswerter Einzelbaum"/>
+      <rule filter="typ_kt = 'N812'" key="{0a985be2-0e57-4935-a626-90f6c653a5a0}" symbol="2" label="812 geologisches Objekt"/>
+      <rule filter="typ_kt = 'N813'" key="{e2289549-71dc-4341-92f4-9dab6ab26368}" symbol="3" label="813 Naturobjekt"/>
+      <rule filter="typ_kt = 'N820'" key="{cf87c5b5-d461-4cf6-a3db-fd71ba2a65a7}" symbol="4" label="820 kantonal geschütztes Kulturobjekt"/>
+      <rule filter="typ_kt = 'N821'" key="{b7983924-297c-40fb-a5d6-a3c2e676b0ae}" symbol="5" label="821 kommunal geschütztes Kulturobjekt"/>
+      <rule filter="typ_kt = 'N822'" key="{0a96a432-c387-4095-9ce0-6bcc28043f24}" symbol="6" label="822 schützenswertes Kulturobjekt"/>
+      <rule filter="typ_kt = 'N823'" key="{aa6d64de-76be-4991-ae34-d7247e10921c}" symbol="7" label="823 erhaltenswertes Kulturobjekt"/>
+      <rule filter="typ_kt = 'N899'" key="{61480c4e-db2e-4c75-a757-a50763506b23}" symbol="8" label="899 weitere punktbezogene Festlegungen NP"/>
+    </rules>
     <symbols>
       <symbol alpha="1" type="marker" name="0">
-        <layer pass="0" class="SimpleMarker" locked="0">
+        <layer pass="0" class="SvgMarker" locked="0">
           <prop k="angle" v="0"/>
-          <prop k="color" v="0,255,0,255"/>
+          <prop k="color" v="#ff3316"/>
           <prop k="horizontal_anchor_point" v="1"/>
-          <prop k="name" v="circle"/>
+          <prop k="name" v="symbol/landuse_deciduous.svg"/>
           <prop k="offset" v="0,0"/>
           <prop k="offset_map_unit_scale" v="0,0"/>
           <prop k="offset_unit" v="MM"/>
-          <prop k="outline_color" v="0,0,0,255"/>
-          <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0"/>
+          <prop k="outline_color" v="#000000"/>
+          <prop k="outline_width" v="5.55112e-17"/>
           <prop k="outline_width_map_unit_scale" v="0,0"/>
           <prop k="outline_width_unit" v="MM"/>
           <prop k="scale_method" v="area"/>
-          <prop k="size" v="2"/>
+          <prop k="size" v="5"/>
           <prop k="size_map_unit_scale" v="0,0"/>
           <prop k="size_unit" v="MM"/>
           <prop k="vertical_anchor_point" v="1"/>
         </layer>
       </symbol>
       <symbol alpha="1" type="marker" name="1">
-        <layer pass="0" class="SimpleMarker" locked="0">
+        <layer pass="0" class="SvgMarker" locked="0">
           <prop k="angle" v="0"/>
-          <prop k="color" v="0,85,0,255"/>
+          <prop k="color" v="#276f31"/>
           <prop k="horizontal_anchor_point" v="1"/>
-          <prop k="name" v="circle"/>
+          <prop k="name" v="symbol/landuse_deciduous.svg"/>
           <prop k="offset" v="0,0"/>
           <prop k="offset_map_unit_scale" v="0,0"/>
           <prop k="offset_unit" v="MM"/>
-          <prop k="outline_color" v="0,0,0,255"/>
-          <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0"/>
+          <prop k="outline_color" v="#000000"/>
+          <prop k="outline_width" v="1"/>
           <prop k="outline_width_map_unit_scale" v="0,0"/>
           <prop k="outline_width_unit" v="MM"/>
           <prop k="scale_method" v="area"/>
-          <prop k="size" v="2"/>
+          <prop k="size" v="5"/>
           <prop k="size_map_unit_scale" v="0,0"/>
           <prop k="size_unit" v="MM"/>
           <prop k="vertical_anchor_point" v="1"/>
@@ -184,7 +181,7 @@
       <symbol alpha="1" type="marker" name="4">
         <layer pass="0" class="SimpleMarker" locked="0">
           <prop k="angle" v="0"/>
-          <prop k="color" v="230,0,0,255"/>
+          <prop k="color" v="201,40,17,255"/>
           <prop k="horizontal_anchor_point" v="1"/>
           <prop k="name" v="rectangle"/>
           <prop k="offset" v="0,0"/>
@@ -205,7 +202,7 @@
       <symbol alpha="1" type="marker" name="5">
         <layer pass="0" class="SimpleMarker" locked="0">
           <prop k="angle" v="0"/>
-          <prop k="color" v="255,166,0,255"/>
+          <prop k="color" v="255,51,22,255"/>
           <prop k="horizontal_anchor_point" v="1"/>
           <prop k="name" v="rectangle"/>
           <prop k="offset" v="0,0"/>
@@ -226,7 +223,7 @@
       <symbol alpha="1" type="marker" name="6">
         <layer pass="0" class="SimpleMarker" locked="0">
           <prop k="angle" v="0"/>
-          <prop k="color" v="255,242,0,255"/>
+          <prop k="color" v="87,110,146,255"/>
           <prop k="horizontal_anchor_point" v="1"/>
           <prop k="name" v="rectangle"/>
           <prop k="offset" v="0,0"/>
@@ -247,7 +244,7 @@
       <symbol alpha="1" type="marker" name="7">
         <layer pass="0" class="SimpleMarker" locked="0">
           <prop k="angle" v="0"/>
-          <prop k="color" v="77,255,255,255"/>
+          <prop k="color" v="39,111,49,255"/>
           <prop k="horizontal_anchor_point" v="1"/>
           <prop k="name" v="rectangle"/>
           <prop k="offset" v="0,0"/>
@@ -286,54 +283,8 @@
           <prop k="vertical_anchor_point" v="1"/>
         </layer>
       </symbol>
-      <symbol alpha="1" type="marker" name="9">
-        <layer pass="0" class="SimpleMarker" locked="0">
-          <prop k="angle" v="0"/>
-          <prop k="color" v="0,0,0,255"/>
-          <prop k="horizontal_anchor_point" v="1"/>
-          <prop k="name" v="regular_star"/>
-          <prop k="offset" v="0,0"/>
-          <prop k="offset_map_unit_scale" v="0,0"/>
-          <prop k="offset_unit" v="MM"/>
-          <prop k="outline_color" v="0,0,0,255"/>
-          <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0"/>
-          <prop k="outline_width_map_unit_scale" v="0,0"/>
-          <prop k="outline_width_unit" v="MM"/>
-          <prop k="scale_method" v="area"/>
-          <prop k="size" v="2"/>
-          <prop k="size_map_unit_scale" v="0,0"/>
-          <prop k="size_unit" v="MM"/>
-          <prop k="vertical_anchor_point" v="1"/>
-        </layer>
-      </symbol>
     </symbols>
     <legendsymbols/>
-    <source-symbol>
-      <symbol alpha="1" type="marker" name="0">
-        <layer pass="0" class="SimpleMarker" locked="0">
-          <prop k="angle" v="0"/>
-          <prop k="color" v="154,231,216,255"/>
-          <prop k="horizontal_anchor_point" v="1"/>
-          <prop k="name" v="circle"/>
-          <prop k="offset" v="0,0"/>
-          <prop k="offset_map_unit_scale" v="0,0"/>
-          <prop k="offset_unit" v="MM"/>
-          <prop k="outline_color" v="0,0,0,255"/>
-          <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0"/>
-          <prop k="outline_width_map_unit_scale" v="0,0"/>
-          <prop k="outline_width_unit" v="MM"/>
-          <prop k="scale_method" v="area"/>
-          <prop k="size" v="2"/>
-          <prop k="size_map_unit_scale" v="0,0"/>
-          <prop k="size_unit" v="MM"/>
-          <prop k="vertical_anchor_point" v="1"/>
-        </layer>
-      </symbol>
-    </source-symbol>
-    <rotation/>
-    <sizescale scalemethod="area"/>
   </renderer-v2>
   <customproperties>
     <property key="labeling" value="pal"/>
@@ -516,10 +467,10 @@
   <excludeAttributesWFS/>
   <attributeEditorForm>
     <attributeEditorContainer name="überlagernder Punkt">
-      <attributeEditorField index="3" name="typ_bezeichnung"/>
-      <attributeEditorField index="4" name="typ_abkuerzung"/>
-      <attributeEditorField index="5" name="typ_verbindlichkeit"/>
-      <attributeEditorField index="6" name="typ_bemerkungen"/>
+      <attributeEditorField index="2" name="typ_bezeichnung"/>
+      <attributeEditorField index="3" name="typ_abkuerzung"/>
+      <attributeEditorField index="4" name="typ_verbindlichkeit"/>
+      <attributeEditorField index="5" name="typ_bemerkungen"/>
       <attributeEditorField index="7" name="typ_kt"/>
       <attributeEditorField index="8" name="typ_code_kommunal"/>
       <attributeEditorField index="9" name="name_nummer"/>

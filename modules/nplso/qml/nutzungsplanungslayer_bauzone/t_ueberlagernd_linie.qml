@@ -4,9 +4,6 @@
     <edittype widgetv2type="TextEdit" name="t_id">
       <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
     </edittype>
-    <edittype widgetv2type="TextEdit" name="t_datasetname">
-      <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-    </edittype>
     <edittype widgetv2type="TextEdit" name="t_ili_tid">
       <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
     </edittype>
@@ -20,6 +17,9 @@
       <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
     </edittype>
     <edittype widgetv2type="TextEdit" name="typ_bemerkungen">
+      <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+    </edittype>
+    <edittype widgetv2type="TextEdit" name="typ_kt_txt">
       <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
     </edittype>
     <edittype widgetv2type="TextEdit" name="typ_kt">
@@ -83,14 +83,14 @@
       <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
     </edittype>
   </edittypes>
-  <renderer-v2 attr="typ_kt" symbollevels="0" type="categorizedSymbol">
-    <categories>
-      <category render="true" symbol="0" value="N790_Wanderwege" html="" label="N790_Wanderwege"/>
-      <category render="true" symbol="1" value="N791_historische_Verkehrswege" html="" label="N791_historische_Verkehrswege"/>
-      <category render="true" symbol="2" value="N792_Waldgrenze" html="" label="N792_Waldgrenze"/>
-      <category render="true" symbol="3" value="N793_negative_Waldfeststellung" html="" label="N793_negative_Waldfeststellung"/>
-      <category render="true" symbol="4" value="N799_weitere_linienbezogene_Festlegungen_NP" html="" label="N799_weitere_linienbezogene_Festlegungen_NP"/>
-    </categories>
+  <renderer-v2 symbollevels="0" type="RuleRenderer">
+    <rules key="{a40e0f1d-5161-4511-bd1f-b75f9ca28376}">
+      <rule filter="typ_kt = 'N790'" key="{5557e8ca-a6fb-4409-a7ac-a72a9da7bdaa}" symbol="0" label="790 Wanderwege"/>
+      <rule filter="typ_kt = 'N791'" key="{47d06375-3a0f-4305-8a32-b9f9f9850e4b}" symbol="1" label="791 historische Verkehrswege"/>
+      <rule filter="typ_kt = 'N792'" key="{ff11aa8a-d11f-4c8f-97a3-309f3eb8345f}" symbol="2" label="792 Waldgrenze"/>
+      <rule filter="typ_kt = 'N793'" key="{9faef139-3de8-45d4-8446-73b3b3bce044}" symbol="3" label="793 negative Waldfeststellung"/>
+      <rule filter="typ_kt = 'N799'" key="{f2ff21be-efc2-4dd5-bc1f-fafb52c7b6b4}" symbol="4" label="799 weitere linienbezogene Festlegungen NP"/>
+    </rules>
     <symbols>
       <symbol alpha="1" type="line" name="0">
         <layer pass="0" class="SimpleLine" locked="0">
@@ -189,29 +189,6 @@
       </symbol>
     </symbols>
     <legendsymbols/>
-    <source-symbol>
-      <symbol alpha="1" type="line" name="0">
-        <layer pass="0" class="SimpleLine" locked="0">
-          <prop k="capstyle" v="square"/>
-          <prop k="customdash" v="5;2"/>
-          <prop k="customdash_map_unit_scale" v="0,0"/>
-          <prop k="customdash_unit" v="MM"/>
-          <prop k="draw_inside_polygon" v="0"/>
-          <prop k="joinstyle" v="bevel"/>
-          <prop k="line_color" v="220,178,38,255"/>
-          <prop k="line_style" v="solid"/>
-          <prop k="line_width" v="0.26"/>
-          <prop k="line_width_unit" v="MM"/>
-          <prop k="offset" v="0"/>
-          <prop k="offset_map_unit_scale" v="0,0"/>
-          <prop k="offset_unit" v="MM"/>
-          <prop k="use_custom_dash" v="0"/>
-          <prop k="width_map_unit_scale" v="0,0"/>
-        </layer>
-      </symbol>
-    </source-symbol>
-    <rotation/>
-    <sizescale scalemethod="area"/>
   </renderer-v2>
   <customproperties>
     <property key="labeling" value="pal"/>
@@ -394,10 +371,10 @@
   <excludeAttributesWFS/>
   <attributeEditorForm>
     <attributeEditorContainer name="überlagernde Linie">
-      <attributeEditorField index="3" name="typ_bezeichnung"/>
-      <attributeEditorField index="4" name="typ_abkuerzung"/>
-      <attributeEditorField index="5" name="typ_verbindlichkeit"/>
-      <attributeEditorField index="6" name="typ_bemerkungen"/>
+      <attributeEditorField index="2" name="typ_bezeichnung"/>
+      <attributeEditorField index="3" name="typ_abkuerzung"/>
+      <attributeEditorField index="4" name="typ_verbindlichkeit"/>
+      <attributeEditorField index="5" name="typ_bemerkungen"/>
       <attributeEditorField index="7" name="typ_kt"/>
       <attributeEditorField index="8" name="typ_code_kommunal"/>
       <attributeEditorField index="9" name="name_nummer"/>

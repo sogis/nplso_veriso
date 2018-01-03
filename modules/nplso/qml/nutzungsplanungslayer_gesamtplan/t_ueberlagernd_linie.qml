@@ -1,10 +1,7 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis version="2.15.2-Dev" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+<qgis version="2.15.2-Dev" minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
   <edittypes>
     <edittype widgetv2type="TextEdit" name="t_id">
-      <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-    </edittype>
-    <edittype widgetv2type="TextEdit" name="t_datasetname">
       <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
     </edittype>
     <edittype widgetv2type="TextEdit" name="t_ili_tid">
@@ -20,6 +17,9 @@
       <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
     </edittype>
     <edittype widgetv2type="TextEdit" name="typ_bemerkungen">
+      <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+    </edittype>
+    <edittype widgetv2type="TextEdit" name="typ_kt_txt">
       <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
     </edittype>
     <edittype widgetv2type="TextEdit" name="typ_kt">
@@ -83,12 +83,14 @@
       <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
     </edittype>
   </edittypes>
-  <renderer-v2 attr="typ_kt" symbollevels="0" type="categorizedSymbol">
-    <categories>
-      <category render="true" symbol="0" value="N790_Wanderwege" html="" label="N790_Wanderwege"/>
-      <category render="true" symbol="1" value="N791_historische_Verkehrswege" html="" label="N791_historische_Verkehrswege"/>
-      <category render="true" symbol="2" value="N799_weitere_linienbezogene_Festlegungen_NP" html="" label="N799_weitere_linienbezogene_Festlegungen_NP"/>
-    </categories>
+  <renderer-v2 symbollevels="0" type="RuleRenderer">
+    <rules key="{a40e0f1d-5161-4511-bd1f-b75f9ca28376}">
+      <rule filter="typ_kt = 'N790'" key="{5557e8ca-a6fb-4409-a7ac-a72a9da7bdaa}" symbol="0" label="790 Wanderwege"/>
+      <rule filter="typ_kt = 'N791'" key="{47d06375-3a0f-4305-8a32-b9f9f9850e4b}" symbol="1" label="791 historische Verkehrswege"/>
+      <rule filter="typ_kt = 'N792'" key="{ff11aa8a-d11f-4c8f-97a3-309f3eb8345f}" symbol="2" label="792 Waldgrenze"/>
+      <rule filter="typ_kt = 'N793'" key="{9faef139-3de8-45d4-8446-73b3b3bce044}" symbol="3" label="793 negative Waldfeststellung"/>
+      <rule filter="typ_kt = 'N799'" key="{f2ff21be-efc2-4dd5-bc1f-fafb52c7b6b4}" symbol="4" label="799 weitere linienbezogene Festlegungen NP"/>
+    </rules>
     <symbols>
       <symbol alpha="1" type="line" name="0">
         <layer pass="0" class="SimpleLine" locked="0">
@@ -136,6 +138,44 @@
           <prop k="customdash_unit" v="MM"/>
           <prop k="draw_inside_polygon" v="0"/>
           <prop k="joinstyle" v="bevel"/>
+          <prop k="line_color" v="10,104,19,255"/>
+          <prop k="line_style" v="solid"/>
+          <prop k="line_width" v="0.46"/>
+          <prop k="line_width_unit" v="MM"/>
+          <prop k="offset" v="0"/>
+          <prop k="offset_map_unit_scale" v="0,0"/>
+          <prop k="offset_unit" v="MM"/>
+          <prop k="use_custom_dash" v="0"/>
+          <prop k="width_map_unit_scale" v="0,0"/>
+        </layer>
+      </symbol>
+      <symbol alpha="1" type="line" name="3">
+        <layer pass="0" class="SimpleLine" locked="0">
+          <prop k="capstyle" v="square"/>
+          <prop k="customdash" v="5;2"/>
+          <prop k="customdash_map_unit_scale" v="0,0"/>
+          <prop k="customdash_unit" v="MM"/>
+          <prop k="draw_inside_polygon" v="0"/>
+          <prop k="joinstyle" v="bevel"/>
+          <prop k="line_color" v="58,227,24,255"/>
+          <prop k="line_style" v="solid"/>
+          <prop k="line_width" v="0.66"/>
+          <prop k="line_width_unit" v="MM"/>
+          <prop k="offset" v="0"/>
+          <prop k="offset_map_unit_scale" v="0,0"/>
+          <prop k="offset_unit" v="MM"/>
+          <prop k="use_custom_dash" v="0"/>
+          <prop k="width_map_unit_scale" v="0,0"/>
+        </layer>
+      </symbol>
+      <symbol alpha="1" type="line" name="4">
+        <layer pass="0" class="SimpleLine" locked="0">
+          <prop k="capstyle" v="square"/>
+          <prop k="customdash" v="5;2"/>
+          <prop k="customdash_map_unit_scale" v="0,0"/>
+          <prop k="customdash_unit" v="MM"/>
+          <prop k="draw_inside_polygon" v="0"/>
+          <prop k="joinstyle" v="bevel"/>
           <prop k="line_color" v="0,0,255,255"/>
           <prop k="line_style" v="solid"/>
           <prop k="line_width" v="0.5"/>
@@ -149,29 +189,6 @@
       </symbol>
     </symbols>
     <legendsymbols/>
-    <source-symbol>
-      <symbol alpha="1" type="line" name="0">
-        <layer pass="0" class="SimpleLine" locked="0">
-          <prop k="capstyle" v="square"/>
-          <prop k="customdash" v="5;2"/>
-          <prop k="customdash_map_unit_scale" v="0,0"/>
-          <prop k="customdash_unit" v="MM"/>
-          <prop k="draw_inside_polygon" v="0"/>
-          <prop k="joinstyle" v="bevel"/>
-          <prop k="line_color" v="220,178,38,255"/>
-          <prop k="line_style" v="solid"/>
-          <prop k="line_width" v="0.26"/>
-          <prop k="line_width_unit" v="MM"/>
-          <prop k="offset" v="0"/>
-          <prop k="offset_map_unit_scale" v="0,0"/>
-          <prop k="offset_unit" v="MM"/>
-          <prop k="use_custom_dash" v="0"/>
-          <prop k="width_map_unit_scale" v="0,0"/>
-        </layer>
-      </symbol>
-    </source-symbol>
-    <rotation/>
-    <sizescale scalemethod="area"/>
   </renderer-v2>
   <customproperties>
     <property key="labeling" value="pal"/>
@@ -349,8 +366,40 @@
   <editforminit/>
   <featformsuppress>0</featformsuppress>
   <annotationform>../../../../verifikation_pilot/Balsthal</annotationform>
-  <editorlayout>generatedlayout</editorlayout>
+  <editorlayout>tablayout</editorlayout>
   <excludeAttributesWMS/>
   <excludeAttributesWFS/>
-  <attributeactions/>
+  <attributeEditorForm>
+    <attributeEditorContainer name="überlagernde Linie">
+      <attributeEditorField index="2" name="typ_bezeichnung"/>
+      <attributeEditorField index="3" name="typ_abkuerzung"/>
+      <attributeEditorField index="4" name="typ_verbindlichkeit"/>
+      <attributeEditorField index="5" name="typ_bemerkungen"/>
+      <attributeEditorField index="7" name="typ_kt"/>
+      <attributeEditorField index="8" name="typ_code_kommunal"/>
+      <attributeEditorField index="9" name="name_nummer"/>
+      <attributeEditorField index="10" name="rechtsstatus"/>
+      <attributeEditorField index="11" name="publiziertab"/>
+      <attributeEditorField index="12" name="bemerkungen"/>
+      <attributeEditorField index="13" name="erfasser"/>
+      <attributeEditorField index="14" name="datum"/>
+    </attributeEditorContainer>
+    <attributeEditorContainer name="Dokumentation">
+      <attributeEditorField index="15" name="dok_id"/>
+      <attributeEditorField index="16" name="dok_titel"/>
+      <attributeEditorField index="17" name="dok_offiziellertitel"/>
+      <attributeEditorField index="18" name="dok_abkuerzung"/>
+      <attributeEditorField index="19" name="dok_offiziellenr"/>
+      <attributeEditorField index="20" name="dok_kanton"/>
+      <attributeEditorField index="21" name="dok_gemeinde"/>
+      <attributeEditorField index="22" name="dok_publiziertab"/>
+      <attributeEditorField index="23" name="dok_rechtsstatus"/>
+      <attributeEditorField index="24" name="dok_textimweb"/>
+      <attributeEditorField index="25" name="dok_bemerkungen"/>
+      <attributeEditorField index="26" name="dok_rechtsvorschrift"/>
+    </attributeEditorContainer>
+  </attributeEditorForm>
+  <attributeactions>
+    <actionsetting action="[% &quot;dok_textimweb&quot; %]" icon="" capture="0" type="5" name="Dokument öffnen"/>
+  </attributeactions>
 </qgis>

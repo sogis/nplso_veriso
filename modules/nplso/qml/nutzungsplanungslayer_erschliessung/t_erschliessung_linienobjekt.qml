@@ -1,10 +1,7 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis version="2.15.2-Dev" minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+<qgis version="2.15.2-Dev" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
   <edittypes>
     <edittype widgetv2type="TextEdit" name="t_id">
-      <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-    </edittype>
-    <edittype widgetv2type="TextEdit" name="t_datasetname">
       <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
     </edittype>
     <edittype widgetv2type="TextEdit" name="t_ili_tid">
@@ -20,6 +17,9 @@
       <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
     </edittype>
     <edittype widgetv2type="TextEdit" name="typ_bemerkungen">
+      <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+    </edittype>
+    <edittype widgetv2type="TextEdit" name="typ_kt_txt">
       <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
     </edittype>
     <edittype widgetv2type="TextEdit" name="typ_kt">
@@ -83,28 +83,27 @@
       <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
     </edittype>
   </edittypes>
-  <renderer-v2 attr="typ_kt" symbollevels="0" type="categorizedSymbol">
-    <categories>
-      <category render="true" symbol="0" value="E710_eidgenoessische_Baulinie" html="" label="E710_eidgenoessische_Baulinie"/>
-      <category render="true" symbol="1" value="E711_Baulinie_Strasse_kantonal" html="" label="E711_Baulinie_Strasse_kantonal"/>
-      <category render="true" symbol="2" value="E712_Vorbaulinie_kantonal" html="" label="E712_Vorbaulinie_kantonal"/>
-      <category render="true" symbol="3" value="E713_Gestaltungsbaulinie_kantonal" html="" label="E713_Gestaltungsbaulinie_kantonal"/>
-      <category render="true" symbol="4" value="E714_Rueckwaertige_Baulinie_kantonal" html="" label="E714_Rueckwaertige_Baulinie_kantonal"/>
-      <category render="true" symbol="5" value="E715_Baulinie_Infrastruktur_kantonal" html="" label="E715_Baulinie_Infrastruktur_kantonal"/>
-      <category render="true" symbol="6" value="E719_weitere_nationale_und_kantonale_Baulinien" html="" label="E719_weitere_nationale_und_kantonale_Baulinien"/>
-      <category render="true" symbol="7" value="E720_Baulinie_Strasse" html="" label="E720_Baulinie_Strasse"/>
-      <category render="true" symbol="8" value="E721_Vorbaulinie" html="" label="E721_Vorbaulinie"/>
-      <category render="true" symbol="9" value="E722_Gestaltungsbaulinie" html="" label="E722_Gestaltungsbaulinie"/>
-      <category render="true" symbol="10" value="E723_Rueckwaertige_Baulinie" html="" label="E723_Rueckwaertige_Baulinie"/>
-      <category render="true" symbol="11" value="E724_Baulinie_Infrastruktur" html="" label="E724_Baulinie_Infrastruktur"/>
-      <category render="true" symbol="12" value="E725_Waldabstandslinie" html="" label="E725_Waldabstandslinie"/>
-      <category render="true" symbol="13" value="E726_Baulinie_Hecke" html="" label="E726_Baulinie_Hecke"/>
-      <category render="true" symbol="14" value="E727_Baulinie_Gewaesser" html="" label="E727_Baulinie_Gewaesser"/>
-      <category render="true" symbol="15" value="E728_Immissionsstreifen" html="" label="E728_Immissionsstreifen"/>
-      <category render="true" symbol="16" value="E729_weitere_kommunale_Baulinien" html="" label="E729_weitere_kommunale_Baulinien"/>
-      <category render="true" symbol="17" value="E789_weitere_linienbezogene_Objekte_EP" html="" label="E789_weitere_linienbezogene_Objekte_EP"/>
-      <category render="true" symbol="18" value="" html="" label=""/>
-    </categories>
+  <renderer-v2 symbollevels="0" type="RuleRenderer">
+    <rules key="{03762789-f696-4f65-b00d-ba76b947afb5}">
+      <rule filter="typ_kt = 'E710'" key="{7425c578-2a79-4508-a021-fe1be10c1c1e}" symbol="0" label="eidgenoessische Baulinie"/>
+      <rule filter="typ_kt = 'E711'" key="{8e7449c6-802f-4bf0-89c0-127b545cf75f}" symbol="1" label="Baulinie Strasse kantonal"/>
+      <rule filter="typ_kt = 'E712'" key="{224d5cee-e85a-4dcc-aa47-4c64abb70fbb}" symbol="2" label="Vorbaulinie kantonal"/>
+      <rule filter="typ_kt = 'E713'" key="{af0fb5e7-9d37-4f6b-a558-415f72d5e3eb}" symbol="3" label="Gestaltungsbaulinie kantonal"/>
+      <rule filter="typ_kt = 'E714'" key="{8dfc9478-b761-41fd-a2ac-0c749b103509}" symbol="4" label="Rückwärtige Baulinie kantonal"/>
+      <rule filter="typ_kt = 'E715'" key="{b09f8712-b8f1-4c3e-acca-729d7b7ec111}" symbol="5" label="Baulinie Infrastruktur kantonal"/>
+      <rule filter="typ_kt = 'E719'" key="{f76d54a6-e282-4fd9-b714-0a93c67789c2}" symbol="6" label="weitere nationale und kantonale Baulinien"/>
+      <rule filter="typ_kt = 'E720'" key="{fb48d2ed-a2eb-4940-86ee-c1191f07d206}" symbol="7" label="Baulinie Strasse"/>
+      <rule filter="typ_kt = 'E721'" key="{1376b4eb-560d-4c6a-8314-6de334f3f9d2}" symbol="8" label="Vorbaulinie"/>
+      <rule filter="typ_kt = 'E722'" key="{7a6df3d9-75dd-4589-81a1-88b08501adbb}" symbol="9" label="Gestaltungsbaulinie"/>
+      <rule filter="typ_kt = 'E723'" key="{fd7727db-29a6-4cf1-8c37-286f97cb3f92}" symbol="10" label="Rückwärtige Baulinie"/>
+      <rule filter="typ_kt = 'E724'" key="{5d8bda7a-ed57-44a6-8283-a206371411be}" symbol="11" label="Baulinie Infrastruktur"/>
+      <rule filter="typ_kt = 'E725'" key="{bb162d5c-874a-47d9-ac44-aa6c273b60a4}" symbol="12" label="Waldabstandslinie"/>
+      <rule filter="typ_kt = 'E726'" key="{00926b83-1bd3-4025-ab2c-bc5f5360a48b}" symbol="13" label="Baulinie Hecke"/>
+      <rule filter="typ_kt = 'E727'" key="{5af9907a-79f6-4ce7-970d-382a8ae13b21}" symbol="14" label="Baulinie Gewässer"/>
+      <rule filter="typ_kt = 'E728'" key="{dc2aaf55-1e6e-482d-89d2-77c008a3f64b}" symbol="15" label="E728_Immissionsstreifen"/>
+      <rule filter="typ_kt = 'E729'" key="{ec97d9c2-c1a3-4c47-9000-3486a41f86a3}" symbol="16" label="weitere kommunale Baulinien"/>
+      <rule filter="typ_kt = 'E789'" key="{1269c820-1f5c-4831-8d4a-0299c26addb9}" symbol="17" label="weitere linienbezogene Objekte EP"/>
+    </rules>
     <symbols>
       <symbol alpha="1" type="line" name="0">
         <layer pass="0" class="SimpleLine" locked="0">
@@ -114,9 +113,9 @@
           <prop k="customdash_unit" v="MM"/>
           <prop k="draw_inside_polygon" v="0"/>
           <prop k="joinstyle" v="bevel"/>
-          <prop k="line_color" v="89,51,25,255"/>
-          <prop k="line_style" v="dot"/>
-          <prop k="line_width" v="0.5"/>
+          <prop k="line_color" v="142,0,19,255"/>
+          <prop k="line_style" v="dash dot"/>
+          <prop k="line_width" v="0.7"/>
           <prop k="line_width_unit" v="MM"/>
           <prop k="offset" v="0"/>
           <prop k="offset_map_unit_scale" v="0,0"/>
@@ -133,9 +132,9 @@
           <prop k="customdash_unit" v="MM"/>
           <prop k="draw_inside_polygon" v="0"/>
           <prop k="joinstyle" v="bevel"/>
-          <prop k="line_color" v="179,128,102,255"/>
-          <prop k="line_style" v="dot"/>
-          <prop k="line_width" v="0.5"/>
+          <prop k="line_color" v="255,127,0,255"/>
+          <prop k="line_style" v="dash dot"/>
+          <prop k="line_width" v="0.7"/>
           <prop k="line_width_unit" v="MM"/>
           <prop k="offset" v="0"/>
           <prop k="offset_map_unit_scale" v="0,0"/>
@@ -154,7 +153,7 @@
           <prop k="joinstyle" v="bevel"/>
           <prop k="line_color" v="153,242,255,255"/>
           <prop k="line_style" v="dash dot"/>
-          <prop k="line_width" v="0.5"/>
+          <prop k="line_width" v="0.7"/>
           <prop k="line_width_unit" v="MM"/>
           <prop k="offset" v="0"/>
           <prop k="offset_map_unit_scale" v="0,0"/>
@@ -173,7 +172,7 @@
           <prop k="joinstyle" v="bevel"/>
           <prop k="line_color" v="90,90,90,255"/>
           <prop k="line_style" v="dash dot"/>
-          <prop k="line_width" v="0.5"/>
+          <prop k="line_width" v="0.7"/>
           <prop k="line_width_unit" v="MM"/>
           <prop k="offset" v="0"/>
           <prop k="offset_map_unit_scale" v="0,0"/>
@@ -192,7 +191,7 @@
           <prop k="joinstyle" v="bevel"/>
           <prop k="line_color" v="0,255,0,255"/>
           <prop k="line_style" v="dash dot"/>
-          <prop k="line_width" v="0.5"/>
+          <prop k="line_width" v="0.7"/>
           <prop k="line_width_unit" v="MM"/>
           <prop k="offset" v="0"/>
           <prop k="offset_map_unit_scale" v="0,0"/>
@@ -211,7 +210,7 @@
           <prop k="joinstyle" v="bevel"/>
           <prop k="line_color" v="77,179,0,255"/>
           <prop k="line_style" v="dash dot"/>
-          <prop k="line_width" v="0.5"/>
+          <prop k="line_width" v="0.7"/>
           <prop k="line_width_unit" v="MM"/>
           <prop k="offset" v="0"/>
           <prop k="offset_map_unit_scale" v="0,0"/>
@@ -230,7 +229,7 @@
           <prop k="joinstyle" v="bevel"/>
           <prop k="line_color" v="0,161,230,255"/>
           <prop k="line_style" v="dash dot"/>
-          <prop k="line_width" v="0.5"/>
+          <prop k="line_width" v="0.7"/>
           <prop k="line_width_unit" v="MM"/>
           <prop k="offset" v="0"/>
           <prop k="offset_map_unit_scale" v="0,0"/>
@@ -249,7 +248,7 @@
           <prop k="joinstyle" v="bevel"/>
           <prop k="line_color" v="72,0,108,255"/>
           <prop k="line_style" v="dash dot"/>
-          <prop k="line_width" v="0.5"/>
+          <prop k="line_width" v="0.7"/>
           <prop k="line_width_unit" v="MM"/>
           <prop k="offset" v="0"/>
           <prop k="offset_map_unit_scale" v="0,0"/>
@@ -266,9 +265,9 @@
           <prop k="customdash_unit" v="MM"/>
           <prop k="draw_inside_polygon" v="0"/>
           <prop k="joinstyle" v="bevel"/>
-          <prop k="line_color" v="255,255,0,255"/>
+          <prop k="line_color" v="255,204,0,255"/>
           <prop k="line_style" v="dash dot"/>
-          <prop k="line_width" v="0.5"/>
+          <prop k="line_width" v="0.7"/>
           <prop k="line_width_unit" v="MM"/>
           <prop k="offset" v="0"/>
           <prop k="offset_map_unit_scale" v="0,0"/>
@@ -287,26 +286,7 @@
           <prop k="joinstyle" v="bevel"/>
           <prop k="line_color" v="179,89,255,255"/>
           <prop k="line_style" v="dash dot"/>
-          <prop k="line_width" v="0.5"/>
-          <prop k="line_width_unit" v="MM"/>
-          <prop k="offset" v="0"/>
-          <prop k="offset_map_unit_scale" v="0,0"/>
-          <prop k="offset_unit" v="MM"/>
-          <prop k="use_custom_dash" v="0"/>
-          <prop k="width_map_unit_scale" v="0,0"/>
-        </layer>
-      </symbol>
-      <symbol alpha="1" type="line" name="18">
-        <layer pass="0" class="SimpleLine" locked="0">
-          <prop k="capstyle" v="square"/>
-          <prop k="customdash" v="5;2"/>
-          <prop k="customdash_map_unit_scale" v="0,0"/>
-          <prop k="customdash_unit" v="MM"/>
-          <prop k="draw_inside_polygon" v="0"/>
-          <prop k="joinstyle" v="bevel"/>
-          <prop k="line_color" v="0,0,0,255"/>
-          <prop k="line_style" v="solid"/>
-          <prop k="line_width" v="0.5"/>
+          <prop k="line_width" v="0.7"/>
           <prop k="line_width_unit" v="MM"/>
           <prop k="offset" v="0"/>
           <prop k="offset_map_unit_scale" v="0,0"/>
@@ -324,8 +304,8 @@
           <prop k="draw_inside_polygon" v="0"/>
           <prop k="joinstyle" v="bevel"/>
           <prop k="line_color" v="255,77,0,255"/>
-          <prop k="line_style" v="dot"/>
-          <prop k="line_width" v="0.5"/>
+          <prop k="line_style" v="solid"/>
+          <prop k="line_width" v="0.7"/>
           <prop k="line_width_unit" v="MM"/>
           <prop k="offset" v="0"/>
           <prop k="offset_map_unit_scale" v="0,0"/>
@@ -343,8 +323,8 @@
           <prop k="draw_inside_polygon" v="0"/>
           <prop k="joinstyle" v="bevel"/>
           <prop k="line_color" v="218,107,255,255"/>
-          <prop k="line_style" v="dot"/>
-          <prop k="line_width" v="0.5"/>
+          <prop k="line_style" v="solid"/>
+          <prop k="line_width" v="0.7"/>
           <prop k="line_width_unit" v="MM"/>
           <prop k="offset" v="0"/>
           <prop k="offset_map_unit_scale" v="0,0"/>
@@ -362,8 +342,8 @@
           <prop k="draw_inside_polygon" v="0"/>
           <prop k="joinstyle" v="bevel"/>
           <prop k="line_color" v="79,125,188,255"/>
-          <prop k="line_style" v="dot"/>
-          <prop k="line_width" v="0.5"/>
+          <prop k="line_style" v="dash dot"/>
+          <prop k="line_width" v="0.7"/>
           <prop k="line_width_unit" v="MM"/>
           <prop k="offset" v="0"/>
           <prop k="offset_map_unit_scale" v="0,0"/>
@@ -381,8 +361,8 @@
           <prop k="draw_inside_polygon" v="0"/>
           <prop k="joinstyle" v="bevel"/>
           <prop k="line_color" v="122,122,122,255"/>
-          <prop k="line_style" v="dot"/>
-          <prop k="line_width" v="0.5"/>
+          <prop k="line_style" v="dash dot"/>
+          <prop k="line_width" v="0.7"/>
           <prop k="line_width_unit" v="MM"/>
           <prop k="offset" v="0"/>
           <prop k="offset_map_unit_scale" v="0,0"/>
@@ -400,8 +380,8 @@
           <prop k="draw_inside_polygon" v="0"/>
           <prop k="joinstyle" v="bevel"/>
           <prop k="line_color" v="170,170,255,255"/>
-          <prop k="line_style" v="dot"/>
-          <prop k="line_width" v="0.5"/>
+          <prop k="line_style" v="dash dot"/>
+          <prop k="line_width" v="0.7"/>
           <prop k="line_width_unit" v="MM"/>
           <prop k="offset" v="0"/>
           <prop k="offset_map_unit_scale" v="0,0"/>
@@ -418,9 +398,9 @@
           <prop k="customdash_unit" v="MM"/>
           <prop k="draw_inside_polygon" v="0"/>
           <prop k="joinstyle" v="bevel"/>
-          <prop k="line_color" v="0,0,0,255"/>
+          <prop k="line_color" v="170,170,255,255"/>
           <prop k="line_style" v="dash dot"/>
-          <prop k="line_width" v="0.5"/>
+          <prop k="line_width" v="0.7"/>
           <prop k="line_width_unit" v="MM"/>
           <prop k="offset" v="0"/>
           <prop k="offset_map_unit_scale" v="0,0"/>
@@ -437,9 +417,9 @@
           <prop k="customdash_unit" v="MM"/>
           <prop k="draw_inside_polygon" v="0"/>
           <prop k="joinstyle" v="bevel"/>
-          <prop k="line_color" v="255,166,0,255"/>
-          <prop k="line_style" v="dash dot"/>
-          <prop k="line_width" v="0.5"/>
+          <prop k="line_color" v="87,189,243,255"/>
+          <prop k="line_style" v="solid"/>
+          <prop k="line_width" v="0.7"/>
           <prop k="line_width_unit" v="MM"/>
           <prop k="offset" v="0"/>
           <prop k="offset_map_unit_scale" v="0,0"/>
@@ -457,8 +437,8 @@
           <prop k="draw_inside_polygon" v="0"/>
           <prop k="joinstyle" v="bevel"/>
           <prop k="line_color" v="255,0,255,255"/>
-          <prop k="line_style" v="dash dot"/>
-          <prop k="line_width" v="0.5"/>
+          <prop k="line_style" v="solid"/>
+          <prop k="line_width" v="0.7"/>
           <prop k="line_width_unit" v="MM"/>
           <prop k="offset" v="0"/>
           <prop k="offset_map_unit_scale" v="0,0"/>
@@ -469,36 +449,6 @@
       </symbol>
     </symbols>
     <legendsymbols/>
-    <source-symbol>
-      <symbol alpha="1" type="line" name="0">
-        <layer pass="0" class="SimpleLine" locked="0">
-          <prop k="capstyle" v="square"/>
-          <prop k="customdash" v="5;2"/>
-          <prop k="customdash_map_unit_scale" v="0,0"/>
-          <prop k="customdash_unit" v="MM"/>
-          <prop k="draw_inside_polygon" v="0"/>
-          <prop k="joinstyle" v="bevel"/>
-          <prop k="line_color" v="88,168,213,255"/>
-          <prop k="line_style" v="solid"/>
-          <prop k="line_width" v="0.26"/>
-          <prop k="line_width_unit" v="MM"/>
-          <prop k="offset" v="0"/>
-          <prop k="offset_map_unit_scale" v="0,0"/>
-          <prop k="offset_unit" v="MM"/>
-          <prop k="use_custom_dash" v="0"/>
-          <prop k="width_map_unit_scale" v="0,0"/>
-        </layer>
-      </symbol>
-    </source-symbol>
-    <colorramp type="gradient" name="[source]">
-      <prop k="color1" v="255,255,212,255"/>
-      <prop k="color2" v="153,52,4,255"/>
-      <prop k="discrete" v="0"/>
-      <prop k="stops" v="0.25;254,217,142,255:0.5;254,153,41,255:0.75;217,95,14,255"/>
-    </colorramp>
-    <invertedcolorramp value="0"/>
-    <rotation/>
-    <sizescale scalemethod="area"/>
   </renderer-v2>
   <customproperties>
     <property key="labeling" value="pal"/>
