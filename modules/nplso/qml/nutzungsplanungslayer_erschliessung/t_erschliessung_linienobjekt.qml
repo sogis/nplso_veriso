@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis version="2.15.2-Dev" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+<qgis version="2.15.2-Dev" minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
   <edittypes>
     <edittype widgetv2type="TextEdit" name="t_id">
       <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -85,24 +85,24 @@
   </edittypes>
   <renderer-v2 symbollevels="0" type="RuleRenderer">
     <rules key="{03762789-f696-4f65-b00d-ba76b947afb5}">
-      <rule filter="typ_kt = 'E710'" key="{7425c578-2a79-4508-a021-fe1be10c1c1e}" symbol="0" label="eidgenoessische Baulinie"/>
-      <rule filter="typ_kt = 'E711'" key="{8e7449c6-802f-4bf0-89c0-127b545cf75f}" symbol="1" label="Baulinie Strasse kantonal"/>
-      <rule filter="typ_kt = 'E712'" key="{224d5cee-e85a-4dcc-aa47-4c64abb70fbb}" symbol="2" label="Vorbaulinie kantonal"/>
-      <rule filter="typ_kt = 'E713'" key="{af0fb5e7-9d37-4f6b-a558-415f72d5e3eb}" symbol="3" label="Gestaltungsbaulinie kantonal"/>
-      <rule filter="typ_kt = 'E714'" key="{8dfc9478-b761-41fd-a2ac-0c749b103509}" symbol="4" label="Rückwärtige Baulinie kantonal"/>
-      <rule filter="typ_kt = 'E715'" key="{b09f8712-b8f1-4c3e-acca-729d7b7ec111}" symbol="5" label="Baulinie Infrastruktur kantonal"/>
-      <rule filter="typ_kt = 'E719'" key="{f76d54a6-e282-4fd9-b714-0a93c67789c2}" symbol="6" label="weitere nationale und kantonale Baulinien"/>
-      <rule filter="typ_kt = 'E720'" key="{fb48d2ed-a2eb-4940-86ee-c1191f07d206}" symbol="7" label="Baulinie Strasse"/>
-      <rule filter="typ_kt = 'E721'" key="{1376b4eb-560d-4c6a-8314-6de334f3f9d2}" symbol="8" label="Vorbaulinie"/>
-      <rule filter="typ_kt = 'E722'" key="{7a6df3d9-75dd-4589-81a1-88b08501adbb}" symbol="9" label="Gestaltungsbaulinie"/>
-      <rule filter="typ_kt = 'E723'" key="{fd7727db-29a6-4cf1-8c37-286f97cb3f92}" symbol="10" label="Rückwärtige Baulinie"/>
-      <rule filter="typ_kt = 'E724'" key="{5d8bda7a-ed57-44a6-8283-a206371411be}" symbol="11" label="Baulinie Infrastruktur"/>
-      <rule filter="typ_kt = 'E725'" key="{bb162d5c-874a-47d9-ac44-aa6c273b60a4}" symbol="12" label="Waldabstandslinie"/>
-      <rule filter="typ_kt = 'E726'" key="{00926b83-1bd3-4025-ab2c-bc5f5360a48b}" symbol="13" label="Baulinie Hecke"/>
-      <rule filter="typ_kt = 'E727'" key="{5af9907a-79f6-4ce7-970d-382a8ae13b21}" symbol="14" label="Baulinie Gewässer"/>
-      <rule filter="typ_kt = 'E728'" key="{dc2aaf55-1e6e-482d-89d2-77c008a3f64b}" symbol="15" label="E728_Immissionsstreifen"/>
-      <rule filter="typ_kt = 'E729'" key="{ec97d9c2-c1a3-4c47-9000-3486a41f86a3}" symbol="16" label="weitere kommunale Baulinien"/>
-      <rule filter="typ_kt = 'E789'" key="{1269c820-1f5c-4831-8d4a-0299c26addb9}" symbol="17" label="weitere linienbezogene Objekte EP"/>
+      <rule filter="typ_kt = 'E710'" key="{7425c578-2a79-4508-a021-fe1be10c1c1e}" symbol="0" label="710 eidgenoessische Baulinie"/>
+      <rule filter="typ_kt = 'E711'" key="{8e7449c6-802f-4bf0-89c0-127b545cf75f}" symbol="1" label="711 Baulinie Strasse kantonal"/>
+      <rule filter="typ_kt = 'E712'" key="{224d5cee-e85a-4dcc-aa47-4c64abb70fbb}" symbol="2" label="712 Vorbaulinie kantonal"/>
+      <rule filter="typ_kt = 'E713'" key="{af0fb5e7-9d37-4f6b-a558-415f72d5e3eb}" symbol="3" label="713 Gestaltungsbaulinie kantonal"/>
+      <rule filter="typ_kt = 'E714'" key="{8dfc9478-b761-41fd-a2ac-0c749b103509}" symbol="4" label="714 Rückwärtige Baulinie kantonal"/>
+      <rule filter="typ_kt = 'E715'" key="{b09f8712-b8f1-4c3e-acca-729d7b7ec111}" symbol="5" label="715 Baulinie Infrastruktur kantonal"/>
+      <rule filter="typ_kt = 'E719'" key="{f76d54a6-e282-4fd9-b714-0a93c67789c2}" symbol="6" label="719 weitere nationale und kantonale Baulinien"/>
+      <rule filter="typ_kt = 'E720'" key="{fb48d2ed-a2eb-4940-86ee-c1191f07d206}" symbol="7" label="720 Baulinie Strasse"/>
+      <rule filter="typ_kt = 'E721'" key="{1376b4eb-560d-4c6a-8314-6de334f3f9d2}" symbol="8" label="721 Vorbaulinie"/>
+      <rule filter="typ_kt = 'E722'" key="{7a6df3d9-75dd-4589-81a1-88b08501adbb}" symbol="9" label="722 Gestaltungsbaulinie"/>
+      <rule filter="typ_kt = 'E723'" key="{fd7727db-29a6-4cf1-8c37-286f97cb3f92}" symbol="10" label="723 Rückwärtige Baulinie"/>
+      <rule filter="typ_kt = 'E724'" key="{5d8bda7a-ed57-44a6-8283-a206371411be}" symbol="11" label="724 Baulinie Infrastruktur"/>
+      <rule filter="typ_kt = 'E725'" key="{bb162d5c-874a-47d9-ac44-aa6c273b60a4}" symbol="12" label="725 Waldabstandslinie"/>
+      <rule filter="typ_kt = 'E726'" key="{00926b83-1bd3-4025-ab2c-bc5f5360a48b}" symbol="13" label="726 Baulinie Hecke"/>
+      <rule filter="typ_kt = 'E727'" key="{5af9907a-79f6-4ce7-970d-382a8ae13b21}" symbol="14" label="727 Baulinie Gewässer"/>
+      <rule filter="typ_kt = 'E728'" key="{dc2aaf55-1e6e-482d-89d2-77c008a3f64b}" symbol="15" label="728 Immissionsstreifen"/>
+      <rule filter="typ_kt = 'E729'" key="{ec97d9c2-c1a3-4c47-9000-3486a41f86a3}" symbol="16" label="729 weitere kommunale Baulinien"/>
+      <rule filter="typ_kt = 'E789'" key="{1269c820-1f5c-4831-8d4a-0299c26addb9}" symbol="17" label="789 weitere linienbezogene Objekte EP"/>
     </rules>
     <symbols>
       <symbol alpha="1" type="line" name="0">

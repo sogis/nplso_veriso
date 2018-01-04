@@ -66,7 +66,7 @@ class ComplexCheck(ComplexCheckBase):
                 "featuretype": "t_private_strasse_nicht_plausibel",
                 "geom": "geometrie", "key": "id", "sql": "",
                 "readonly": True, "group": group,
-                "style": "checks/ES_private_strasse_nicht_plausibel.qml"
+                "style": "checks/ES_private_stasse_nicht_plausibel.qml"
             }
             vlayer = self.layer_loader.load(layer, True, True, False)
 
@@ -99,7 +99,7 @@ class ComplexCheck(ComplexCheckBase):
                 "featuretype": "t_gewaesserbaulinie_nicht_plausibel",
                 "geom": "geometrie", "key": "id", "sql": "",
                 "readonly": True, "group": group,
-                "style": "checks/ES_geawaesserbaulinie_nicht_plausibel.qml"
+                "style": "checks/ES_gewaesserbaulinie_nicht_plausibel.qml"
             }
             vlayer = self.layer_loader.load(layer, True, True, False)
 

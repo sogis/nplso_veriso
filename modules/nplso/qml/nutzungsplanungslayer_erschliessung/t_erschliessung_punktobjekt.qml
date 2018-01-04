@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis version="2.15.2-Dev" minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+<qgis version="2.15.2-Dev" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
   <edittypes>
     <edittype widgetv2type="TextEdit" name="t_id">
       <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -85,7 +85,7 @@
   </edittypes>
   <renderer-v2 symbollevels="0" type="RuleRenderer">
     <rules key="{cf74c83e-5fae-4989-81b0-bd62aff1fea9}">
-      <rule filter=" typ_kt = 'E889'" key="{ede758ce-9cd6-4d91-9634-27dd14af0de1}" symbol="0" label="weitere punktbezogene Objekte EP"/>
+      <rule filter=" typ_kt = 'E889'" key="{ede758ce-9cd6-4d91-9634-27dd14af0de1}" symbol="0" label="889 weitere punktbezogene Objekte EP"/>
     </rules>
     <symbols>
       <symbol alpha="1" type="marker" name="0">

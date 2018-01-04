@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis version="2.15.2-Dev" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+<qgis version="2.15.2-Dev" minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
   <edittypes>
     <edittype widgetv2type="TextEdit" name="t_id">
       <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -85,22 +85,22 @@
   </edittypes>
   <renderer-v2 symbollevels="0" type="RuleRenderer">
     <rules key="{df0ff34f-6b61-495e-ac70-2fa6bd32cbf1}">
-      <rule filter="typ_kt = 'E560'" key="{5cc77de7-a548-4923-902d-b8ff54a711f6}" symbol="0" label="Nationalstrasse"/>
-      <rule filter="typ_kt = 'E561'" key="{d967531f-7498-4094-9c27-b5e79cc409aa}" symbol="1" label="Kantonsstrasse"/>
-      <rule filter="typ_kt = 'E562'" key="{ed053747-18af-4e03-b09b-983f20822403}" symbol="2" label="Sammelstrasse kommunal"/>
-      <rule filter="typ_kt = 'E563'" key="{926ef5ef-c3a2-488f-8b6f-c401a8691a73}" symbol="3" label="Erschliessungsstrasse_kommunal"/>
-      <rule filter="typ_kt = 'E564'" key="{2b8a65c9-956b-4c0d-9e25-e84698045b0d}" symbol="4" label="Flurweg mit Erschliessungsfunktion"/>
-      <rule filter="typ_kt = 'E565'" key="{5785e976-7e32-48f0-97a0-e4a4afbcd3e6}" symbol="5" label="Flurweg ohne Erschliessungsfunktion"/>
-      <rule filter="typ_kt = 'E566'" key="{4e8a2a20-cefa-4c34-9d4a-62a635e1b3ba}" symbol="6" label="private Erschliessungsstrasse"/>
-      <rule filter="typ_kt = 'E567'" key="{641fd55a-0ea8-4d6d-b7cd-f5e0e6e6b65c}" symbol="7" label="unklassierte Strasse"/>
-      <rule filter="typ_kt = 'E568'" key="{36a77ba8-9f64-41c8-85b3-933fdde3357f}" symbol="8" label="Strassenbankett Verkehrsinsel"/>
-      <rule filter="typ_kt = 'E569'" key="{f511cf3c-a428-442c-9480-c27e8fb20c4d}" symbol="9" label="übrige Verkehrsflächen"/>
-      <rule filter="typ_kt = 'E570'" key="{269fcabe-c9d5-4bc2-91c3-ea9304949105}" symbol="10" label="Gehweg und Trottoir"/>
-      <rule filter="typ_kt = 'E571'" key="{e245752c-dec5-416e-8c04-b9c30bddb3c1}" symbol="11" label="Fussweg"/>
-      <rule filter="typ_kt = 'E572'" key="{d2dfb77f-fd1e-4ef6-8c36-b792c4fe6ae5}" symbol="12" label="Radweg"/>
-      <rule filter="typ_kt = 'E573'" key="{9d5125e5-aca3-49be-9819-4934efd66afb}" symbol="13" label="Fuss und Radweg"/>
-      <rule filter="typ_kt = 'E574'" key="{801983aa-1d87-4586-bc3a-950a38f8fb6b}" symbol="14" label="Grünstreifen Rabatte"/>
-      <rule filter="typ_kt = 'E579'" key="{c8b75919-bfb3-455c-b2c6-ef8d8f2e2f99}" symbol="15" label="übrige Flächen Langsamverkehr"/>
+      <rule filter="typ_kt = 'E560'" key="{5cc77de7-a548-4923-902d-b8ff54a711f6}" symbol="0" label="560 Nationalstrasse"/>
+      <rule filter="typ_kt = 'E561'" key="{d967531f-7498-4094-9c27-b5e79cc409aa}" symbol="1" label="561 Kantonsstrasse"/>
+      <rule filter="typ_kt = 'E562'" key="{ed053747-18af-4e03-b09b-983f20822403}" symbol="2" label="562 Sammelstrasse kommunal"/>
+      <rule filter="typ_kt = 'E563'" key="{926ef5ef-c3a2-488f-8b6f-c401a8691a73}" symbol="3" label="563 Erschliessungsstrasse_kommunal"/>
+      <rule filter="typ_kt = 'E564'" key="{2b8a65c9-956b-4c0d-9e25-e84698045b0d}" symbol="4" label="564 Flurweg mit Erschliessungsfunktion"/>
+      <rule filter="typ_kt = 'E565'" key="{5785e976-7e32-48f0-97a0-e4a4afbcd3e6}" symbol="5" label="565 Flurweg ohne Erschliessungsfunktion"/>
+      <rule filter="typ_kt = 'E566'" key="{4e8a2a20-cefa-4c34-9d4a-62a635e1b3ba}" symbol="6" label="566 private Erschliessungsstrasse"/>
+      <rule filter="typ_kt = 'E567'" key="{641fd55a-0ea8-4d6d-b7cd-f5e0e6e6b65c}" symbol="7" label="567 unklassierte Strasse"/>
+      <rule filter="typ_kt = 'E568'" key="{36a77ba8-9f64-41c8-85b3-933fdde3357f}" symbol="8" label="568 Strassenbankett Verkehrsinsel"/>
+      <rule filter="typ_kt = 'E569'" key="{f511cf3c-a428-442c-9480-c27e8fb20c4d}" symbol="9" label="569 übrige Verkehrsflächen"/>
+      <rule filter="typ_kt = 'E570'" key="{269fcabe-c9d5-4bc2-91c3-ea9304949105}" symbol="10" label="570 Gehweg und Trottoir"/>
+      <rule filter="typ_kt = 'E571'" key="{e245752c-dec5-416e-8c04-b9c30bddb3c1}" symbol="11" label="571 Fussweg"/>
+      <rule filter="typ_kt = 'E572'" key="{d2dfb77f-fd1e-4ef6-8c36-b792c4fe6ae5}" symbol="12" label="572 Radweg"/>
+      <rule filter="typ_kt = 'E573'" key="{9d5125e5-aca3-49be-9819-4934efd66afb}" symbol="13" label="573 Fuss und Radweg"/>
+      <rule filter="typ_kt = 'E574'" key="{801983aa-1d87-4586-bc3a-950a38f8fb6b}" symbol="14" label="574 Grünstreifen Rabatte"/>
+      <rule filter="typ_kt = 'E579'" key="{c8b75919-bfb3-455c-b2c6-ef8d8f2e2f99}" symbol="15" label="579 übrige Flächen Langsamverkehr"/>
     </rules>
     <symbols>
       <symbol alpha="0.694118" type="fill" name="0">
