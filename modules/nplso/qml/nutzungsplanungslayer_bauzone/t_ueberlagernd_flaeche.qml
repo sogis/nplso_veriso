@@ -1724,18 +1724,6 @@
       <attributeEditorField index="25" name="dok_bemerkungen"/>
       <attributeEditorField index="26" name="dok_rechtsvorschrift"/>
     </attributeEditorContainer>
-    <attributeEditorContainer name="Plandokument">
-      <attributeEditorField index="-1" name="plan_plandokumentid"/>
-      <attributeEditorField index="-1" name="plan_titel"/>
-      <attributeEditorField index="-1" name="plan_offiziellertitel"/>
-      <attributeEditorField index="-1" name="plan_offiziellenr"/>
-      <attributeEditorField index="-1" name="plan_kanton"/>
-      <attributeEditorField index="-1" name="plan_gemeinde"/>
-      <attributeEditorField index="-1" name="plan_publiziertab"/>
-      <attributeEditorField index="-1" name="plan_rechtsstatus"/>
-      <attributeEditorField index="-1" name="plan_planimweb"/>
-      <attributeEditorField index="-1" name="plan_bemerkungen"/>
-    </attributeEditorContainer>
   </attributeEditorForm>
   <attributeactions>
     <actionsetting action="[% &quot;dok_textimweb&quot; %]" icon="" capture="0" type="5" name="Dokument öffnen"/>
