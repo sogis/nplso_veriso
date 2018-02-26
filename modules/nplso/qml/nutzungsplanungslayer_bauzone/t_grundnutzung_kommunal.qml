@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis version="2.15.2-Dev" minimumScale="0" maximumScale="10000" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+<qgis version="2.15.2-Dev" minimumScale="-4.65661e-10" maximumScale="10000" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
   <edittypes>
     <edittype widgetv2type="TextEdit" name="t_id">
       <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -125,6 +125,7 @@
       <rule checkstate="0" filter="typ_kt = 'N182'" key="{d2f76683-2226-493f-aef9-1a710e11df6a}" symbol="28" label="N182_Verkehrszone_Flugplatzareal"/>
       <rule checkstate="0" filter="typ_kt = 'N189'" key="{ca16db6a-5c6e-4947-9ffa-96ecbe0ebf1e}" symbol="29" label="N189_weitere_Verkehrszonen"/>
       <rule checkstate="0" filter="typ_kt = 'N190'" key="{81713f9e-9af6-4be9-a0f9-5bfab9dcea71}" symbol="30" label="N190_Spezialzone"/>
+      <rule filter=" &quot;bemerkungen&quot; IS NOT NULL" key="{bf4bf038-510e-4473-b9e3-c95903f5865f}" symbol="31" label="!Bemerkungen!"/>
     </rules>
     <symbols>
       <symbol alpha="0.45098" type="fill" name="0">
@@ -500,6 +501,25 @@
           <prop k="outline_width" v="0.86"/>
           <prop k="outline_width_unit" v="MM"/>
           <prop k="style" v="solid"/>
+        </layer>
+      </symbol>
+      <symbol alpha="1" type="fill" name="31">
+        <layer pass="0" class="SimpleLine" locked="0">
+          <prop k="capstyle" v="square"/>
+          <prop k="customdash" v="5;2"/>
+          <prop k="customdash_map_unit_scale" v="0,0"/>
+          <prop k="customdash_unit" v="MM"/>
+          <prop k="draw_inside_polygon" v="0"/>
+          <prop k="joinstyle" v="bevel"/>
+          <prop k="line_color" v="255,255,0,255"/>
+          <prop k="line_style" v="solid"/>
+          <prop k="line_width" v="0.86"/>
+          <prop k="line_width_unit" v="MM"/>
+          <prop k="offset" v="0.8"/>
+          <prop k="offset_map_unit_scale" v="0,0"/>
+          <prop k="offset_unit" v="MM"/>
+          <prop k="use_custom_dash" v="0"/>
+          <prop k="width_map_unit_scale" v="0,0"/>
         </layer>
       </symbol>
       <symbol alpha="0.45098" type="fill" name="4">

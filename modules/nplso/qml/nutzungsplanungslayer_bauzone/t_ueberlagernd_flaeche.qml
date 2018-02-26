@@ -128,6 +128,7 @@
       <rule filter="typ_kt = 'N821'" key="{d5986b59-612b-4721-821d-a85aae1a5af3}" symbol="40" label="821 kommunal geschütztes Kulturobjekt"/>
       <rule filter="typ_kt = 'N822'" key="{f278476d-a9d4-4685-b505-fac6530bf9b3}" symbol="41" label="822 schützenswertes Kulturobjekt"/>
       <rule filter="typ_kt = 'N823'" key="{ebfdd620-902e-4cb6-9c74-708c7eb399c9}" symbol="42" label="823 erhaltenswertes Kulturobjekt"/>
+      <rule filter=" &quot;bemerkungen&quot; IS NOT NULL" key="{4de34871-38b7-48f5-9209-184e40708bee}" symbol="43" label="!Bemerkungen!"/>
     </rules>
     <symbols>
       <symbol alpha="1" type="fill" name="0">
@@ -1260,6 +1261,25 @@
           <prop k="style" v="solid"/>
         </layer>
       </symbol>
+      <symbol alpha="1" type="fill" name="43">
+        <layer pass="0" class="SimpleLine" locked="0">
+          <prop k="capstyle" v="square"/>
+          <prop k="customdash" v="5;2"/>
+          <prop k="customdash_map_unit_scale" v="0,0"/>
+          <prop k="customdash_unit" v="MM"/>
+          <prop k="draw_inside_polygon" v="0"/>
+          <prop k="joinstyle" v="bevel"/>
+          <prop k="line_color" v="255,255,0,255"/>
+          <prop k="line_style" v="solid"/>
+          <prop k="line_width" v="0.86"/>
+          <prop k="line_width_unit" v="MM"/>
+          <prop k="offset" v="0.8"/>
+          <prop k="offset_map_unit_scale" v="0,0"/>
+          <prop k="offset_unit" v="MM"/>
+          <prop k="use_custom_dash" v="0"/>
+          <prop k="width_map_unit_scale" v="0,0"/>
+        </layer>
+      </symbol>
       <symbol alpha="1" type="fill" name="5">
         <layer pass="0" class="LinePatternFill" locked="0">
           <prop k="angle" v="135"/>
@@ -1723,6 +1743,18 @@
       <attributeEditorField index="24" name="dok_textimweb"/>
       <attributeEditorField index="25" name="dok_bemerkungen"/>
       <attributeEditorField index="26" name="dok_rechtsvorschrift"/>
+    </attributeEditorContainer>
+    <attributeEditorContainer name="Plandokument">
+      <attributeEditorField index="-1" name="plan_plandokumentid"/>
+      <attributeEditorField index="-1" name="plan_titel"/>
+      <attributeEditorField index="-1" name="plan_offiziellertitel"/>
+      <attributeEditorField index="-1" name="plan_offiziellenr"/>
+      <attributeEditorField index="-1" name="plan_kanton"/>
+      <attributeEditorField index="-1" name="plan_gemeinde"/>
+      <attributeEditorField index="-1" name="plan_publiziertab"/>
+      <attributeEditorField index="-1" name="plan_rechtsstatus"/>
+      <attributeEditorField index="-1" name="plan_planimweb"/>
+      <attributeEditorField index="-1" name="plan_bemerkungen"/>
     </attributeEditorContainer>
   </attributeEditorForm>
   <attributeactions>

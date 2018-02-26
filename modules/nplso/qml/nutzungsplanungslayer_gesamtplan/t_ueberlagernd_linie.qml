@@ -90,6 +90,7 @@
       <rule filter="typ_kt = 'N792'" key="{ff11aa8a-d11f-4c8f-97a3-309f3eb8345f}" symbol="2" label="792 Waldgrenze"/>
       <rule filter="typ_kt = 'N793'" key="{9faef139-3de8-45d4-8446-73b3b3bce044}" symbol="3" label="793 negative Waldfeststellung"/>
       <rule filter="typ_kt = 'N799'" key="{f2ff21be-efc2-4dd5-bc1f-fafb52c7b6b4}" symbol="4" label="799 weitere linienbezogene Festlegungen NP"/>
+      <rule filter=" &quot;bemerkungen&quot; IS NOT NULL" key="{de14f534-84ec-430a-a5f1-bef01a324ef5}" symbol="5" label="!Bemerkungen!"/>
     </rules>
     <symbols>
       <symbol alpha="1" type="line" name="0">
@@ -181,6 +182,25 @@
           <prop k="line_width" v="0.5"/>
           <prop k="line_width_unit" v="MM"/>
           <prop k="offset" v="0"/>
+          <prop k="offset_map_unit_scale" v="0,0"/>
+          <prop k="offset_unit" v="MM"/>
+          <prop k="use_custom_dash" v="0"/>
+          <prop k="width_map_unit_scale" v="0,0"/>
+        </layer>
+      </symbol>
+      <symbol alpha="1" type="line" name="5">
+        <layer pass="0" class="SimpleLine" locked="0">
+          <prop k="capstyle" v="square"/>
+          <prop k="customdash" v="5;2"/>
+          <prop k="customdash_map_unit_scale" v="0,0"/>
+          <prop k="customdash_unit" v="MM"/>
+          <prop k="draw_inside_polygon" v="0"/>
+          <prop k="joinstyle" v="bevel"/>
+          <prop k="line_color" v="255,255,0,255"/>
+          <prop k="line_style" v="solid"/>
+          <prop k="line_width" v="0.86"/>
+          <prop k="line_width_unit" v="MM"/>
+          <prop k="offset" v="0.8"/>
           <prop k="offset_map_unit_scale" v="0,0"/>
           <prop k="offset_unit" v="MM"/>
           <prop k="use_custom_dash" v="0"/>

@@ -94,6 +94,7 @@
       <rule filter="typ_kt = 'N822'" key="{0a96a432-c387-4095-9ce0-6bcc28043f24}" symbol="6" label="822 schützenswertes Kulturobjekt"/>
       <rule filter="typ_kt = 'N823'" key="{aa6d64de-76be-4991-ae34-d7247e10921c}" symbol="7" label="823 erhaltenswertes Kulturobjekt"/>
       <rule filter="typ_kt = 'N899'" key="{61480c4e-db2e-4c75-a757-a50763506b23}" symbol="8" label="899 weitere punktbezogene Festlegungen NP"/>
+      <rule filter=" &quot;bemerkungen&quot; IS NOT NULL" key="{28d7ba0e-6b81-47da-8589-50d9c082c7fe}" symbol="9" label="!Bemerkungen!"/>
     </rules>
     <symbols>
       <symbol alpha="1" type="marker" name="0">
@@ -278,6 +279,27 @@
           <prop k="outline_width_unit" v="MM"/>
           <prop k="scale_method" v="area"/>
           <prop k="size" v="2"/>
+          <prop k="size_map_unit_scale" v="0,0"/>
+          <prop k="size_unit" v="MM"/>
+          <prop k="vertical_anchor_point" v="1"/>
+        </layer>
+      </symbol>
+      <symbol alpha="1" type="marker" name="9">
+        <layer pass="0" class="SimpleMarker" locked="0">
+          <prop k="angle" v="0"/>
+          <prop k="color" v="0,0,0,0"/>
+          <prop k="horizontal_anchor_point" v="1"/>
+          <prop k="name" v="circle"/>
+          <prop k="offset" v="0,0"/>
+          <prop k="offset_map_unit_scale" v="0,0"/>
+          <prop k="offset_unit" v="MM"/>
+          <prop k="outline_color" v="255,255,0,255"/>
+          <prop k="outline_style" v="solid"/>
+          <prop k="outline_width" v="0.6"/>
+          <prop k="outline_width_map_unit_scale" v="0,0"/>
+          <prop k="outline_width_unit" v="MM"/>
+          <prop k="scale_method" v="area"/>
+          <prop k="size" v="4"/>
           <prop k="size_map_unit_scale" v="0,0"/>
           <prop k="size_unit" v="MM"/>
           <prop k="vertical_anchor_point" v="1"/>

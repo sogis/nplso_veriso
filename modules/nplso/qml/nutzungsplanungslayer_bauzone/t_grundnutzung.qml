@@ -94,38 +94,39 @@
   </edittypes>
   <renderer-v2 symbollevels="0" type="RuleRenderer">
     <rules key="{3da3a7be-ba72-4ef8-a4e5-2d7dc6fef09a}">
-      <rule filter="typ_kt = 'N110'" key="{cc9166aa-b961-46b1-abb8-3d72502db6a7}" symbol="0" label="Wohnzone 1 G"/>
-      <rule filter="typ_kt = 'N111'" key="{546c65e7-6343-4828-aa2c-4c27e8767e99}" symbol="1" label="Wohnzone 2 G"/>
-      <rule filter="typ_kt = 'N112'" key="{54c6a22c-f729-432d-a016-27e53921a0c2}" symbol="2" label="Wohnzone 3 G"/>
-      <rule filter="typ_kt = 'N113'" key="{5204fe43-1f0d-4810-855c-2b226a43ebea}" symbol="3" label="Wohnzone 4 G"/>
-      <rule filter="typ_kt = 'N114'" key="{f2843f5f-fdc4-4a1c-90b8-d61be37de03d}" symbol="4" label="Wohnzone 5 G"/>
-      <rule filter="typ_kt = 'N115'" key="{0c46b80c-7e22-47aa-b421-242579c21d3e}" symbol="5" label="Wohnzone 6 G"/>
-      <rule filter="typ_kt = 'N116'" key="{9dd17f3b-5386-4189-b2ea-4a2258ae3b75}" symbol="6" label="Wohnzone 7 G und grösser"/>
-      <rule filter="typ_kt = 'N117'" key="{d4ff8cd3-f238-4e2b-8e61-57361a1f53a7}" symbol="7" label="Zone für Terrassenhaeuser Terrassensiedlung"/>
-      <rule filter="typ_kt = 'N120'" key="{a2853f48-feeb-42f1-b896-0e1d8aae7e58}" symbol="8" label="Gewerbezone ohne Wohnen"/>
-      <rule filter="typ_kt = 'N121'" key="{94984ad8-e9bb-4355-bcc0-1771cf512305}" symbol="9" label="Industriezone"/>
-      <rule filter="typ_kt = 'N122'" key="{939d8cc8-47b9-408c-b89f-051f75b1f408}" symbol="10" label="Arbeitszone"/>
-      <rule filter="typ_kt = 'N130'" key="{f8c847aa-1fb0-411c-82b6-73dfbb19a18a}" symbol="11" label="Gewerbezone mit Wohnen / Mischzone"/>
-      <rule filter="typ_kt = 'N131'" key="{3c98a62a-08a9-406b-b28b-f327fce4d1a0}" symbol="12" label="Gewerbezone mit Wohnen / Mischzone 2 G"/>
-      <rule filter="typ_kt = 'N132'" key="{fdf42852-450d-43a4-b395-d6ef39e55507}" symbol="13" label="Gewerbezone mit Wohnen / Mischzone 3 G"/>
-      <rule filter="typ_kt = 'N133'" key="{d396e15b-ec7b-4437-b733-1f8b17df0570}" symbol="14" label="Gewerbezone mit Wohnen / Mischzone 4 G und grösser"/>
-      <rule filter="typ_kt = 'N134'" key="{f6162fb9-f5ec-4f4d-9f78-1568d8ac05fc}" symbol="15" label="Zone für Freizeit und Erholung"/>
-      <rule filter="typ_kt = 'N140'" key="{3cf5f0c7-a891-4d15-80ce-bb838b2da0ea}" symbol="16" label="Kernzone"/>
-      <rule filter="typ_kt = 'N141'" key="{6fe74646-e0c7-4a25-b0c7-21f988e3416a}" symbol="17" label="Zentrumszone"/>
-      <rule filter="typ_kt = 'N142'" key="{1562e578-1dc9-4183-8120-6c3cba2a0272}" symbol="18" label="Erhaltungszone"/>
-      <rule filter="typ_kt = 'N150'" key="{97c82015-b3ed-462b-be8e-40ded45f9bd6}" symbol="19" label="Zone für öffentliche Bauten"/>
-      <rule filter="typ_kt = 'N151'" key="{8ee7c1cd-77b2-4537-acd0-7086b08455ef}" symbol="20" label="Zone für öffentliche Anlagen"/>
-      <rule filter="typ_kt = 'N160'" key="{fc925077-7d3d-47dc-bd27-5312d912eebd}" symbol="21" label="Grün und Freihaltezone innerhalb Bauzone"/>
-      <rule filter="typ_kt = 'N161'" key="{4a003139-f6b2-4e15-adb5-22d05b00e5a7}" symbol="22" label="kommunale Uferschutzzone innerhalb Bauzone"/>
-      <rule filter="typ_kt = 'N162'" key="{7cb94b84-2d1a-4a14-b929-f31dc7e2e2ce}" symbol="23" label="Landwirtschaftliche Kernzone"/>
-      <rule filter="typ_kt = 'N163'" key="{b8669870-621e-4628-9f78-d0f25f0f3f47}" symbol="24" label="Weilerzone"/>
-      <rule filter="typ_kt = 'N169'" key="{962c3c47-e045-4ab1-b261-82f08e59a996}" symbol="25" label="weitere eingeschränkte Bauzonen"/>
-      <rule filter="typ_kt = 'N170'" key="{a2a7a964-5bd7-42dd-b732-5a58b2239ef4}" symbol="26" label="Zone für Freizeit und Erholung"/>
-      <rule filter="typ_kt = 'N180'" key="{b14945ca-fbb8-414d-8ec4-254841d89d82}" symbol="27" label="Verkehrszone Strasse"/>
-      <rule filter="typ_kt = 'N181'" key="{bfd2a8ca-88a0-4a74-9535-ab813adcc2dd}" symbol="28" label="Verkehrszone Bahnareal"/>
-      <rule filter="typ_kt = 'N182'" key="{d2f76683-2226-493f-aef9-1a710e11df6a}" symbol="29" label="Verkehrszone Flugplatzareal"/>
-      <rule filter="typ_kt = 'N189'" key="{ca16db6a-5c6e-4947-9ffa-96ecbe0ebf1e}" symbol="30" label="weitere Verkehrszonen"/>
-      <rule filter="typ_kt = 'N190'" key="{81713f9e-9af6-4be9-a0f9-5bfab9dcea71}" symbol="31" label="Spezialzone"/>
+      <rule filter="typ_kt = 'N110'" key="{cc9166aa-b961-46b1-abb8-3d72502db6a7}" symbol="0" label="110 Wohnzone 1 G"/>
+      <rule filter="typ_kt = 'N111'" key="{546c65e7-6343-4828-aa2c-4c27e8767e99}" symbol="1" label="111 Wohnzone 2 G"/>
+      <rule filter="typ_kt = 'N112'" key="{54c6a22c-f729-432d-a016-27e53921a0c2}" symbol="2" label="112 Wohnzone 3 G"/>
+      <rule filter="typ_kt = 'N113'" key="{5204fe43-1f0d-4810-855c-2b226a43ebea}" symbol="3" label="113 Wohnzone 4 G"/>
+      <rule filter="typ_kt = 'N114'" key="{f2843f5f-fdc4-4a1c-90b8-d61be37de03d}" symbol="4" label="114 Wohnzone 5 G"/>
+      <rule filter="typ_kt = 'N115'" key="{0c46b80c-7e22-47aa-b421-242579c21d3e}" symbol="5" label="115 Wohnzone 6 G"/>
+      <rule filter="typ_kt = 'N116'" key="{9dd17f3b-5386-4189-b2ea-4a2258ae3b75}" symbol="6" label="116 Wohnzone 7 G und grösser"/>
+      <rule filter="typ_kt = 'N117'" key="{d4ff8cd3-f238-4e2b-8e61-57361a1f53a7}" symbol="7" label="117 Zone für Terrassenhaeuser Terrassensiedlung"/>
+      <rule filter="typ_kt = 'N120'" key="{a2853f48-feeb-42f1-b896-0e1d8aae7e58}" symbol="8" label="120 Gewerbezone ohne Wohnen"/>
+      <rule filter="typ_kt = 'N121'" key="{94984ad8-e9bb-4355-bcc0-1771cf512305}" symbol="9" label="121 Industriezone"/>
+      <rule filter="typ_kt = 'N122'" key="{939d8cc8-47b9-408c-b89f-051f75b1f408}" symbol="10" label="122 Arbeitszone"/>
+      <rule filter="typ_kt = 'N130'" key="{f8c847aa-1fb0-411c-82b6-73dfbb19a18a}" symbol="11" label="130 Gewerbezone mit Wohnen / Mischzone"/>
+      <rule filter="typ_kt = 'N131'" key="{3c98a62a-08a9-406b-b28b-f327fce4d1a0}" symbol="12" label="131 Gewerbezone mit Wohnen / Mischzone 2 G"/>
+      <rule filter="typ_kt = 'N132'" key="{fdf42852-450d-43a4-b395-d6ef39e55507}" symbol="13" label="132 Gewerbezone mit Wohnen / Mischzone 3 G"/>
+      <rule filter="typ_kt = 'N133'" key="{d396e15b-ec7b-4437-b733-1f8b17df0570}" symbol="14" label="133 Gewerbezone mit Wohnen / Mischzone 4 G und grösser"/>
+      <rule filter="typ_kt = 'N134'" key="{f6162fb9-f5ec-4f4d-9f78-1568d8ac05fc}" symbol="15" label="134 Zone für Freizeit und Erholung"/>
+      <rule filter="typ_kt = 'N140'" key="{3cf5f0c7-a891-4d15-80ce-bb838b2da0ea}" symbol="16" label="140 Kernzone"/>
+      <rule filter="typ_kt = 'N141'" key="{6fe74646-e0c7-4a25-b0c7-21f988e3416a}" symbol="17" label="141 Zentrumszone"/>
+      <rule filter="typ_kt = 'N142'" key="{1562e578-1dc9-4183-8120-6c3cba2a0272}" symbol="18" label="142 Erhaltungszone"/>
+      <rule filter="typ_kt = 'N150'" key="{97c82015-b3ed-462b-be8e-40ded45f9bd6}" symbol="19" label="150 Zone für öffentliche Bauten"/>
+      <rule filter="typ_kt = 'N151'" key="{8ee7c1cd-77b2-4537-acd0-7086b08455ef}" symbol="20" label="151 Zone für öffentliche Anlagen"/>
+      <rule filter="typ_kt = 'N160'" key="{fc925077-7d3d-47dc-bd27-5312d912eebd}" symbol="21" label="160 Grün und Freihaltezone innerhalb Bauzone"/>
+      <rule filter="typ_kt = 'N161'" key="{4a003139-f6b2-4e15-adb5-22d05b00e5a7}" symbol="22" label="161 kommunale Uferschutzzone innerhalb Bauzone"/>
+      <rule filter="typ_kt = 'N162'" key="{7cb94b84-2d1a-4a14-b929-f31dc7e2e2ce}" symbol="23" label="162 Landwirtschaftliche Kernzone"/>
+      <rule filter="typ_kt = 'N163'" key="{b8669870-621e-4628-9f78-d0f25f0f3f47}" symbol="24" label="163 Weilerzone"/>
+      <rule filter="typ_kt = 'N169'" key="{962c3c47-e045-4ab1-b261-82f08e59a996}" symbol="25" label="169 weitere eingeschränkte Bauzonen"/>
+      <rule filter="typ_kt = 'N170'" key="{a2a7a964-5bd7-42dd-b732-5a58b2239ef4}" symbol="26" label="170 Zone für Freizeit und Erholung"/>
+      <rule filter="typ_kt = 'N180'" key="{b14945ca-fbb8-414d-8ec4-254841d89d82}" symbol="27" label="180 Verkehrszone Strasse"/>
+      <rule filter="typ_kt = 'N181'" key="{bfd2a8ca-88a0-4a74-9535-ab813adcc2dd}" symbol="28" label="181 Verkehrszone Bahnareal"/>
+      <rule filter="typ_kt = 'N182'" key="{d2f76683-2226-493f-aef9-1a710e11df6a}" symbol="29" label="182 Verkehrszone Flugplatzareal"/>
+      <rule filter="typ_kt = 'N189'" key="{ca16db6a-5c6e-4947-9ffa-96ecbe0ebf1e}" symbol="30" label="189 weitere Verkehrszonen"/>
+      <rule filter="typ_kt = 'N190'" key="{81713f9e-9af6-4be9-a0f9-5bfab9dcea71}" symbol="31" label="190 Spezialzone"/>
+      <rule filter=" &quot;bemerkungen&quot; IS NOT NULL" key="{3bbbf7fc-3509-415c-aab4-a4b4033feb06}" symbol="32" label="!Bemerkungen!"/>
     </rules>
     <symbols>
       <symbol alpha="0.45098" type="fill" name="0">
@@ -173,20 +174,7 @@
           <prop k="style" v="solid"/>
         </layer>
       </symbol>
-      <symbol alpha="0.45098" type="fill" name="11">
-        <layer pass="0" class="SimpleFill" locked="0">
-          <prop k="border_width_map_unit_scale" v="0,0"/>
-          <prop k="color" v="20,178,225,255"/>
-          <prop k="joinstyle" v="bevel"/>
-          <prop k="offset" v="0,0"/>
-          <prop k="offset_map_unit_scale" v="0,0"/>
-          <prop k="offset_unit" v="MM"/>
-          <prop k="outline_color" v="0,0,0,255"/>
-          <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.26"/>
-          <prop k="outline_width_unit" v="MM"/>
-          <prop k="style" v="solid"/>
-        </layer>
+      <symbol alpha="0.266667" type="fill" name="11">
         <layer pass="0" class="LinePatternFill" locked="0">
           <prop k="angle" v="45"/>
           <prop k="color" v="255,255,0,255"/>
@@ -201,7 +189,7 @@
           <prop k="offset_unit" v="MM"/>
           <prop k="outline_width_map_unit_scale" v="0,0"/>
           <prop k="outline_width_unit" v="MM"/>
-          <symbol alpha="1" type="line" name="@11@1">
+          <symbol alpha="1" type="line" name="@11@0">
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="square"/>
               <prop k="customdash" v="5;2"/>
@@ -221,21 +209,42 @@
             </layer>
           </symbol>
         </layer>
-      </symbol>
-      <symbol alpha="0.45098" type="fill" name="12">
-        <layer pass="0" class="SimpleFill" locked="0">
-          <prop k="border_width_map_unit_scale" v="0,0"/>
-          <prop k="color" v="20,178,225,255"/>
-          <prop k="joinstyle" v="bevel"/>
-          <prop k="offset" v="0,0"/>
+        <layer pass="0" class="LinePatternFill" locked="0">
+          <prop k="angle" v="45"/>
+          <prop k="color" v="0,0,255,255"/>
+          <prop k="distance" v="6"/>
+          <prop k="distance_map_unit_scale" v="0,0"/>
+          <prop k="distance_unit" v="MM"/>
+          <prop k="line_width" v="0.26"/>
+          <prop k="line_width_map_unit_scale" v="0,0"/>
+          <prop k="line_width_unit" v="MM"/>
+          <prop k="offset" v="3"/>
           <prop k="offset_map_unit_scale" v="0,0"/>
           <prop k="offset_unit" v="MM"/>
-          <prop k="outline_color" v="0,0,0,255"/>
-          <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.26"/>
+          <prop k="outline_width_map_unit_scale" v="0,0"/>
           <prop k="outline_width_unit" v="MM"/>
-          <prop k="style" v="solid"/>
+          <symbol alpha="1" type="line" name="@11@1">
+            <layer pass="0" class="SimpleLine" locked="0">
+              <prop k="capstyle" v="square"/>
+              <prop k="customdash" v="5;2"/>
+              <prop k="customdash_map_unit_scale" v="0,0"/>
+              <prop k="customdash_unit" v="MM"/>
+              <prop k="draw_inside_polygon" v="0"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="line_color" v="20,178,225,255"/>
+              <prop k="line_style" v="solid"/>
+              <prop k="line_width" v="3"/>
+              <prop k="line_width_unit" v="MM"/>
+              <prop k="offset" v="0"/>
+              <prop k="offset_map_unit_scale" v="0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="use_custom_dash" v="0"/>
+              <prop k="width_map_unit_scale" v="0,0"/>
+            </layer>
+          </symbol>
         </layer>
+      </symbol>
+      <symbol alpha="0.266667" type="fill" name="12">
         <layer pass="0" class="LinePatternFill" locked="0">
           <prop k="angle" v="45"/>
           <prop k="color" v="255,168,0,255"/>
@@ -250,7 +259,7 @@
           <prop k="offset_unit" v="MM"/>
           <prop k="outline_width_map_unit_scale" v="0,0"/>
           <prop k="outline_width_unit" v="MM"/>
-          <symbol alpha="1" type="line" name="@12@1">
+          <symbol alpha="1" type="line" name="@12@0">
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="square"/>
               <prop k="customdash" v="5;2"/>
@@ -270,21 +279,42 @@
             </layer>
           </symbol>
         </layer>
-      </symbol>
-      <symbol alpha="0.45098" type="fill" name="13">
-        <layer pass="0" class="SimpleFill" locked="0">
-          <prop k="border_width_map_unit_scale" v="0,0"/>
-          <prop k="color" v="20,178,225,255"/>
-          <prop k="joinstyle" v="bevel"/>
-          <prop k="offset" v="0,0"/>
+        <layer pass="0" class="LinePatternFill" locked="0">
+          <prop k="angle" v="45"/>
+          <prop k="color" v="0,0,255,255"/>
+          <prop k="distance" v="6"/>
+          <prop k="distance_map_unit_scale" v="0,0"/>
+          <prop k="distance_unit" v="MM"/>
+          <prop k="line_width" v="0.26"/>
+          <prop k="line_width_map_unit_scale" v="0,0"/>
+          <prop k="line_width_unit" v="MM"/>
+          <prop k="offset" v="3"/>
           <prop k="offset_map_unit_scale" v="0,0"/>
           <prop k="offset_unit" v="MM"/>
-          <prop k="outline_color" v="0,0,0,255"/>
-          <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.26"/>
+          <prop k="outline_width_map_unit_scale" v="0,0"/>
           <prop k="outline_width_unit" v="MM"/>
-          <prop k="style" v="solid"/>
+          <symbol alpha="1" type="line" name="@12@1">
+            <layer pass="0" class="SimpleLine" locked="0">
+              <prop k="capstyle" v="square"/>
+              <prop k="customdash" v="5;2"/>
+              <prop k="customdash_map_unit_scale" v="0,0"/>
+              <prop k="customdash_unit" v="MM"/>
+              <prop k="draw_inside_polygon" v="0"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="line_color" v="20,178,225,255"/>
+              <prop k="line_style" v="solid"/>
+              <prop k="line_width" v="3"/>
+              <prop k="line_width_unit" v="MM"/>
+              <prop k="offset" v="0"/>
+              <prop k="offset_map_unit_scale" v="0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="use_custom_dash" v="0"/>
+              <prop k="width_map_unit_scale" v="0,0"/>
+            </layer>
+          </symbol>
         </layer>
+      </symbol>
+      <symbol alpha="0.266667" type="fill" name="13">
         <layer pass="0" class="LinePatternFill" locked="0">
           <prop k="angle" v="45"/>
           <prop k="color" v="0,0,255,255"/>
@@ -299,7 +329,7 @@
           <prop k="offset_unit" v="MM"/>
           <prop k="outline_width_map_unit_scale" v="0,0"/>
           <prop k="outline_width_unit" v="MM"/>
-          <symbol alpha="1" type="line" name="@13@1">
+          <symbol alpha="1" type="line" name="@13@0">
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="square"/>
               <prop k="customdash" v="5;2"/>
@@ -319,21 +349,42 @@
             </layer>
           </symbol>
         </layer>
-      </symbol>
-      <symbol alpha="0.45098" type="fill" name="14">
-        <layer pass="0" class="SimpleFill" locked="0">
-          <prop k="border_width_map_unit_scale" v="0,0"/>
-          <prop k="color" v="20,178,225,255"/>
-          <prop k="joinstyle" v="bevel"/>
-          <prop k="offset" v="0,0"/>
+        <layer pass="0" class="LinePatternFill" locked="0">
+          <prop k="angle" v="45"/>
+          <prop k="color" v="0,0,255,255"/>
+          <prop k="distance" v="6"/>
+          <prop k="distance_map_unit_scale" v="0,0"/>
+          <prop k="distance_unit" v="MM"/>
+          <prop k="line_width" v="0.26"/>
+          <prop k="line_width_map_unit_scale" v="0,0"/>
+          <prop k="line_width_unit" v="MM"/>
+          <prop k="offset" v="3"/>
           <prop k="offset_map_unit_scale" v="0,0"/>
           <prop k="offset_unit" v="MM"/>
-          <prop k="outline_color" v="0,0,0,255"/>
-          <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.26"/>
+          <prop k="outline_width_map_unit_scale" v="0,0"/>
           <prop k="outline_width_unit" v="MM"/>
-          <prop k="style" v="solid"/>
+          <symbol alpha="1" type="line" name="@13@1">
+            <layer pass="0" class="SimpleLine" locked="0">
+              <prop k="capstyle" v="square"/>
+              <prop k="customdash" v="5;2"/>
+              <prop k="customdash_map_unit_scale" v="0,0"/>
+              <prop k="customdash_unit" v="MM"/>
+              <prop k="draw_inside_polygon" v="0"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="line_color" v="20,178,225,255"/>
+              <prop k="line_style" v="solid"/>
+              <prop k="line_width" v="3"/>
+              <prop k="line_width_unit" v="MM"/>
+              <prop k="offset" v="0"/>
+              <prop k="offset_map_unit_scale" v="0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="use_custom_dash" v="0"/>
+              <prop k="width_map_unit_scale" v="0,0"/>
+            </layer>
+          </symbol>
         </layer>
+      </symbol>
+      <symbol alpha="0.266667" type="fill" name="14">
         <layer pass="0" class="LinePatternFill" locked="0">
           <prop k="angle" v="45"/>
           <prop k="color" v="0,0,255,255"/>
@@ -348,7 +399,7 @@
           <prop k="offset_unit" v="MM"/>
           <prop k="outline_width_map_unit_scale" v="0,0"/>
           <prop k="outline_width_unit" v="MM"/>
-          <symbol alpha="1" type="line" name="@14@1">
+          <symbol alpha="1" type="line" name="@14@0">
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="square"/>
               <prop k="customdash" v="5;2"/>
@@ -357,6 +408,40 @@
               <prop k="draw_inside_polygon" v="0"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="line_color" v="255,0,0,255"/>
+              <prop k="line_style" v="solid"/>
+              <prop k="line_width" v="3"/>
+              <prop k="line_width_unit" v="MM"/>
+              <prop k="offset" v="0"/>
+              <prop k="offset_map_unit_scale" v="0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="use_custom_dash" v="0"/>
+              <prop k="width_map_unit_scale" v="0,0"/>
+            </layer>
+          </symbol>
+        </layer>
+        <layer pass="0" class="LinePatternFill" locked="0">
+          <prop k="angle" v="45"/>
+          <prop k="color" v="0,0,255,255"/>
+          <prop k="distance" v="6"/>
+          <prop k="distance_map_unit_scale" v="0,0"/>
+          <prop k="distance_unit" v="MM"/>
+          <prop k="line_width" v="0.26"/>
+          <prop k="line_width_map_unit_scale" v="0,0"/>
+          <prop k="line_width_unit" v="MM"/>
+          <prop k="offset" v="3"/>
+          <prop k="offset_map_unit_scale" v="0,0"/>
+          <prop k="offset_unit" v="MM"/>
+          <prop k="outline_width_map_unit_scale" v="0,0"/>
+          <prop k="outline_width_unit" v="MM"/>
+          <symbol alpha="1" type="line" name="@14@1">
+            <layer pass="0" class="SimpleLine" locked="0">
+              <prop k="capstyle" v="square"/>
+              <prop k="customdash" v="5;2"/>
+              <prop k="customdash_map_unit_scale" v="0,0"/>
+              <prop k="customdash_unit" v="MM"/>
+              <prop k="draw_inside_polygon" v="0"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="line_color" v="20,178,225,255"/>
               <prop k="line_style" v="solid"/>
               <prop k="line_width" v="3"/>
               <prop k="line_width_unit" v="MM"/>
@@ -652,6 +737,25 @@
           <prop k="outline_width" v="0.26"/>
           <prop k="outline_width_unit" v="MM"/>
           <prop k="style" v="solid"/>
+        </layer>
+      </symbol>
+      <symbol alpha="1" type="fill" name="32">
+        <layer pass="0" class="SimpleLine" locked="0">
+          <prop k="capstyle" v="flat"/>
+          <prop k="customdash" v="5;2"/>
+          <prop k="customdash_map_unit_scale" v="0,0"/>
+          <prop k="customdash_unit" v="MM"/>
+          <prop k="draw_inside_polygon" v="0"/>
+          <prop k="joinstyle" v="round"/>
+          <prop k="line_color" v="255,255,0,255"/>
+          <prop k="line_style" v="solid"/>
+          <prop k="line_width" v="0.86"/>
+          <prop k="line_width_unit" v="MM"/>
+          <prop k="offset" v="0.8"/>
+          <prop k="offset_map_unit_scale" v="0,0"/>
+          <prop k="offset_unit" v="MM"/>
+          <prop k="use_custom_dash" v="0"/>
+          <prop k="width_map_unit_scale" v="0,0"/>
         </layer>
       </symbol>
       <symbol alpha="0.45098" type="fill" name="4">

@@ -101,6 +101,7 @@
       <rule filter="typ_kt = 'E573'" key="{9d5125e5-aca3-49be-9819-4934efd66afb}" symbol="13" label="573 Fuss und Radweg"/>
       <rule filter="typ_kt = 'E574'" key="{801983aa-1d87-4586-bc3a-950a38f8fb6b}" symbol="14" label="574 Grünstreifen Rabatte"/>
       <rule filter="typ_kt = 'E579'" key="{c8b75919-bfb3-455c-b2c6-ef8d8f2e2f99}" symbol="15" label="579 übrige Flächen Langsamverkehr"/>
+      <rule filter=" &quot;bemerkungen&quot; IS NOT NULL" key="{0a132d0c-59a6-4a97-a35a-1656d44d13f8}" symbol="16" label="!Bemerkungen!"/>
     </rules>
     <symbols>
       <symbol alpha="0.694118" type="fill" name="0">
@@ -255,6 +256,25 @@
           <prop k="line_width" v="0.26"/>
           <prop k="line_width_unit" v="MM"/>
           <prop k="offset" v="0"/>
+          <prop k="offset_map_unit_scale" v="0,0"/>
+          <prop k="offset_unit" v="MM"/>
+          <prop k="use_custom_dash" v="0"/>
+          <prop k="width_map_unit_scale" v="0,0"/>
+        </layer>
+      </symbol>
+      <symbol alpha="1" type="fill" name="16">
+        <layer pass="0" class="SimpleLine" locked="0">
+          <prop k="capstyle" v="square"/>
+          <prop k="customdash" v="5;2"/>
+          <prop k="customdash_map_unit_scale" v="0,0"/>
+          <prop k="customdash_unit" v="MM"/>
+          <prop k="draw_inside_polygon" v="0"/>
+          <prop k="joinstyle" v="bevel"/>
+          <prop k="line_color" v="255,51,22,255"/>
+          <prop k="line_style" v="solid"/>
+          <prop k="line_width" v="0.86"/>
+          <prop k="line_width_unit" v="MM"/>
+          <prop k="offset" v="0.8"/>
           <prop k="offset_map_unit_scale" v="0,0"/>
           <prop k="offset_unit" v="MM"/>
           <prop k="use_custom_dash" v="0"/>

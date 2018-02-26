@@ -86,12 +86,13 @@
   <renderer-v2 symbollevels="0" type="RuleRenderer">
     <rules key="{cf74c83e-5fae-4989-81b0-bd62aff1fea9}">
       <rule filter=" typ_kt = 'E889'" key="{ede758ce-9cd6-4d91-9634-27dd14af0de1}" symbol="0" label="889 weitere punktbezogene Objekte EP"/>
+      <rule filter=" &quot;bemerkungen&quot; IS NOT NULL" key="{63c27063-21df-4a37-9eeb-ec3d4f7d6c51}" symbol="1" label="!Bemerkungen!"/>
     </rules>
     <symbols>
       <symbol alpha="1" type="marker" name="0">
         <layer pass="0" class="SimpleMarker" locked="0">
           <prop k="angle" v="0"/>
-          <prop k="color" v="255,0,0,255"/>
+          <prop k="color" v="254,0,216,255"/>
           <prop k="horizontal_anchor_point" v="1"/>
           <prop k="name" v="circle"/>
           <prop k="offset" v="0,0"/>
@@ -104,6 +105,27 @@
           <prop k="outline_width_unit" v="MM"/>
           <prop k="scale_method" v="area"/>
           <prop k="size" v="2"/>
+          <prop k="size_map_unit_scale" v="0,0"/>
+          <prop k="size_unit" v="MM"/>
+          <prop k="vertical_anchor_point" v="1"/>
+        </layer>
+      </symbol>
+      <symbol alpha="1" type="marker" name="1">
+        <layer pass="0" class="SimpleMarker" locked="0">
+          <prop k="angle" v="0"/>
+          <prop k="color" v="0,0,0,0"/>
+          <prop k="horizontal_anchor_point" v="1"/>
+          <prop k="name" v="circle"/>
+          <prop k="offset" v="0,0"/>
+          <prop k="offset_map_unit_scale" v="0,0"/>
+          <prop k="offset_unit" v="MM"/>
+          <prop k="outline_color" v="255,51,22,255"/>
+          <prop k="outline_style" v="solid"/>
+          <prop k="outline_width" v="0.6"/>
+          <prop k="outline_width_map_unit_scale" v="0,0"/>
+          <prop k="outline_width_unit" v="MM"/>
+          <prop k="scale_method" v="area"/>
+          <prop k="size" v="4"/>
           <prop k="size_map_unit_scale" v="0,0"/>
           <prop k="size_unit" v="MM"/>
           <prop k="vertical_anchor_point" v="1"/>
