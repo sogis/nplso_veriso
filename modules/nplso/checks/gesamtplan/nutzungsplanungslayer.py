@@ -182,6 +182,18 @@ class ComplexCheck(ComplexCheckBase):
                 "readonly": True, "group": group
             }
             vlayer = self.layer_loader.load(layer, False, True, False)
+            
+                        
+            layer = {
+                "type": "postgres",
+                "title": _translate("VeriSO_NPLSO_Bauzonenplan", "Typen",
+                                    None),
+                "featuretype": "t_auflistung_typen",
+                "geom": "", "key": "t_id", "sql": "",
+                "readonly": True, "group": group
+            }
+            vlayer = self.layer_loader.load(layer, False, True, False)
+
 
       
             if bauzone:
