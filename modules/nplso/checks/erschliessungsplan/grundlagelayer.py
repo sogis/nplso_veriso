@@ -65,34 +65,21 @@ class ComplexCheck(ComplexCheckBase):
 
             layer = {
                 "type": "wms",
-                "title": _translate("VeriSO_NPLSO_Erschliessungsplan", "Basisplan schwarz-weiss (WMS)",
+                "title": _translate("VeriSO_NPLSO_Erschliessungsplan", "Hintergrundkarte schwarz-weiss (WMS)",
                                     None),
-                "url": "http://geoweb.rootso.org/wms/sogis_bpav.wms",
-                "layers": "bpav10000sw_overview_scaledependent,bpav10000sw_scaledependent,bpav5000sw_scaledependent",
+                "url": "https://geo.so.ch/wms?",
+                "layers": "ch.so.agi.hintergrundkarte_sw",
                 "format": "image/png", "crs": "EPSG:" + str(epsg),
                 "group": group
             }
             vlayer = self.layer_loader.load(layer, True, True, False)
 
-
-            layer = {
-                "type": "wms",
-                "title": _translate("VeriSO_NPLSO_Erschliessungsplan", "Amtliche Vermessung (schwarz-weiss)",
-                                    None),
-                "url": "http://geoweb.so.ch/wms/grundbuchplan",
-                "layers": "Amtliche Vermessung (schwarz-weiss)",
-                "format": "image/jpeg", "crs": "EPSG:" + str(epsg),
-                "group": group
-            }
-            vlayer = self.layer_loader.load(layer, True, True, False)
-
-
             layer = {
                 "type": "wms",
                 "title": _translate("VeriSO_NPLSO_Erschliessungsplan", "Orthofoto RGB",
                                     None),
-                "url": "http://geoweb.so.ch/wms/sogis_orthofoto.wms",
-                "layers": "Ortho_SO",
+                "url": "https://geo.so.ch/wms?",
+                "layers": "ch.so.agi.orthofoto_rgb",
                 "format": "image/jpeg", "crs": "EPSG:" + str(epsg),
                 "group": group
             }
