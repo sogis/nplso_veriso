@@ -157,6 +157,7 @@ class ExportDefects(QObject):
             # Create excel file.
             filename = QDir.convertSeparators(
                     QDir.cleanPath(os.path.join(project_dir, "bemerkungen.xlsx")))
+            
 
             workbook = xlsxwriter.Workbook(filename)
             fmt_bold = workbook.add_format({'bold': True})
@@ -347,6 +348,8 @@ class ExportDefects(QObject):
 
             # Close excel file.
             workbook.close()
+
+            os.chmod(filename, 0775)
 
             self.message_bar.pushInfo("Information",
                                       tr(

@@ -534,6 +534,8 @@ class ImportProjectDialog(QDialog, Ui_ImportProject):
         try:
             os.makedirs(os.path.join(str(self.projects_root_directory),
                                      str(self.db_schema)))
+            os.chmod(os.path.join(str(self.projects_root_directory),
+                                     str(self.db_schema)), 0775)
             return True
         except Exception as e:
             message = "Something went wrong while creating project directory."
